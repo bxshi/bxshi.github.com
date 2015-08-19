@@ -49,7 +49,7 @@ Before we dive into real problems, I want to briefly discuss about binary">
 If you know what is binary search, I encourage you to skip the first section and goes to the questions.
 
 Before we dive into real problems, I want to briefly discuss about binary">
-<meta property="og:updated_time" content="2015-08-19T04:45:35.000Z">
+<meta property="og:updated_time" content="2015-08-19T22:47:32.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Algorithm Problems: Binary Search">
 <meta name="twitter:description" content="Binary Search Basics
@@ -233,19 +233,32 @@ Before we dive into real problems, I want to briefly discuss about binary">
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  4  5  7  9 11 13 20 21  39 &#10;                      ^  ^            &#10;label:                l  r</span><br></pre></td></tr></table></figure>
 <p>Then we test <code>v[l]</code> and <code>v[r]</code> to see if they equal to <code>10</code>. Unfortunately none of them is <code>10</code> therefore we say <code>10</code> is not in this array <code>v</code>. One may wondering why comparing <code>v[r]</code> since <code>r</code> is <code>m</code> in the previous step and we already compared <code>v[m]</code> in last step. Thing may get tricky when one is trying to save this two comparison. An example is what if <code>l == m</code>? In such case we do not need to compare <code>v[l]</code> but <code>v[r]</code>.</p>
 <p><a name="binary_search_questions"></a></p>
-<h2 id="Binary_Search_Questions">Binary Search Questions</h2><p>In previous section, we talked about the simplest version of binary search, here we will try some more advanced tasks. The basic binary search algorithm can be found at <a href="#binary_search_snippet">here</a>.</p>
-<p>There are four main parts of a binary search algorithm:</p>
+<h2 id="Binary_Search_Questions">Binary Search Questions</h2><p>There are five main parts of a binary search algorithm:</p>
 <ol>
 <li>Invalid input detection. One need to filter our all input with a length less than 0 because this will make <code>r == -1</code>.</li>
 <li>Iteration stop condition. Usually I like to use <code>l &lt; r - 1</code> because it is easy to implement and can avoid specific cases. But you can always use <code>l &lt; r - k</code>, where <code>k &gt;= 0</code>.</li>
 <li>Pruning condition. The classic binary search uses <code>v[m] &lt; target</code> or <code>v[m] &gt; target</code>, but this depends on your problems.</li>
 <li>Boundry condition. By using <code>l &lt; r - 1</code>, one do not need to do detecting but check the value of <code>v[l]</code> and <code>v[r]</code>.</li>
+<li>Boundry check. Check boundary values <code>v[l]</code> and <code>v[r]</code> and deal with the case when target is not found.</li>
 </ol>
-<h3 id="Problems_on_Sorted_Arrays">Problems on Sorted Arrays</h3><h4 id="Binary_Search">Binary Search</h4><h4 id="Search_insert_position">Search insert position</h4><h4 id="Wood_Cut">Wood Cut</h4><h4 id="Find_Bad_Version">Find Bad Version</h4><h4 id="Find_the_nearest_pow(i,2)_that_equals_or_less_thansqrt(x)">Find the nearest <code>pow(i,2)</code> that equals or less than<code>sqrt(x)</code></h4><p>The question description can be found at the following sites:</p>
+<h3 id="Problems_on_Sorted_Arrays">Problems on Sorted Arrays</h3><h4 id="Binary_Search">Binary Search</h4><p>The question description can be found at the following site:</p>
+<blockquote>
+<p>Lintcode: <a href="http://www.lintcode.com/en/problem/binary-search/" target="_blank" rel="external">(14) Binary Search</a></p>
+</blockquote>
+<p>This is the basic binary search problem, the code can be found <a href="#binary_search_snippet">above</a>.</p>
+<h4 id="Search_insert_position">Search insert position</h4><p>The question description can be found at the following sites:</p>
+<blockquote>
+<p>Lintcode: <a href="http://www.lintcode.com/en/problem/search-insert-position/" target="_blank" rel="external">(60) Search insert position</a><br>Leetcode: <a href="https://leetcode.com/problems/search-insert-position/" target="_blank" rel="external">(35) Search insert position</a></p>
+</blockquote>
+<p>The answer of this question is a twisted version of classic binary search. Namely we just need to change the <em>invalid input detection</em> and <em>boundry check</em>.</p>
+<p>The invalid input detection should output <code>0</code> instead of <code>-1</code> because when <code>target</code> is not found, the output should be the index of target if it was inserted. In this case, it is <code>0</code>.</p>
+<p>As for boundary check, we return <code>l</code> or <code>r</code> if <code>m[l] == target</code> or <code>m[r] == target</code>. If none of them equals to <code>target</code>, we need to determine where to insert <code>target</code>. The index should be the smallest value in <code>m</code> that is larger than <code>target</code>.</p>
+<script src="//gist.github.com/2d48d066fee6ccc38c85.js"></script>
+<h4 id="Wood_Cut">Wood Cut</h4><h4 id="Find_Bad_Version">Find Bad Version</h4><h4 id="Find_the_nearest_pow(i,2)_that_equals_or_less_thansqrt(x)">Find the nearest <code>pow(i,2)</code> that equals or less than<code>sqrt(x)</code></h4><p>The question description can be found at the following sites:</p>
 <blockquote>
 <p>Lintcode: <a href="http://www.lintcode.com/en/problem/sqrtx/" target="_blank" rel="external">(141) sqrt(x)</a><br>Leetcode: <a href="https://leetcode.com/problems/sqrtx/" target="_blank" rel="external">(69) sqrt(x)</a></p>
 </blockquote>
-<p><strong>TODO: explanation</strong></p>
+<p>This problem is also a variant of binary search problem. One thing we need to mention is how to calculate <code>sqrt(2)</code>. The question does not require you to return <code>1.414</code> but <code>1</code> (the largest integer that satifies <code>x^2 &lt; target</code>). Therefore, we need to change the <em>pruning condition</em> to comparing <code>m[mid]^2</code> and <code>x</code>. </p>
 <script src="//gist.github.com/15f9e8aed2f0590ba099.js"></script>
 <h4 id="Find_value_range_in_sorted_array_containing_duplicate_values">Find value range in sorted array containing duplicate values</h4><p>The question description can be found at the following sites:</p>
 <blockquote>
