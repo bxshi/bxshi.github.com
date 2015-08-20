@@ -314,7 +314,7 @@
 <p>Say we want to determine if <code>10</code> is in the array or not, an intuitive solution is walk though this array and check <code>arr[i] == 9</code>. The time complexity of such algorithm is <code>O(n)</code>. Note that this is usually the best solution if the array is <strong>unsorted</strong> because binary search can not be applied to unsorted array (A rotated, sorted array is an exception and we will talk about it later).</p>
 <p>To reduce the time complexity of <em>searching for a value in sorted array</em> from <code>O(n)</code> to <code>O(logn)</code>, we will use binary search next.</p>
 <p>The <code>C++</code> snippet is as follow:</p>
-<p><a name="binary_search_snippet"><br><script src="//gist.github.com/852d366d94387f4ffc16.js"></script></a></p>
+<p><a style="visibility: hidden" name="binary_search_snippet"><br><script src="//gist.github.com/852d366d94387f4ffc16.js"></script></a></p>
 <p>Let’s walk though the code using our example:</p>
 <p>At the very beginning, <code>l = 0</code> and <code>r = 10</code>. <code>v[l:r]</code>, where <code>l:r</code> means <code>[l,l+1,...,r-1,r]</code>, denotes the search range, in other words, we know that if the target value exists in <code>v</code>, it must lies in <code>v[l:r]</code>.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  4  5  7  9 11 13 20 21  39 &#10;       ^                              ^&#10;label: l                              r</span><br></pre></td></tr></table></figure>
@@ -330,7 +330,7 @@
 <p>Now <code>v[m] = 11</code>, which is still larger than our target <code>10</code>, therefore we set <code>r = m</code>. Note that in our <code>C++</code> snippet we stop when <code>l == r - 1</code>, therefore we stop when l and r are adjecent.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  4  5  7  9 11 13 20 21  39 &#10;                      ^  ^            &#10;label:                l  r</span><br></pre></td></tr></table></figure>
 <p>Then we test <code>v[l]</code> and <code>v[r]</code> to see if they equal to <code>10</code>. Unfortunately none of them is <code>10</code> therefore we say <code>10</code> is not in this array <code>v</code>. One may wondering why comparing <code>v[r]</code> since <code>r</code> is <code>m</code> in the previous step and we already compared <code>v[m]</code> in last step. Thing may get tricky when one is trying to save this two comparison. An example is what if <code>l == m</code>? In such case we do not need to compare <code>v[l]</code> but <code>v[r]</code>.</p>
-<p><a name="binary_search_questions"></a></p>
+<p><a style="visibility: hidden" name="binary_search_questions"></a></p>
 <h2 id="Binary_Search_Questions">Binary Search Questions</h2><p>There are five main parts of a binary search algorithm:</p>
 <ol>
 <li>Invalid input detection. One need to filter our all input with a length less than 0 because this will make <code>r == -1</code>.</li>
