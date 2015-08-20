@@ -306,7 +306,7 @@
       
         
           <span itemprop="articleBody"><h2 id="Binary_Search_Basics">Binary Search Basics</h2><blockquote>
-<p>If you know what is binary search, I encourage you to skip the first section and goes to <a href="#binary_search_questions">the questions</a>.</p>
+<p>If you know what is binary search, I encourage you to skip the first section and goes to <a href="#Binary Search Questions">the questions</a>.</p>
 </blockquote>
 <p>Before we dive into real problems, I want to briefly discuss about binary search. Binary search is a technic that can search for the existance of a value in a sorted array in <code>O(logn)</code> time, where <code>n</code> is the size of that array.</p>
 <p>An example array <code>v</code>, which is sorted, is shown below:</p>
@@ -314,7 +314,7 @@
 <p>Say we want to determine if <code>10</code> is in the array or not, an intuitive solution is walk though this array and check <code>arr[i] == 9</code>. The time complexity of such algorithm is <code>O(n)</code>. Note that this is usually the best solution if the array is <strong>unsorted</strong> because binary search can not be applied to unsorted array (A rotated, sorted array is an exception and we will talk about it later).</p>
 <p>To reduce the time complexity of <em>searching for a value in sorted array</em> from <code>O(n)</code> to <code>O(logn)</code>, we will use binary search next.</p>
 <p>The <code>C++</code> snippet is as follow:</p>
-<p><a style="visibility: hidden" name="binary_search_snippet"><br><script src="//gist.github.com/852d366d94387f4ffc16.js"></script></a></p>
+<script src="//gist.github.com/852d366d94387f4ffc16.js"></script>
 <p>Let’s walk though the code using our example:</p>
 <p>At the very beginning, <code>l = 0</code> and <code>r = 10</code>. <code>v[l:r]</code>, where <code>l:r</code> means <code>[l,l+1,...,r-1,r]</code>, denotes the search range, in other words, we know that if the target value exists in <code>v</code>, it must lies in <code>v[l:r]</code>.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  4  5  7  9 11 13 20 21  39 &#10;       ^                              ^&#10;label: l                              r</span><br></pre></td></tr></table></figure>
@@ -330,7 +330,6 @@
 <p>Now <code>v[m] = 11</code>, which is still larger than our target <code>10</code>, therefore we set <code>r = m</code>. Note that in our <code>C++</code> snippet we stop when <code>l == r - 1</code>, therefore we stop when l and r are adjecent.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  4  5  7  9 11 13 20 21  39 &#10;                      ^  ^            &#10;label:                l  r</span><br></pre></td></tr></table></figure>
 <p>Then we test <code>v[l]</code> and <code>v[r]</code> to see if they equal to <code>10</code>. Unfortunately none of them is <code>10</code> therefore we say <code>10</code> is not in this array <code>v</code>. One may wondering why comparing <code>v[r]</code> since <code>r</code> is <code>m</code> in the previous step and we already compared <code>v[m]</code> in last step. Thing may get tricky when one is trying to save this two comparison. An example is what if <code>l == m</code>? In such case we do not need to compare <code>v[l]</code> but <code>v[r]</code>.</p>
-<p><a style="visibility: hidden" name="binary_search_questions"></a></p>
 <h2 id="Binary_Search_Questions">Binary Search Questions</h2><p>There are five main parts of a binary search algorithm:</p>
 <ol>
 <li>Invalid input detection. One need to filter our all input with a length less than 0 because this will make <code>r == -1</code>.</li>
@@ -343,7 +342,7 @@
 <blockquote>
 <p>Lintcode: <a href="http://www.lintcode.com/en/problem/binary-search/" target="_blank" rel="external">(14) Binary Search</a></p>
 </blockquote>
-<p>This is the basic binary search problem, the code can be found <a href="#binary_search_snippet">above</a>.</p>
+<p>This is the basic binary search problem, the code can be found <a href="#Binary_Search_Basics">above</a>.</p>
 <h4 id="Search_insert_position">Search insert position</h4><p>The question description can be found at the following sites:</p>
 <blockquote>
 <p>Lintcode: <a href="http://www.lintcode.com/en/problem/search-insert-position/" target="_blank" rel="external">(60) Search insert position</a><br>Leetcode: <a href="https://leetcode.com/problems/search-insert-position/" target="_blank" rel="external">(35) Search insert position</a></p>
@@ -362,7 +361,7 @@
 <blockquote>
 <p>Lintcode: <a href="http://www.lintcode.com/en/problem/search-for-a-range/" target="_blank" rel="external">(61) Search for a Range</a><br>Leetcode: <a href="https://leetcode.com/problems/search-for-a-range/" target="_blank" rel="external">(34) Search for a Range</a></p>
 </blockquote>
-<p>If we keep using the <a href="#binary_search_snippet">old algorithm</a>, we can find <code>v[index] = target</code>, but we can not guarantee which <code>index</code> we returned. An example is:</p>
+<p>If we keep using the <a href="#Binary_Search_Basics">old algorithm</a>, we can find <code>v[index] = target</code>, but we can not guarantee which <code>index</code> we returned. An example is:</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  3  3  4  9 11 13 20 21  39 &#10;             ^ &#10;label:       m</span><br></pre></td></tr></table></figure>
 <p>Here we return <code>index = 2</code>, but we can not return the correct range of <code>3</code>, which is <code>[1,3]</code>.</p>
 <p>A simple solution is search the left and right part of <code>index</code> one by one until we find an element not equals to <code>target</code> or reaches the boundary. This is doable but in the worse case it will cost <code>O(n)</code> time, which is not what we want.</p>
