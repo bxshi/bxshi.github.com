@@ -274,7 +274,7 @@
         
           <span itemprop="articleBody"><p>This is actually pretty simple thanks to <a href="~/Blog/bxshi.github.com/source/_posts/Hide-One-or-More-Legends-in-ggplot2.md">this StackOverflow post</a>.</p>
 <p>To disable the legend of a scale being shown in the legend, just set <code>guides(SCALE_NAME=FALSE)</code>, the follwing example ignores the legend of <code>color</code>.</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">ggplot(mpg, aes(x=cty,y=hwy,color=manufacturer,shape=class)) + geom_point() + guides(color=<span class="literal">FALSE</span>)</span><br></pre></td></tr></table></figure></span>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ggplot(mpg, aes(x=cty,y=hwy,color=manufacturer,shape=class)) + geom_point() + guides(color=<span class="literal">FALSE</span>)</span><br></pre></td></tr></table></figure></span>
         
       
     </div>
