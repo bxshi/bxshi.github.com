@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="ggplot2,">
+  <meta name="keywords" content="LCS,algorithm,leetcode,lintcode,longest common subsequence,longest common substring,string,">
 
 
 
@@ -39,19 +39,25 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1">
 
 
-<meta name="description" content="This is actually pretty simple thanks to this StackOverflow post.
-To disable the legend of a scale being shown in the legend, just set guides(SCALE_NAME=FALSE), the follwing example ignores the legend">
+<meta name="description" content="String Matching, or needle in haystack (KMP Algorithm)
+Given a string target, find the index of its first occurrence in string source. -1 if such index does not exist.
+
+There is a good youtube video t">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hide One or More Legends in ggplot2">
-<meta property="og:url" content="http://bxshi.github.io/2015/08/25/Hide-One-or-More-Legends-in-ggplot2/index.html">
+<meta property="og:title" content="String Problems">
+<meta property="og:url" content="http://bxshi.github.io/2015/09/06/String-Problems/index.html">
 <meta property="og:site_name" content="RAndom NoTeS">
-<meta property="og:description" content="This is actually pretty simple thanks to this StackOverflow post.
-To disable the legend of a scale being shown in the legend, just set guides(SCALE_NAME=FALSE), the follwing example ignores the legend">
-<meta property="og:updated_time" content="2015-09-02T05:19:05.000Z">
+<meta property="og:description" content="String Matching, or needle in haystack (KMP Algorithm)
+Given a string target, find the index of its first occurrence in string source. -1 if such index does not exist.
+
+There is a good youtube video t">
+<meta property="og:updated_time" content="2015-09-07T03:31:08.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hide One or More Legends in ggplot2">
-<meta name="twitter:description" content="This is actually pretty simple thanks to this StackOverflow post.
-To disable the legend of a scale being shown in the legend, just set guides(SCALE_NAME=FALSE), the follwing example ignores the legend">
+<meta name="twitter:title" content="String Problems">
+<meta name="twitter:description" content="String Matching, or needle in haystack (KMP Algorithm)
+Given a string target, find the index of its first occurrence in string source. -1 if such index does not exist.
+
+There is a good youtube video t">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -61,7 +67,7 @@ To disable the legend of a scale being shown in the legend, just set guides(SCAL
   };
 </script>
 
-  <title> Hide One or More Legends in ggplot2 | RAndom NoTeS </title>
+  <title> String Problems | RAndom NoTeS </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -169,7 +175,7 @@ To disable the legend of a scale being shown in the legend, just set guides(SCAL
           
           
             
-              Hide One or More Legends in ggplot2
+              String Problems
             
           
         </h1>
@@ -178,19 +184,34 @@ To disable the legend of a scale being shown in the legend, just set guides(SCAL
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2015-08-25T14:45:06-04:00" content="2015-08-25">
-            2015-08-25
+          <time itemprop="dateCreated" datetime="2015-09-06T20:17:07-04:00" content="2015-09-06">
+            2015-09-06
           </time>
         </span>
 
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/code-interview/" itemprop="url" rel="index">
+                  <span itemprop="name">code interview</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
         
 
         
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/08/25/Hide-One-or-More-Legends-in-ggplot2/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/08/25/Hide-One-or-More-Legends-in-ggplot2/" itemprop="commentsCount"></span>
+            <a href="/2015/09/06/String-Problems/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/06/String-Problems/" itemprop="commentsCount"></span>
             </a>
           </span>
           
@@ -204,9 +225,36 @@ To disable the legend of a scale being shown in the legend, just set guides(SCAL
       
 
       
-        <span itemprop="articleBody"><p>This is actually pretty simple thanks to <a href="~/Blog/bxshi.github.com/source/_posts/Hide-One-or-More-Legends-in-ggplot2.md">this StackOverflow post</a>.</p>
-<p>To disable the legend of a scale being shown in the legend, just set <code>guides(SCALE_NAME=FALSE)</code>, the follwing example ignores the legend of <code>color</code>.</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ggplot(mpg, aes(x=cty,y=hwy,color=manufacturer,shape=class)) + geom_point() + guides(color=<span class="literal">FALSE</span>)</span><br></pre></td></tr></table></figure></span>
+        <span itemprop="articleBody"><h3 id="String_Matching,_or_needle_in_haystack_(KMP_Algorithm)">String Matching, or needle in haystack (KMP Algorithm)</h3><blockquote>
+<p>Given a string <code>target</code>, find the index of its first occurrence in string <code>source</code>. -1 if such index does not exist.</p>
+</blockquote>
+<p>There is a good <a href="https://www.youtube.com/watch?v=1k2KDhcO_uo" target="_blank" rel="external">youtube video</a> that describes KMP table generation pretty well and I hope you could check it out.</p>
+<p>Another good resource is the <a href="https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm" target="_blank" rel="external">Wikipedia page of KMP</a>, which explains the purpose of KMP with great examples. But it becomes less straightforward when comes to the pseudo code part.</p>
+<p>Okay, here comes the code, we divide the code into two parts, the first one is generating KMP table, which determines how should we move when there is a mismatch, and the second part is the matching function that does the matching according to our KMP table.</p>
+<script src="//gist.github.com/7238f288bb28ebc3a088.js"></script>
+<p>Several notes:</p>
+<ol>
+<li>The <code>failure_table</code> (or <code>table</code> in this case) is for the target string (needle), not the source string.</li>
+<li>Using <code>pos</code> and <code>offset</code> can be more convience than traditional <code>i</code>, <code>j</code> which denotes the position in each string accordingly because this eliminates the calulation of the index of first occurrence.</li>
+</ol>
+<p>The above code is also the solution of <code>strStr()</code> question on <a href="https://leetcode.com/problems/implement-strstr/" target="_blank" rel="external">LeetCode</a> and <a href="http://www.lintcode.com/en/problem/strstr/" target="_blank" rel="external">LintCode</a>.</p>
+<h3 id="Longest_Common_Substring">Longest Common Substring</h3><blockquote>
+<p>Find the longest common substring of two strings.</p>
+</blockquote>
+<h4 id="Suffix_Tree_solution_of_LCS_with_two_strings">Suffix Tree solution of LCS with two strings</h4><p>The defintion and implementation of <code>Suffix Tree</code> or <code>Suffix Trie</code> can be found in <a href="../Trie-Prefix-Tree-and-Suffix-Tree/">another article</a>.</p>
+<p>Here is the naive solution of it, and the time complexity is <code>O(n^2 + m^2)</code>, where <code>n</code> and <code>m</code> are the length of each string.</p>
+<p>The main steps of this solution is:</p>
+<ol>
+<li>we insert all suffixes of string <code>A</code> and string <code>B</code> into a suffix trie. &lt;- this costs <code>O(n^2 + m^2)</code> due to the naive implementation</li>
+<li>we search the suffix trie we get and find the deepest ancestor of suffixes of both <code>A</code> and <code>B</code>. &lt;- this costs <code>O(m+n)</code> time</li>
+</ol>
+<script src="//gist.github.com/b06602a60aa5feb47497.js"></script>
+<p>An improved implementation is as follow.</p>
+<p>TODO: gist of an improved version of suffix tree</p>
+<h4 id="Dynamic_Programming_solution_of_LCS_with_two_strings">Dynamic Programming solution of LCS with two strings</h4><blockquote>
+<p>Find the longset common substring of <code>m</code> strings.</p>
+</blockquote>
+<h4 id="Suffix_Tree_solution_of_LCS_with_m_strings">Suffix Tree solution of LCS with <code>m</code> strings</h4><h3 id="Longest_Common_Subsequence">Longest Common Subsequence</h3><h3 id="Reference:">Reference:</h3><p><a href="https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm" target="_blank" rel="external">Knuth–Morris–Pratt algorithm</a><br><a href="https://www.youtube.com/watch?v=1k2KDhcO_uo" target="_blank" rel="external">KMP Table Tutorial</a><br><a href="https://en.wikipedia.org/wiki/Longest_common_substring_problem" target="_blank" rel="external">Longest common substring problem</a><br><a href="https://en.wikipedia.org/wiki/Longest_common_subsequence_problem" target="_blank" rel="external">Longest common subsequence problem</a></p></span>
       
     </div>
 
@@ -214,7 +262,19 @@ To disable the legend of a scale being shown in the legend, just set guides(SCAL
       
         <div class="post-tags">
           
-            <a href="/tags/ggplot2/" rel="tag">#ggplot2</a>
+            <a href="/tags/LCS/" rel="tag">#LCS</a>
+          
+            <a href="/tags/algorithm/" rel="tag">#algorithm</a>
+          
+            <a href="/tags/leetcode/" rel="tag">#leetcode</a>
+          
+            <a href="/tags/lintcode/" rel="tag">#lintcode</a>
+          
+            <a href="/tags/longest-common-subsequence/" rel="tag">#longest common subsequence</a>
+          
+            <a href="/tags/longest-common-substring/" rel="tag">#longest common substring</a>
+          
+            <a href="/tags/string/" rel="tag">#string</a>
           
         </div>
       
@@ -223,13 +283,13 @@ To disable the legend of a scale being shown in the legend, just set guides(SCAL
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/27/Graph-Traversal-DFS-BFS-and-BFS-From-Both-Sides/" rel="prev">Graph Traversal -- DFS, BFS, and BFS From Both Sides</a>
+              <a href="/2015/09/06/Trie-Prefix-Tree-and-Suffix-Tree/" rel="prev">Trie, Prefix Tree, and Suffix Tree</a>
             
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/19/Ugly-Number/" rel="next">Ugly Number</a>
+              <a href="/2015/08/27/Graph-Traversal-DFS-BFS-and-BFS-From-Both-Sides/" rel="next">Graph Traversal -- DFS, BFS, and BFS From Both Sides</a>
             
           </div>
         </div>
@@ -347,7 +407,7 @@ To disable the legend of a scale being shown in the legend, just set guides(SCAL
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">This post does not have a Table Of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#String_Matching,_or_needle_in_haystack_(KMP_Algorithm)"><span class="nav-number">1.</span> <span class="nav-text">String Matching, or needle in haystack (KMP Algorithm)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Longest_Common_Substring"><span class="nav-number">2.</span> <span class="nav-text">Longest Common Substring</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Suffix_Tree_solution_of_LCS_with_two_strings"><span class="nav-number">2.1.</span> <span class="nav-text">Suffix Tree solution of LCS with two strings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dynamic_Programming_solution_of_LCS_with_two_strings"><span class="nav-number">2.2.</span> <span class="nav-text">Dynamic Programming solution of LCS with two strings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Suffix_Tree_solution_of_LCS_with_m_strings"><span class="nav-number">2.3.</span> <span class="nav-text">Suffix Tree solution of LCS with m strings</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Longest_Common_Subsequence"><span class="nav-number">3.</span> <span class="nav-text">Longest Common Subsequence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference:"><span class="nav-number">4.</span> <span class="nav-text">Reference:</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -401,9 +461,9 @@ To disable the legend of a scale being shown in the legend, just set guides(SCAL
 
     <script type="text/javascript">
       var disqus_shortname = 'bshiblog';
-      var disqus_identifier = '2015/08/25/Hide-One-or-More-Legends-in-ggplot2/';
-      var disqus_title = 'Hide One or More Legends in ggplot2';
-      var disqus_url = 'http://bxshi.github.io/2015/08/25/Hide-One-or-More-Legends-in-ggplot2/';
+      var disqus_identifier = '2015/09/06/String-Problems/';
+      var disqus_title = 'String Problems';
+      var disqus_url = 'http://bxshi.github.io/2015/09/06/String-Problems/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

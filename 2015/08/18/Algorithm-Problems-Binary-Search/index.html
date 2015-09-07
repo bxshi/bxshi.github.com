@@ -51,7 +51,7 @@ Before we dive into real problems, I want to briefly discuss about binary">
 If you know what is binary search, I encourage you to skip the first section and goes to the questions.
 
 Before we dive into real problems, I want to briefly discuss about binary">
-<meta property="og:updated_time" content="2015-08-20T04:39:54.000Z">
+<meta property="og:updated_time" content="2015-09-07T01:13:10.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Algorithm Problems: Binary Search">
 <meta name="twitter:description" content="Binary Search Basics
@@ -237,18 +237,18 @@ Before we dive into real problems, I want to briefly discuss about binary">
 <script src="//gist.github.com/852d366d94387f4ffc16.js"></script>
 <p>Let’s walk though the code using our example:</p>
 <p>At the very beginning, <code>l = 0</code> and <code>r = 10</code>. <code>v[l:r]</code>, where <code>l:r</code> means <code>[l,l+1,...,r-1,r]</code>, denotes the search range, in other words, we know that if the target value exists in <code>v</code>, it must lies in <code>v[l:r]</code>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  4  5  7  9 11 13 20 21  39 &#10;       ^                              ^&#10;label: l                              r</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  4  5  7  9 11 13 20 21  39&#10;       ^                              ^&#10;label: l                              r</span><br></pre></td></tr></table></figure>
 <p>Then we compute the median <code>v[m]</code> of <code>v[l:r]</code>, which is the value right in the middle of <code>v[l:r]</code>. Note that we are not necessary computing the exact median when there are even number of elements in the range. That is to say we are calculating <span>$v[ \lfloor \frac{l+r}{2} \rfloor ]$</span><!-- Has MathJax -->.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  4  5  7  9 11 13 20 21  39 &#10;       ^              ^               ^&#10;label: l              m               r</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  4  5  7  9 11 13 20 21  39&#10;       ^              ^               ^&#10;label: l              m               r</span><br></pre></td></tr></table></figure>
 <p>As we can see, <code>v[m] = 9</code> and <code>v[m] &lt; 10</code>. Since <code>v[m] = max(v[0:m])</code>, we can safely say that if <code>10</code> is in <code>v</code>, it must in <code>v[m:r]</code>.</p>
 <p>With that in mind, we narrow our search space to <code>v[5,10]</code>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  4  5  7  9 11 13 20 21  39 &#10;                      ^               ^&#10;label:                l               r</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  4  5  7  9 11 13 20 21  39&#10;                      ^               ^&#10;label:                l               r</span><br></pre></td></tr></table></figure>
 <p>After we reduce the search range, we calculate <code>m</code> by <code>(l+r)/2</code>. Note <code>l</code>, <code>r</code>, and <code>2</code> are <em>integers</em> therefore the fraction part of <code>(l+r)/2</code> is ignored.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  4  5  7  9 11 13 20 21  39 &#10;                      ^     ^         ^&#10;label:                l     m         r</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  4  5  7  9 11 13 20 21  39&#10;                      ^     ^         ^&#10;label:                l     m         r</span><br></pre></td></tr></table></figure>
 <p>This time <code>v[m]</code> is larger than <code>10</code>. Because <code>v[m] = min(v[m:(v.size()-1)])</code>, we can safely conclude that <code>10</code> won’t appear in <code>v[m:10]</code>. So we change our search space to <code>v[l:m]</code> by setting <code>r = m</code>.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  4  5  7  9 11 13 20 21  39 &#10;                      ^  ^  ^          &#10;label:                l  m  r</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  4  5  7  9 11 13 20 21  39&#10;                      ^  ^  ^&#10;label:                l  m  r</span><br></pre></td></tr></table></figure>
 <p>Now <code>v[m] = 11</code>, which is still larger than our target <code>10</code>, therefore we set <code>r = m</code>. Note that in our <code>C++</code> snippet we stop when <code>l == r - 1</code>, therefore we stop when l and r are adjecent.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  4  5  7  9 11 13 20 21  39 &#10;                      ^  ^            &#10;label:                l  r</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  4  5  7  9 11 13 20 21  39&#10;                      ^  ^&#10;label:                l  r</span><br></pre></td></tr></table></figure>
 <p>Then we test <code>v[l]</code> and <code>v[r]</code> to see if they equal to <code>10</code>. Unfortunately none of them is <code>10</code> therefore we say <code>10</code> is not in this array <code>v</code>. One may wondering why comparing <code>v[r]</code> since <code>r</code> is <code>m</code> in the previous step and we already compared <code>v[m]</code> in last step. Thing may get tricky when one is trying to save this two comparison. An example is what if <code>l == m</code>? In such case we do not need to compare <code>v[l]</code> but <code>v[r]</code>.</p>
 <h2 id="Binary_Search_Questions">Binary Search Questions</h2><p>There are five main parts of a binary search algorithm:</p>
 <ol>
@@ -275,20 +275,20 @@ Before we dive into real problems, I want to briefly discuss about binary">
 <blockquote>
 <p>Lintcode: <a href="http://www.lintcode.com/en/problem/sqrtx/" target="_blank" rel="external">(141) sqrt(x)</a><br>Leetcode: <a href="https://leetcode.com/problems/sqrtx/" target="_blank" rel="external">(69) sqrt(x)</a></p>
 </blockquote>
-<p>This problem is also a variant of binary search problem. One thing we need to mention is how to calculate <code>sqrt(2)</code>. The question does not require you to return <code>1.414</code> but <code>1</code> (the largest integer that satifies <code>x^2 &lt; target</code>). Therefore, we need to change the <em>pruning condition</em> to comparing <code>m[mid]^2</code> and <code>x</code>. </p>
+<p>This problem is also a variant of binary search problem. One thing we need to mention is how to calculate <code>sqrt(2)</code>. The question does not require you to return <code>1.414</code> but <code>1</code> (the largest integer that satifies <code>x^2 &lt; target</code>). Therefore, we need to change the <em>pruning condition</em> to comparing <code>m[mid]^2</code> and <code>x</code>.</p>
 <script src="//gist.github.com/15f9e8aed2f0590ba099.js"></script>
 <h4 id="Find_value_range_in_sorted_array_containing_duplicate_values">Find value range in sorted array containing duplicate values</h4><p>The question description can be found at the following sites:</p>
 <blockquote>
 <p>Lintcode: <a href="http://www.lintcode.com/en/problem/search-for-a-range/" target="_blank" rel="external">(61) Search for a Range</a><br>Leetcode: <a href="https://leetcode.com/problems/search-for-a-range/" target="_blank" rel="external">(34) Search for a Range</a></p>
 </blockquote>
 <p>If we keep using the <a href="#Binary_Search_Basics">old algorithm</a>, we can find <code>v[index] = target</code>, but we can not guarantee which <code>index</code> we returned. An example is:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  3  3  4  9 11 13 20 21  39 &#10;             ^ &#10;label:       m</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  3  3  4  9 11 13 20 21  39&#10;             ^&#10;label:       m</span><br></pre></td></tr></table></figure>
 <p>Here we return <code>index = 2</code>, but we can not return the correct range of <code>3</code>, which is <code>[1,3]</code>.</p>
 <p>A simple solution is search the left and right part of <code>index</code> one by one until we find an element not equals to <code>target</code> or reaches the boundary. This is doable but in the worse case it will cost <code>O(n)</code> time, which is not what we want.</p>
 <p>To solve this problem in <code>O(logn)</code> time as usual, we need to twist the traditional binary search algorithm. Remember, we keep reducing the search space by comparing <code>v[mid]</code> to <code>target</code>, and we stop when <code>v[mid] == target</code>. What if we change the comparison? I do not know how to search the range in one binary search, so I break the result into two parts, namely find the left most <code>target</code> and the right most <code>target</code>.</p>
-<p>To find the left most <code>target</code> in this array, we should change the comparison from </p>
+<p>To find the left most <code>target</code> in this array, we should change the comparison from</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (v[m] &gt; target) &#123;</span><br><span class="line">  r = m;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  l = m;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>to </p>
+<p>to</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (v[m] &gt;= target) &#123;</span><br><span class="line">  r = m;</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  l = m;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>In such way, if we find <code>v[m] == target</code>, we will not stop. Instead we will search the left part while keeping <code>v[r] == target</code>. When <code>l == r - 1</code>, we just check <code>v[l]</code> and <code>v[r]</code> and see if <code>v[l] == target</code>, which is unlikely in this case, or <code>v[r] == target</code>. We return the index of the leftmost one that equals to <code>target</code>. By doing this, we find the leftmost <code>target</code>.</p>
 <p>The way of finding the rightmost target is similar and is shown in the follwing code.</p>
@@ -386,7 +386,7 @@ Before we dive into real problems, I want to briefly discuss about binary">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">4</span>
+              <span class="site-state-item-count">6</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -400,7 +400,7 @@ Before we dive into real problems, I want to briefly discuss about binary">
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">17</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
