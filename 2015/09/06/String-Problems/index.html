@@ -51,7 +51,7 @@ There is a good youtube video t">
 Given a string target, find the index of its first occurrence in string source. -1 if such index does not exist.
 
 There is a good youtube video t">
-<meta property="og:updated_time" content="2015-09-07T03:31:08.000Z">
+<meta property="og:updated_time" content="2015-09-09T02:13:15.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="String Problems">
 <meta name="twitter:description" content="String Matching, or needle in haystack (KMP Algorithm)
@@ -241,7 +241,14 @@ There is a good youtube video t">
 <h3 id="Longest_Common_Substring">Longest Common Substring</h3><blockquote>
 <p>Find the longest common substring of two strings.</p>
 </blockquote>
-<h4 id="Suffix_Tree_solution_of_LCS_with_two_strings">Suffix Tree solution of LCS with two strings</h4><p>The defintion and implementation of <code>Suffix Tree</code> or <code>Suffix Trie</code> can be found in <a href="../Trie-Prefix-Tree-and-Suffix-Tree/">another article</a>.</p>
+<h4 id="Suffix_Tree_solution_of_LCS_with_two_strings">Suffix Tree solution of LCS with two strings</h4><p>First let’s see an examle from Wikipedia</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ABABC</span><br><span class="line">  <span class="string">|||</span></span><br><span class="line"> BABCA</span><br></pre></td></tr></table></figure>
+<p>Apparently the longset common substring is <code>ABC</code>, and <code>ABC</code> can be obtained by the following procedures:</p>
+<ol>
+<li>For all suffixes of <code>ABABC</code> and <code>BABCA</code>, find the longest common prefix of their suffixes</li>
+<li>For all prefixes of <code>ABABC</code> and <code>BABCA</code>, find the longest common suffix of their prefixes</li>
+</ol>
+<p>The defintion and implementation of <code>Suffix Tree</code> or <code>Suffix Trie</code> can be found in <a href="../Trie-Prefix-Tree-and-Suffix-Tree/">another article</a>.</p>
 <p>Here is the naive solution of it, and the time complexity is <code>O(n^2 + m^2)</code>, where <code>n</code> and <code>m</code> are the length of each string.</p>
 <p>The main steps of this solution is:</p>
 <ol>
@@ -251,7 +258,9 @@ There is a good youtube video t">
 <script src="//gist.github.com/b06602a60aa5feb47497.js"></script>
 <p>An improved implementation is as follow.</p>
 <p>TODO: gist of an improved version of suffix tree</p>
-<h4 id="Dynamic_Programming_solution_of_LCS_with_two_strings">Dynamic Programming solution of LCS with two strings</h4><blockquote>
+<p>Here is a youtube video that explains how (Ukkonen’s algorithm)[<a href="https://www.youtube.com/watch?v=aPRqocoBsFQ" target="_blank" rel="external">https://www.youtube.com/watch?v=aPRqocoBsFQ</a>] works</p>
+<h4 id="Dynamic_Programming_solution_of_LCS_with_two_strings">Dynamic Programming solution of LCS with two strings</h4><script src="//gist.github.com/857586e520357160bd0b.js"></script>
+<blockquote>
 <p>Find the longset common substring of <code>m</code> strings.</p>
 </blockquote>
 <h4 id="Suffix_Tree_solution_of_LCS_with_m_strings">Suffix Tree solution of LCS with <code>m</code> strings</h4><h3 id="Longest_Common_Subsequence">Longest Common Subsequence</h3><h3 id="Reference:">Reference:</h3><p><a href="https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm" target="_blank" rel="external">Knuth–Morris–Pratt algorithm</a><br><a href="https://www.youtube.com/watch?v=1k2KDhcO_uo" target="_blank" rel="external">KMP Table Tutorial</a><br><a href="https://en.wikipedia.org/wiki/Longest_common_substring_problem" target="_blank" rel="external">Longest common substring problem</a><br><a href="https://en.wikipedia.org/wiki/Longest_common_subsequence_problem" target="_blank" rel="external">Longest common subsequence problem</a></p></span>
