@@ -165,6 +165,165 @@
           
           
             
+              <a class="post-title-link" href="/2015/09/21/Edit-Distance/" itemprop="url">
+                Edit Distance
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2015-09-21T22:13:00-04:00" content="2015-09-21">
+            2015-09-21
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/09/21/Edit-Distance/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/21/Edit-Distance/" itemprop="commentsCount"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>The sub-problem of edit distance is the edit distance of string <code>A[0:i]</code> and string <code>B[0:j]</code>.</p>
+<p>The boundary cases are:</p>
+<ol>
+<li><code>A.length() == 0</code>, then edit distance is <code>B.legnth()</code></li>
+<li><code>B.length() == 0</code>, then edit distance is <code>A.length()</code></li>
+<li>otherwise, there are three cases (log the minimum score):<ol>
+<li>if we align <code>A</code> and <code>B</code> at <code>i</code> and <code>j</code> respectly, then the edit distance is <code>M[i-1][j-1] + (A[i] == B[j] ? 0 : 1)</code></li>
+<li>if we align by <code>A[0:i-1]</code> and <code>B[0:j]</code>, then we need to perform a delete/add operation</li>
+<li>if we align by <code>A[0:i]</code> and <code>B[0:j-1]</code>, then we need to perform a delete/add operation</li>
+</ol>
+</li>
+</ol>
+<p>By analysis the above conditions, we can know the state we need to keep is two rows, namely <code>M[i-1][0:j]</code> and <code>M[i][0:j]</code>.</p>
+<p>Therefore, the code is:</p>
+<script src="//gist.github.com/264b131e2edb52d2ba5b.js"></script></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
+              <a class="post-title-link" href="/2015/09/11/Pirority-Queue-Heap-Implementation/" itemprop="url">
+                Pirority Queue, Heap Implementation
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2015-09-11T23:09:19-04:00" content="2015-09-11">
+            2015-09-11
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/09/11/Pirority-Queue-Heap-Implementation/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/11/Pirority-Queue-Heap-Implementation/" itemprop="commentsCount"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p>Pirority queue can be implemented by a binary heap, and heap is usually implemented in a vector so we do not need to keep multiple pointers that point to its parent and two children.</p>
+<p>If we use a vector <code>v</code> to store a heap, it satisfies the following rules:</p>
+<ol>
+<li>the root of this heap is stored at <code>v[1]</code>, and <code>v[0]</code> is never used</li>
+<li>for any sub heap in this vector, if <code>v[pos]</code> is the root, <code>v[2*pos]</code> and <code>v[2*pos + 1]</code> are the children of it.</li>
+<li>for any node (except the root) in the heap, <code>v[pos]</code>‘s parent is <code>v[pos/2]</code>.</li>
+</ol>
+<p>The main operations of a heap is <code>insert</code> ant <code>pop</code>, when the heap is a min heap, <code>pop</code> pops out the maximum value in the heap and when it is a max heap, it pops out the smallest one. Since we need to keep the root to be the smallest or largest element, every time we modify the heap, we need to reorder it in order to keep the root is the largest or smallest.</p>
+<p>Therefore, we need to define two algorithms to reorder the heap for both <code>insert</code> and <code>pop</code> function.</p>
+<h3 id="Insert">Insert</h3><p>Insert is done by attach an element to the rightmost node.</p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/09/06/Trie-Prefix-Tree-and-Suffix-Tree/" itemprop="url">
                 Trie, Prefix Tree, and Suffix Tree
               </a>
@@ -803,7 +962,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">6</span>
+              <span class="site-state-item-count">8</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -817,7 +976,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">17</span>
+              <span class="site-state-item-count">22</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
