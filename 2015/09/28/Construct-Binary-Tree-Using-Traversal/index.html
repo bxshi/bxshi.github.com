@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="ggplot2,">
+  <meta name="keywords" content="algorithm,binary tree,">
 
 
 
@@ -39,19 +39,25 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1">
 
 
-<meta name="description" content="This is actually pretty simple thanks to this StackOverflow post.
-To disable the legend of a scale being shown in the legend, just set guides(SCALE_NAME=FALSE), the follwing example ignores the legend">
+<meta name="description" content="First let’s check an example
+1234567      7   /     \ 10       2 /\       /4  3     8    \   /     1 11
+The traversal results are as follow:
+1234Index:   0  1  2  3  4  5  6  7In:      4 10  3  1  7 1">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Hide One or More Legends in ggplot2">
-<meta property="og:url" content="http://bxshi.github.io/2015/08/25/Hide-One-or-More-Legends-in-ggplot2/index.html">
+<meta property="og:title" content="Construct Binary Tree Using Traversal">
+<meta property="og:url" content="http://bxshi.github.io/2015/09/28/Construct-Binary-Tree-Using-Traversal/index.html">
 <meta property="og:site_name" content="RAndom NoTeS">
-<meta property="og:description" content="This is actually pretty simple thanks to this StackOverflow post.
-To disable the legend of a scale being shown in the legend, just set guides(SCALE_NAME=FALSE), the follwing example ignores the legend">
-<meta property="og:updated_time" content="2015-09-02T05:19:05.000Z">
+<meta property="og:description" content="First let’s check an example
+1234567      7   /     \ 10       2 /\       /4  3     8    \   /     1 11
+The traversal results are as follow:
+1234Index:   0  1  2  3  4  5  6  7In:      4 10  3  1  7 1">
+<meta property="og:updated_time" content="2015-09-28T23:36:41.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hide One or More Legends in ggplot2">
-<meta name="twitter:description" content="This is actually pretty simple thanks to this StackOverflow post.
-To disable the legend of a scale being shown in the legend, just set guides(SCALE_NAME=FALSE), the follwing example ignores the legend">
+<meta name="twitter:title" content="Construct Binary Tree Using Traversal">
+<meta name="twitter:description" content="First let’s check an example
+1234567      7   /     \ 10       2 /\       /4  3     8    \   /     1 11
+The traversal results are as follow:
+1234Index:   0  1  2  3  4  5  6  7In:      4 10  3  1  7 1">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -61,7 +67,7 @@ To disable the legend of a scale being shown in the legend, just set guides(SCAL
   };
 </script>
 
-  <title> Hide One or More Legends in ggplot2 | RAndom NoTeS </title>
+  <title> Construct Binary Tree Using Traversal | RAndom NoTeS </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -169,7 +175,7 @@ To disable the legend of a scale being shown in the legend, just set guides(SCAL
           
           
             
-              Hide One or More Legends in ggplot2
+              Construct Binary Tree Using Traversal
             
           
         </h1>
@@ -178,8 +184,8 @@ To disable the legend of a scale being shown in the legend, just set guides(SCAL
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2015-08-25T14:45:06-04:00" content="2015-08-25">
-            2015-08-25
+          <time itemprop="dateCreated" datetime="2015-09-28T19:09:02-04:00" content="2015-09-28">
+            2015-09-28
           </time>
         </span>
 
@@ -189,8 +195,8 @@ To disable the legend of a scale being shown in the legend, just set guides(SCAL
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/08/25/Hide-One-or-More-Legends-in-ggplot2/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/08/25/Hide-One-or-More-Legends-in-ggplot2/" itemprop="commentsCount"></span>
+            <a href="/2015/09/28/Construct-Binary-Tree-Using-Traversal/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/28/Construct-Binary-Tree-Using-Traversal/" itemprop="commentsCount"></span>
             </a>
           </span>
           
@@ -204,9 +210,24 @@ To disable the legend of a scale being shown in the legend, just set guides(SCAL
       
 
       
-        <span itemprop="articleBody"><p>This is actually pretty simple thanks to <a href="~/Blog/bxshi.github.com/source/_posts/Hide-One-or-More-Legends-in-ggplot2.md">this StackOverflow post</a>.</p>
-<p>To disable the legend of a scale being shown in the legend, just set <code>guides(SCALE_NAME=FALSE)</code>, the follwing example ignores the legend of <code>color</code>.</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ggplot(mpg, aes(x=cty,y=hwy,color=manufacturer,shape=class)) + geom_point() + guides(color=<span class="literal">FALSE</span>)</span><br></pre></td></tr></table></figure></span>
+        <span itemprop="articleBody"><p>First let’s check an example</p>
+<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">      <span class="number">7</span></span><br><span class="line">   /     <span class="string">\</span></span><br><span class="line"> <span class="number">10</span>       <span class="number">2</span></span><br><span class="line"> /<span class="string">\</span>       /</span><br><span class="line"><span class="number">4</span>  <span class="number">3</span>     <span class="number">8</span></span><br><span class="line">    <span class="string">\</span>   /</span><br><span class="line">     <span class="number">1</span> <span class="number">11</span></span><br></pre></td></tr></table></figure>
+<p>The traversal results are as follow:</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Index</span>: <span class="string">  0  1  2  3  4  5  6  7</span></span><br><span class="line"><span class="attribute">In</span>: <span class="string">     4 10  3  1  7 11  8  2</span></span><br><span class="line"><span class="attribute">Pre</span>: <span class="string">    7 10  4  3  1  2  8  11</span></span><br><span class="line"><span class="attribute">Post</span>: <span class="string">   4  1  3 10 11  8  2  7</span></span><br></pre></td></tr></table></figure>
+<h2 id="Construct_a_binary_tree_using_inorder_and_preorder_traversal">Construct a binary tree using inorder and preorder traversal</h2><p>It is clear that the first element in preorder traversal is the root of this tree, so we divide the inorder vector using the root.</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Index</span>: <span class="string">   0   1  2  3  4  5  6  7</span></span><br><span class="line"><span class="attribute">In</span>: <span class="string">     [4  10  3  1] 7[11  8  2]</span></span><br><span class="line"><span class="attribute">Pre</span>: <span class="string">    [7] 10  4  3  1  2  8  11</span></span><br></pre></td></tr></table></figure>
+<p>As we can see, <code>[4,10,3,1]</code> are in the left subtree of root and <code>[11,8,2]</code> are in the right subtree of root. Therefore, we can do the <code>find root-&gt;get left and right subtree</code> procedure recursively. However, a challenge here is how to determine the root of left and right subtree.</p>
+<p>To solve the above problem, we need to go back to the tree representation and recall the way that preorder traversal is done.</p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">        root    left           right</span><br><span class="line">Pre:     <span class="comment">[7]</span> <span class="comment">[10  4  3  1]</span>  <span class="comment">[2  8  11]</span></span><br></pre></td></tr></table></figure>
+<p>If we divide the result of preorder traversal into three parts, we can see the root is followed by a left subtree and right subtree, so if we can know the size of left subtree, we can know the preorder traversal of right subtree, which is <code>rootPosition + leftSubTreeSize + 1</code>. Luckly by finding the position of <code>7</code> in inorder traversal, we can know the size of left subtree (and the right subtree also). Note that <code>[10,4,3,1]</code> and <code>[2,8,11]</code> are also preorder traversal result, which means the first element in these two vector are the root of them respectively.</p>
+<p>To implement this algorithm, we need three indexes, first one is <code>rootPos</code>, which denotes the index of the root of current subtree, <code>lpos</code> and <code>rpos</code> denote the range of <code>rootPos</code>‘s decedents (not children, which are directly connected). We can find <code>lpos</code> and <code>rpos</code> by finding the root in inorder, and by fiding the root in inorder traversal, the size of two subtrees can be determined and therefore we can know the root of these two subtress in preorder traversal.</p>
+<p>The code are as follow:</p>
+<script src="//gist.github.com/e7aa1e158eeb1f159989.js"></script>
+<h2 id="Construct_a_binary_tree_using_inorder_and_postorder_traversal">Construct a binary tree using inorder and postorder traversal</h2><p>The difference between preorder and postorder traversal is that whether we visit the root at first or at last.</p>
+<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Index</span>: <span class="string">  0  1  2  3  4   5  6  7</span></span><br><span class="line"><span class="attribute">In</span>: <span class="string">    [4 10  3  1] 7 [11  8  2]</span></span><br><span class="line"><span class="attribute">Post</span>: <span class="string">   4  1  3 10 11   8 2  [7]</span></span><br></pre></td></tr></table></figure>
+<p>Therefore all we need to do is change the way we find the root of subtrees, namely we do it from right to left by minus the size of right tree.</p>
+<p>The code are as follow:</p>
+<script src="//gist.github.com/8d6dc93141e0466474ea.js"></script></span>
       
     </div>
 
@@ -214,7 +235,9 @@ To disable the legend of a scale being shown in the legend, just set guides(SCAL
       
         <div class="post-tags">
           
-            <a href="/tags/ggplot2/" rel="tag">#ggplot2</a>
+            <a href="/tags/algorithm/" rel="tag">#algorithm</a>
+          
+            <a href="/tags/binary-tree/" rel="tag">#binary tree</a>
           
         </div>
       
@@ -223,13 +246,11 @@ To disable the legend of a scale being shown in the legend, just set guides(SCAL
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/08/27/Graph-Traversal-DFS-BFS-and-BFS-From-Both-Sides/" rel="prev">Graph Traversal -- DFS, BFS, and BFS From Both Sides</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/19/Ugly-Number/" rel="next">Ugly Number</a>
+              <a href="/2015/09/21/Edit-Distance/" rel="next">Edit Distance</a>
             
           </div>
         </div>
@@ -347,7 +368,7 @@ To disable the legend of a scale being shown in the legend, just set guides(SCAL
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">This post does not have a Table Of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Construct_a_binary_tree_using_inorder_and_preorder_traversal"><span class="nav-number">1.</span> <span class="nav-text">Construct a binary tree using inorder and preorder traversal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Construct_a_binary_tree_using_inorder_and_postorder_traversal"><span class="nav-number">2.</span> <span class="nav-text">Construct a binary tree using inorder and postorder traversal</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -401,9 +422,9 @@ To disable the legend of a scale being shown in the legend, just set guides(SCAL
 
     <script type="text/javascript">
       var disqus_shortname = 'bshiblog';
-      var disqus_identifier = '2015/08/25/Hide-One-or-More-Legends-in-ggplot2/';
-      var disqus_title = 'Hide One or More Legends in ggplot2';
-      var disqus_url = 'http://bxshi.github.io/2015/08/25/Hide-One-or-More-Legends-in-ggplot2/';
+      var disqus_identifier = '2015/09/28/Construct-Binary-Tree-Using-Traversal/';
+      var disqus_title = 'Construct Binary Tree Using Traversal';
+      var disqus_url = 'http://bxshi.github.io/2015/09/28/Construct-Binary-Tree-Using-Traversal/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
