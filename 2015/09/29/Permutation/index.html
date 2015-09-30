@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="algorithm,binary tree,">
+  <meta name="keywords" content="algorithm,permutation,">
 
 
 
@@ -39,25 +39,22 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1">
 
 
-<meta name="description" content="First let’s check an example
-1234567      7   /     \ 10       2 /\       /4  3     8    \   /     1 11
-The traversal results are as follow:
-1234Index:   0  1  2  3  4  5  6  7In:      4 10  3  1  7 1">
+<meta name="description" content="Next Permutation (With duplication)First let’s check the first six permutation of sequence [1,2,3,4] in lexical order.
+1234561 2 3 41 2 4 31 3 2 41 3 4 21 4 2 31 4 3 2
+If we starting from the tail of">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Construct Binary Tree Using Traversal">
-<meta property="og:url" content="http://bxshi.github.io/2015/09/28/Construct-Binary-Tree-Using-Traversal/index.html">
+<meta property="og:title" content="Permutation">
+<meta property="og:url" content="http://bxshi.github.io/2015/09/29/Permutation/index.html">
 <meta property="og:site_name" content="RAndom NoTeS">
-<meta property="og:description" content="First let’s check an example
-1234567      7   /     \ 10       2 /\       /4  3     8    \   /     1 11
-The traversal results are as follow:
-1234Index:   0  1  2  3  4  5  6  7In:      4 10  3  1  7 1">
-<meta property="og:updated_time" content="2015-09-28T23:36:41.000Z">
+<meta property="og:description" content="Next Permutation (With duplication)First let’s check the first six permutation of sequence [1,2,3,4] in lexical order.
+1234561 2 3 41 2 4 31 3 2 41 3 4 21 4 2 31 4 3 2
+If we starting from the tail of">
+<meta property="og:updated_time" content="2015-09-30T02:05:49.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Construct Binary Tree Using Traversal">
-<meta name="twitter:description" content="First let’s check an example
-1234567      7   /     \ 10       2 /\       /4  3     8    \   /     1 11
-The traversal results are as follow:
-1234Index:   0  1  2  3  4  5  6  7In:      4 10  3  1  7 1">
+<meta name="twitter:title" content="Permutation">
+<meta name="twitter:description" content="Next Permutation (With duplication)First let’s check the first six permutation of sequence [1,2,3,4] in lexical order.
+1234561 2 3 41 2 4 31 3 2 41 3 4 21 4 2 31 4 3 2
+If we starting from the tail of">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -67,7 +64,7 @@ The traversal results are as follow:
   };
 </script>
 
-  <title> Construct Binary Tree Using Traversal | RAndom NoTeS </title>
+  <title> Permutation | RAndom NoTeS </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -175,7 +172,7 @@ The traversal results are as follow:
           
           
             
-              Construct Binary Tree Using Traversal
+              Permutation
             
           
         </h1>
@@ -184,8 +181,8 @@ The traversal results are as follow:
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2015-09-28T19:09:02-04:00" content="2015-09-28">
-            2015-09-28
+          <time itemprop="dateCreated" datetime="2015-09-29T20:58:24-04:00" content="2015-09-29">
+            2015-09-29
           </time>
         </span>
 
@@ -195,8 +192,8 @@ The traversal results are as follow:
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/09/28/Construct-Binary-Tree-Using-Traversal/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/28/Construct-Binary-Tree-Using-Traversal/" itemprop="commentsCount"></span>
+            <a href="/2015/09/29/Permutation/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/29/Permutation/" itemprop="commentsCount"></span>
             </a>
           </span>
           
@@ -210,24 +207,25 @@ The traversal results are as follow:
       
 
       
-        <span itemprop="articleBody"><p>First let’s check an example</p>
-<figure class="highlight livescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">      <span class="number">7</span></span><br><span class="line">   /     <span class="string">\</span></span><br><span class="line"> <span class="number">10</span>       <span class="number">2</span></span><br><span class="line"> /<span class="string">\</span>       /</span><br><span class="line"><span class="number">4</span>  <span class="number">3</span>     <span class="number">8</span></span><br><span class="line">    <span class="string">\</span>   /</span><br><span class="line">     <span class="number">1</span> <span class="number">11</span></span><br></pre></td></tr></table></figure>
-<p>The traversal results are as follow:</p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Index</span>: <span class="string">  0  1  2  3  4  5  6  7</span></span><br><span class="line"><span class="attribute">In</span>: <span class="string">     4 10  3  1  7 11  8  2</span></span><br><span class="line"><span class="attribute">Pre</span>: <span class="string">    7 10  4  3  1  2  8  11</span></span><br><span class="line"><span class="attribute">Post</span>: <span class="string">   4  1  3 10 11  8  2  7</span></span><br></pre></td></tr></table></figure>
-<h2 id="Construct_a_binary_tree_using_inorder_and_preorder_traversal">Construct a binary tree using inorder and preorder traversal</h2><p>It is clear that the first element in preorder traversal is the root of this tree, so we divide the inorder vector using the root.</p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Index</span>: <span class="string">   0   1  2  3  4  5  6  7</span></span><br><span class="line"><span class="attribute">In</span>: <span class="string">     [4  10  3  1] 7[11  8  2]</span></span><br><span class="line"><span class="attribute">Pre</span>: <span class="string">    [7] 10  4  3  1  2  8  11</span></span><br></pre></td></tr></table></figure>
-<p>As we can see, <code>[4,10,3,1]</code> are in the left subtree of root and <code>[11,8,2]</code> are in the right subtree of root. Therefore, we can do the <code>find root-&gt;get left and right subtree</code> procedure recursively. However, a challenge here is how to determine the root of left and right subtree.</p>
-<p>To solve the above problem, we need to go back to the tree representation and recall the way that preorder traversal is done.</p>
-<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">        root    left           right</span><br><span class="line">Pre:     <span class="comment">[7]</span> <span class="comment">[10  4  3  1]</span>  <span class="comment">[2  8  11]</span></span><br></pre></td></tr></table></figure>
-<p>If we divide the result of preorder traversal into three parts, we can see the root is followed by a left subtree and right subtree, so if we can know the size of left subtree, we can know the preorder traversal of right subtree, which is <code>rootPosition + leftSubTreeSize + 1</code>. Luckly by finding the position of <code>7</code> in inorder traversal, we can know the size of left subtree (and the right subtree also). Note that <code>[10,4,3,1]</code> and <code>[2,8,11]</code> are also preorder traversal result, which means the first element in these two vector are the root of them respectively.</p>
-<p>To implement this algorithm, we need three indexes, first one is <code>rootPos</code>, which denotes the index of the root of current subtree, <code>lpos</code> and <code>rpos</code> denote the range of <code>rootPos</code>‘s decedents (not children, which are directly connected). We can find <code>lpos</code> and <code>rpos</code> by finding the root in inorder, and by fiding the root in inorder traversal, the size of two subtrees can be determined and therefore we can know the root of these two subtress in preorder traversal.</p>
-<p>The code are as follow:</p>
-<script src="//gist.github.com/e7aa1e158eeb1f159989.js"></script>
-<h2 id="Construct_a_binary_tree_using_inorder_and_postorder_traversal">Construct a binary tree using inorder and postorder traversal</h2><p>The difference between preorder and postorder traversal is that whether we visit the root at first or at last.</p>
-<figure class="highlight http"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">Index</span>: <span class="string">  0  1  2  3  4   5  6  7</span></span><br><span class="line"><span class="attribute">In</span>: <span class="string">    [4 10  3  1] 7 [11  8  2]</span></span><br><span class="line"><span class="attribute">Post</span>: <span class="string">   4  1  3 10 11   8 2  [7]</span></span><br></pre></td></tr></table></figure>
-<p>Therefore all we need to do is change the way we find the root of subtrees, namely we do it from right to left by minus the size of right tree.</p>
-<p>The code are as follow:</p>
-<script src="//gist.github.com/8d6dc93141e0466474ea.js"></script></span>
+        <span itemprop="articleBody"><h3 id="Next_Permutation_(With_duplication)">Next Permutation (With duplication)</h3><p>First let’s check the first six permutation of sequence <code>[1,2,3,4]</code> in lexical order.</p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1 2 3 4</span></span><br><span class="line"><span class="number">1 2 4 3</span></span><br><span class="line"><span class="number">1 3 2 4</span></span><br><span class="line"><span class="number">1 3 4 2</span></span><br><span class="line"><span class="number">1 4 2 3</span></span><br><span class="line"><span class="number">1 4 3 2</span></span><br></pre></td></tr></table></figure>
+<p>If we starting from the tail of each permutation and try find an ascending sequence <code>[n-1 : j]</code>, then the discovered sequences are:</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> [<span class="number">4</span>]</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> [<span class="number">4</span> <span class="number">3</span>]</span><br><span class="line"><span class="number">1</span> <span class="number">3</span> <span class="number">2</span> [<span class="number">4</span>]</span><br><span class="line"><span class="number">1</span> <span class="number">3</span> [<span class="number">4</span> <span class="number">2</span>]</span><br><span class="line"><span class="number">1</span> <span class="number">4</span> <span class="number">2</span> [<span class="number">3</span>]</span><br><span class="line"><span class="number">1</span> [<span class="number">4</span> <span class="number">3</span> <span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+<p>Now for every permutation we successfully divide it into two parts, then if we exam the difference between two adjacent permutation, we can find the following rules:</p>
+<ol>
+<li>get <code>s[j - 1]</code></li>
+<li>find the first <code>s[k]</code> in <code>s[n-1:j]</code> that is larger than <code>s[j-1]</code></li>
+<li>swap <code>s[j-1]</code> and <code>s[k]</code>, sort <code>s[j:n-1]</code> in ascending order</li>
+</ol>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find <span class="keyword">ascending</span> subarray starting <span class="built_in">from</span> <span class="operator">the</span> <span class="keyword">end</span>, <span class="operator">the</span> left <span class="keyword">element</span> <span class="operator">of</span> this subarray should be replaced <span class="keyword">by</span> <span class="operator">the</span> <span class="keyword">first</span> <span class="keyword">element</span> <span class="keyword">at</span> <span class="operator">the</span> <span class="constant">right</span> <span class="operator">of</span> <span class="operator">the</span> subarray that is larger than <span class="operator">the</span> <span class="keyword">element</span>.</span><br></pre></td></tr></table></figure>
+<script src="//gist.github.com/4f13804d7e34c9d955ad.js"></script>
+<h3 id="Previous_Permutation_(With_duplication)">Previous Permutation (With duplication)</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find <span class="keyword">descending</span> subarray starting <span class="built_in">from</span> <span class="operator">the</span> <span class="keyword">end</span>, <span class="operator">the</span> left <span class="keyword">element</span> <span class="operator">of</span> this subarray should be replaced <span class="keyword">by</span> <span class="operator">the</span> <span class="keyword">first</span> <span class="keyword">element</span> <span class="keyword">at</span> <span class="operator">the</span> <span class="constant">right</span> <span class="operator">of</span> <span class="operator">the</span> subarray that is smaller than <span class="operator">the</span> <span class="keyword">element</span>.</span><br></pre></td></tr></table></figure>
+<script src="//gist.github.com/ec0f330b300e77c3529c.js"></script>
+<h3 id="Permutation_(Without_duplication)">Permutation (Without duplication)</h3><p>We can do a depth-first search to construct the permutation, or use the code snippet we shown above to generate next permutation until reach <code>asc == 0</code>. Note the result of both solution has the same order.</p>
+<p>The DFS method is maintaining a visited vector and for every recursive call pick one unvisited node and visit it until all nodes are visited (put into the temporary result vector).</p>
+<script src="//gist.github.com/b6fe650dfe1af6209c86.js"></script>
+<h3 id="Permutation_(With_duplication)">Permutation (With duplication)</h3><p>When there are duplications in <code>nums</code>, create a map in which the key is the number in <code>nums</code> and the value is the count of the occurrence of key. When doing DFS, traverse through the map and try any numbers that has a value larger than 1.</p>
+<script src="//gist.github.com/d9ea51e11fcc9c77e21e.js"></script></span>
       
     </div>
 
@@ -237,7 +235,7 @@ The traversal results are as follow:
           
             <a href="/tags/algorithm/" rel="tag">#algorithm</a>
           
-            <a href="/tags/binary-tree/" rel="tag">#binary tree</a>
+            <a href="/tags/permutation/" rel="tag">#permutation</a>
           
         </div>
       
@@ -246,13 +244,11 @@ The traversal results are as follow:
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/29/Permutation/" rel="prev">Permutation</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/21/Edit-Distance/" rel="next">Edit Distance</a>
+              <a href="/2015/09/28/Construct-Binary-Tree-Using-Traversal/" rel="next">Construct Binary Tree Using Traversal</a>
             
           </div>
         </div>
@@ -370,7 +366,7 @@ The traversal results are as follow:
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Construct_a_binary_tree_using_inorder_and_preorder_traversal"><span class="nav-number">1.</span> <span class="nav-text">Construct a binary tree using inorder and preorder traversal</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Construct_a_binary_tree_using_inorder_and_postorder_traversal"><span class="nav-number">2.</span> <span class="nav-text">Construct a binary tree using inorder and postorder traversal</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Next_Permutation_(With_duplication)"><span class="nav-number">1.</span> <span class="nav-text">Next Permutation (With duplication)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Previous_Permutation_(With_duplication)"><span class="nav-number">2.</span> <span class="nav-text">Previous Permutation (With duplication)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Permutation_(Without_duplication)"><span class="nav-number">3.</span> <span class="nav-text">Permutation (Without duplication)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Permutation_(With_duplication)"><span class="nav-number">4.</span> <span class="nav-text">Permutation (With duplication)</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -424,9 +420,9 @@ The traversal results are as follow:
 
     <script type="text/javascript">
       var disqus_shortname = 'bshiblog';
-      var disqus_identifier = '2015/09/28/Construct-Binary-Tree-Using-Traversal/';
-      var disqus_title = 'Construct Binary Tree Using Traversal';
-      var disqus_url = 'http://bxshi.github.io/2015/09/28/Construct-Binary-Tree-Using-Traversal/';
+      var disqus_identifier = '2015/09/29/Permutation/';
+      var disqus_title = 'Permutation';
+      var disqus_url = 'http://bxshi.github.io/2015/09/29/Permutation/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
