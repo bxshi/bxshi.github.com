@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="algorithm,edit distance,string,">
+  <meta name="keywords" content="algorithm,dynamic programming,subarray,">
 
 
 
@@ -39,28 +39,19 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1">
 
 
-<meta name="description" content="The sub-problem of edit distance is the edit distance of string A[0:i] and string B[0:j].
-The boundary cases are:
-
-A.length() == 0, then edit distance is B.legnth()
-B.length() == 0, then edit distance">
+<meta name="description" content="Maximal SubarrayGiven an unsorted array s[0:n], find a subarray s[i:j] that maximize sum(s[i:j]).
+sum(s[i:j]) equals to sum(s[0:j]) - sum(s[0:i-1]), in which sum(s[0:j]) is a fixed value when j is kno">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Edit Distance">
-<meta property="og:url" content="http://bxshi.github.io/2015/09/21/Edit-Distance/index.html">
+<meta property="og:title" content="Subarray Problems">
+<meta property="og:url" content="http://bxshi.github.io/2015/09/30/Subarray-Problems/index.html">
 <meta property="og:site_name" content="RAndom NoTeS">
-<meta property="og:description" content="The sub-problem of edit distance is the edit distance of string A[0:i] and string B[0:j].
-The boundary cases are:
-
-A.length() == 0, then edit distance is B.legnth()
-B.length() == 0, then edit distance">
-<meta property="og:updated_time" content="2015-09-22T02:36:34.000Z">
+<meta property="og:description" content="Maximal SubarrayGiven an unsorted array s[0:n], find a subarray s[i:j] that maximize sum(s[i:j]).
+sum(s[i:j]) equals to sum(s[0:j]) - sum(s[0:i-1]), in which sum(s[0:j]) is a fixed value when j is kno">
+<meta property="og:updated_time" content="2015-10-01T01:42:26.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Edit Distance">
-<meta name="twitter:description" content="The sub-problem of edit distance is the edit distance of string A[0:i] and string B[0:j].
-The boundary cases are:
-
-A.length() == 0, then edit distance is B.legnth()
-B.length() == 0, then edit distance">
+<meta name="twitter:title" content="Subarray Problems">
+<meta name="twitter:description" content="Maximal SubarrayGiven an unsorted array s[0:n], find a subarray s[i:j] that maximize sum(s[i:j]).
+sum(s[i:j]) equals to sum(s[0:j]) - sum(s[0:i-1]), in which sum(s[0:j]) is a fixed value when j is kno">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -70,7 +61,7 @@ B.length() == 0, then edit distance">
   };
 </script>
 
-  <title> Edit Distance | RAndom NoTeS </title>
+  <title> Subarray Problems | RAndom NoTeS </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -178,7 +169,7 @@ B.length() == 0, then edit distance">
           
           
             
-              Edit Distance
+              Subarray Problems
             
           
         </h1>
@@ -187,8 +178,8 @@ B.length() == 0, then edit distance">
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2015-09-21T22:13:00-04:00" content="2015-09-21">
-            2015-09-21
+          <time itemprop="dateCreated" datetime="2015-09-30T21:28:18-04:00" content="2015-09-30">
+            2015-09-30
           </time>
         </span>
 
@@ -198,8 +189,8 @@ B.length() == 0, then edit distance">
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/09/21/Edit-Distance/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/21/Edit-Distance/" itemprop="commentsCount"></span>
+            <a href="/2015/09/30/Subarray-Problems/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/30/Subarray-Problems/" itemprop="commentsCount"></span>
             </a>
           </span>
           
@@ -213,21 +204,13 @@ B.length() == 0, then edit distance">
       
 
       
-        <span itemprop="articleBody"><p>The sub-problem of edit distance is the edit distance of string <code>A[0:i]</code> and string <code>B[0:j]</code>.</p>
-<p>The boundary cases are:</p>
-<ol>
-<li><code>A.length() == 0</code>, then edit distance is <code>B.legnth()</code></li>
-<li><code>B.length() == 0</code>, then edit distance is <code>A.length()</code></li>
-<li>otherwise, there are three cases (log the minimum score):<ol>
-<li>if we align <code>A</code> and <code>B</code> at <code>i</code> and <code>j</code> respectly, then the edit distance is <code>M[i-1][j-1] + (A[i] == B[j] ? 0 : 1)</code></li>
-<li>if we align by <code>A[0:i-1]</code> and <code>B[0:j]</code>, then we need to perform a delete/add operation</li>
-<li>if we align by <code>A[0:i]</code> and <code>B[0:j-1]</code>, then we need to perform a delete/add operation</li>
-</ol>
-</li>
-</ol>
-<p>By analysis the above conditions, we can know the state we need to keep is two rows, namely <code>M[i-1][0:j]</code> and <code>M[i][0:j]</code>.</p>
-<p>Therefore, the code is:</p>
-<script src="//gist.github.com/264b131e2edb52d2ba5b.js"></script></span>
+        <span itemprop="articleBody"><h3 id="Maximal_Subarray">Maximal Subarray</h3><p>Given an unsorted array <code>s[0:n]</code>, find a subarray <code>s[i:j]</code> that maximize <code>sum(s[i:j])</code>.</p>
+<p><code>sum(s[i:j])</code> equals to <code>sum(s[0:j]) - sum(s[0:i-1])</code>, in which <code>sum(s[0:j])</code> is a fixed value when <code>j</code> is known. Hence maximizing <code>sum(s[i:j])</code> becomes minimize <code>sum(s[0:i-1])</code>, where <code>i-1 &lt; j</code>.</p>
+<p>Therefore we need <code>sum(s[0:i])</code>, and the minimum subarray <code>min(s[0:k])</code> where <code>k &lt; i</code> to calculate <code>max(s[i:j])</code>.</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">sum</span><span class="params">(s[<span class="number">0</span>:i])</span></span> = s[<span class="number">0</span>:i]</span><br><span class="line"><span class="function"><span class="title">min</span><span class="params">(s[<span class="number">0</span>:k])</span></span> = <span class="function"><span class="title">min</span><span class="params">(sum(s[<span class="number">0</span>:k-<span class="number">1</span>])</span></span>, <span class="function"><span class="title">sum</span><span class="params">(s[<span class="number">0</span>:k])</span></span>)</span><br><span class="line"><span class="function"><span class="title">max</span><span class="params">(s[k+<span class="number">1</span>:j])</span></span> = <span class="function"><span class="title">max</span><span class="params">(sum(s[<span class="number">0</span>:j])</span></span>, <span class="function"><span class="title">sum</span><span class="params">(s[<span class="number">0</span>:j])</span></span> - <span class="function"><span class="title">min</span><span class="params">(s[<span class="number">0</span>:k])</span></span>, <span class="function"><span class="title">max</span><span class="params">(s[k+<span class="number">1</span>:j-<span class="number">1</span>])</span></span>)</span><br></pre></td></tr></table></figure>
+<script src="//gist.github.com/5af5505e881706765593.js"></script>
+<h3 id="Minimal_Subarray">Minimal Subarray</h3><p>Similar idea but we need to keep the minimal <code>s[0:k]</code>.</p>
+<script src="//gist.github.com/8f6f92926f3929b5f810.js"></script></span>
       
     </div>
 
@@ -237,9 +220,9 @@ B.length() == 0, then edit distance">
           
             <a href="/tags/algorithm/" rel="tag">#algorithm</a>
           
-            <a href="/tags/edit-distance/" rel="tag">#edit distance</a>
+            <a href="/tags/dynamic-programming/" rel="tag">#dynamic programming</a>
           
-            <a href="/tags/string/" rel="tag">#string</a>
+            <a href="/tags/subarray/" rel="tag">#subarray</a>
           
         </div>
       
@@ -248,13 +231,11 @@ B.length() == 0, then edit distance">
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/28/Construct-Binary-Tree-Using-Traversal/" rel="prev">Construct Binary Tree Using Traversal</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/11/Pirority-Queue-Heap-Implementation/" rel="next">Pirority Queue, Heap Implementation</a>
+              <a href="/2015/09/29/Permutation/" rel="next">Permutation</a>
             
           </div>
         </div>
@@ -372,7 +353,7 @@ B.length() == 0, then edit distance">
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">This post does not have a Table Of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Maximal_Subarray"><span class="nav-number">1.</span> <span class="nav-text">Maximal Subarray</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Minimal_Subarray"><span class="nav-number">2.</span> <span class="nav-text">Minimal Subarray</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -426,9 +407,9 @@ B.length() == 0, then edit distance">
 
     <script type="text/javascript">
       var disqus_shortname = 'bshiblog';
-      var disqus_identifier = '2015/09/21/Edit-Distance/';
-      var disqus_title = 'Edit Distance';
-      var disqus_url = 'http://bxshi.github.io/2015/09/21/Edit-Distance/';
+      var disqus_identifier = '2015/09/30/Subarray-Problems/';
+      var disqus_title = 'Subarray Problems';
+      var disqus_url = 'http://bxshi.github.io/2015/09/30/Subarray-Problems/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
