@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="LCS,algorithm,leetcode,lintcode,longest common subsequence,longest common substring,string,">
+  <meta name="keywords" content="algorithm,interview,">
 
 
 
@@ -39,25 +39,40 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1">
 
 
-<meta name="description" content="String Matching, or needle in haystack (KMP Algorithm)
-Given a string target, find the index of its first occurrence in string source. -1 if such index does not exist.
+<meta name="description" content="Given an infinite input of integers (or others), find the following things:
 
-There is a good youtube video t">
+The sum of the last k elements
+
+The average (mean) of the last k elements
+
+The minimum of the last k elements
+
+The maximum">
 <meta property="og:type" content="article">
-<meta property="og:title" content="String Problems">
-<meta property="og:url" content="http://bxshi.github.io/2015/09/06/String-Problems/index.html">
+<meta property="og:title" content="Questions About Infinite Inputs">
+<meta property="og:url" content="http://bxshi.github.io/2015/10/06/Questions-About-Infinite-Inputs/index.html">
 <meta property="og:site_name" content="RAndom NoTeS">
-<meta property="og:description" content="String Matching, or needle in haystack (KMP Algorithm)
-Given a string target, find the index of its first occurrence in string source. -1 if such index does not exist.
+<meta property="og:description" content="Given an infinite input of integers (or others), find the following things:
 
-There is a good youtube video t">
-<meta property="og:updated_time" content="2015-09-09T02:13:15.000Z">
+The sum of the last k elements
+
+The average (mean) of the last k elements
+
+The minimum of the last k elements
+
+The maximum">
+<meta property="og:updated_time" content="2015-10-07T00:24:25.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="String Problems">
-<meta name="twitter:description" content="String Matching, or needle in haystack (KMP Algorithm)
-Given a string target, find the index of its first occurrence in string source. -1 if such index does not exist.
+<meta name="twitter:title" content="Questions About Infinite Inputs">
+<meta name="twitter:description" content="Given an infinite input of integers (or others), find the following things:
 
-There is a good youtube video t">
+The sum of the last k elements
+
+The average (mean) of the last k elements
+
+The minimum of the last k elements
+
+The maximum">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -67,7 +82,7 @@ There is a good youtube video t">
   };
 </script>
 
-  <title> String Problems | RAndom NoTeS </title>
+  <title> Questions About Infinite Inputs | RAndom NoTeS </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -175,7 +190,7 @@ There is a good youtube video t">
           
           
             
-              String Problems
+              Questions About Infinite Inputs
             
           
         </h1>
@@ -184,34 +199,19 @@ There is a good youtube video t">
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2015-09-06T20:17:07-04:00" content="2015-09-06">
-            2015-09-06
+          <time itemprop="dateCreated" datetime="2015-10-06T19:48:00-04:00" content="2015-10-06">
+            2015-10-06
           </time>
         </span>
 
-        
-          <span class="post-category">
-            &nbsp; | &nbsp; In
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/code-interview/" itemprop="url" rel="index">
-                  <span itemprop="name">code interview</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
         
 
         
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/09/06/String-Problems/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/06/String-Problems/" itemprop="commentsCount"></span>
+            <a href="/2015/10/06/Questions-About-Infinite-Inputs/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/10/06/Questions-About-Infinite-Inputs/" itemprop="commentsCount"></span>
             </a>
           </span>
           
@@ -225,45 +225,34 @@ There is a good youtube video t">
       
 
       
-        <span itemprop="articleBody"><h3 id="String_Matching,_or_needle_in_haystack_(KMP_Algorithm)">String Matching, or needle in haystack (KMP Algorithm)</h3><blockquote>
-<p>Given a string <code>target</code>, find the index of its first occurrence in string <code>source</code>. -1 if such index does not exist.</p>
-</blockquote>
-<p>There is a good <a href="https://www.youtube.com/watch?v=1k2KDhcO_uo" target="_blank" rel="external">youtube video</a> that describes KMP table generation pretty well and I hope you could check it out.</p>
-<p>Another good resource is the <a href="https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm" target="_blank" rel="external">Wikipedia page of KMP</a>, which explains the purpose of KMP with great examples. But it becomes less straightforward when comes to the pseudo code part.</p>
-<p>Okay, here comes the code, we divide the code into two parts, the first one is generating KMP table, which determines how should we move when there is a mismatch, and the second part is the matching function that does the matching according to our KMP table.</p>
-<script src="//gist.github.com/7238f288bb28ebc3a088.js"></script>
-<p>Several notes:</p>
+        <span itemprop="articleBody"><p>Given an infinite input of integers (or others), find the following things:</p>
 <ol>
-<li>The <code>failure_table</code> (or <code>table</code> in this case) is for the target string (needle), not the source string.</li>
-<li>Using <code>pos</code> and <code>offset</code> can be more convience than traditional <code>i</code>, <code>j</code> which denotes the position in each string accordingly because this eliminates the calulation of the index of first occurrence.</li>
+<li><p>The sum of the last <code>k</code> elements</p>
+</li>
+<li><p>The average (mean) of the last <code>k</code> elements</p>
+</li>
+<li><p>The minimum of the last <code>k</code> elements</p>
+</li>
+<li><p>The maximum of the last <code>k</code> elements</p>
+</li>
+<li><p>The median of the last <code>k</code> elements</p>
+</li>
 </ol>
-<p>The above code is also the solution of <code>strStr()</code> question on <a href="https://leetcode.com/problems/implement-strstr/" target="_blank" rel="external">LeetCode</a> and <a href="http://www.lintcode.com/en/problem/strstr/" target="_blank" rel="external">LintCode</a>.</p>
-<h3 id="Longest_Common_Substring">Longest Common Substring</h3><blockquote>
-<p>Find the longest common substring of two strings.</p>
-</blockquote>
-<h4 id="Suffix_Tree_solution_of_LCS_with_two_strings">Suffix Tree solution of LCS with two strings</h4><p>First let’s see an examle from Wikipedia</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ABABC</span><br><span class="line">  <span class="string">|||</span></span><br><span class="line"> BABCA</span><br></pre></td></tr></table></figure>
-<p>Apparently the longset common substring is <code>ABC</code>, and <code>ABC</code> can be obtained by the following procedures:</p>
-<ol>
-<li>For all suffixes of <code>ABABC</code> and <code>BABCA</code>, find the longest common prefix of their suffixes</li>
-<li>For all prefixes of <code>ABABC</code> and <code>BABCA</code>, find the longest common suffix of their prefixes</li>
-</ol>
-<p>The defintion and implementation of <code>Suffix Tree</code> or <code>Suffix Trie</code> can be found in <a href="../Trie-Prefix-Tree-and-Suffix-Tree/">another article</a>.</p>
-<p>Here is the naive solution of it, and the time complexity is <code>O(n^2 + m^2)</code>, where <code>n</code> and <code>m</code> are the length of each string.</p>
-<p>The main steps of this solution is:</p>
-<ol>
-<li>we insert all suffixes of string <code>A</code> and string <code>B</code> into a suffix trie. &lt;- this costs <code>O(n^2 + m^2)</code> due to the naive implementation</li>
-<li>we search the suffix trie we get and find the deepest ancestor of suffixes of both <code>A</code> and <code>B</code>. &lt;- this costs <code>O(m+n)</code> time</li>
-</ol>
-<script src="//gist.github.com/b06602a60aa5feb47497.js"></script>
-<p>An improved implementation is as follow.</p>
-<p>TODO: gist of an improved version of suffix tree</p>
-<p>Here is a youtube video that explains how (Ukkonen’s algorithm)[<a href="https://www.youtube.com/watch?v=aPRqocoBsFQ" target="_blank" rel="external">https://www.youtube.com/watch?v=aPRqocoBsFQ</a>] works</p>
-<h4 id="Dynamic_Programming_solution_of_LCS_with_two_strings">Dynamic Programming solution of LCS with two strings</h4><script src="//gist.github.com/857586e520357160bd0b.js"></script>
-<blockquote>
-<p>Find the longset common substring of <code>m</code> strings.</p>
-</blockquote>
-<h4 id="Suffix_Tree_solution_of_LCS_with_m_strings">Suffix Tree solution of LCS with <code>m</code> strings</h4><h3 id="Longest_Common_Subsequence">Longest Common Subsequence</h3><h3 id="Reference:">Reference:</h3><p><a href="https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm" target="_blank" rel="external">Knuth–Morris–Pratt algorithm</a><br><a href="https://www.youtube.com/watch?v=1k2KDhcO_uo" target="_blank" rel="external">KMP Table Tutorial</a><br><a href="https://en.wikipedia.org/wiki/Longest_common_substring_problem" target="_blank" rel="external">Longest common substring problem</a><br><a href="https://en.wikipedia.org/wiki/Longest_common_subsequence_problem" target="_blank" rel="external">Longest common subsequence problem</a></p></span>
+<h3 id="Sum">Sum</h3><p>Well, there are two ways of thinking this, first is the sum of last <code>k</code> elements can be stored in a single primitive type. In this case, we store the last k elements and keep a cache of the ksum.</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> it = input.begin();</span><br><span class="line"><span class="built_in">deque</span>&lt;<span class="keyword">int</span>&gt; lastK;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> k = <span class="number">10000</span>; <span class="comment">// whatever window size</span></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ksum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(it != input.end()) &#123;</span><br><span class="line">  <span class="keyword">if</span> (lastK.size() &lt;= k) &#123;</span><br><span class="line">    lastK.push_back(*it);</span><br><span class="line">    ksum += *it;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    ksum -= lastK.front();</span><br><span class="line">    lastK.pop_front();</span><br><span class="line">    lastK.push_back(*it);</span><br><span class="line">    ksum += *it;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>If the sum can not be stored, we can define a new ksum class to store the sum by combining the values. The basic idea of that class is, instead of storing the sum directly, we store m partial sums for the k elements.</p>
+<h3 id="Mean">Mean</h3><p>To calculate the mean we will use the ksum we have in previous section and divide it by k.</p>
+<h3 id="Minimum">Minimum</h3><p>To get the minimum, we can traverse through <code>lastK</code> and find the minimum value, which costs <code>O(k)</code> time, if we want <code>O(logk)</code> time, we can keep a minHeap but the space cost may double if we also want <code>O(logk)</code> insertion time.</p>
+<p>Here is a findMin <code>O(logk)</code> but insert/delete <code>O(k)</code> example:</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> minHeap &#123;</span><br><span class="line">  <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; heap;</span><br><span class="line">  <span class="keyword">long</span> <span class="keyword">long</span> size;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (heap.size() &lt; size + <span class="number">1</span>) heap.resize(size + <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">    heap[++size] = val;</span><br><span class="line">    <span class="comment">// do swim at heap[size]</span></span><br><span class="line">    <span class="keyword">return</span> swim(size); <span class="comment">// return final position</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (size &lt;= <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    heap[<span class="number">1</span>] = heap[size--];</span><br><span class="line">    <span class="comment">// do sink at heap[1]</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">front</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (size &gt; <span class="number">0</span>) <span class="keyword">return</span> heap[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>; <span class="comment">// <span class="doctag">TODO</span>: should define error here</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> pos)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (size &lt; pos) <span class="keyword">return</span>;</span><br><span class="line">    heap[pos] = heap[size--];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// do sink at heap[pos]</span></span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">auto</span> it = input.begin();</span><br><span class="line"><span class="built_in">deque</span>&lt;<span class="keyword">int</span>&gt; pos;</span><br><span class="line">minHeap mHeap;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(it != input.end()) &#123;</span><br><span class="line">  <span class="keyword">if</span> (pos.size() &lt; k) &#123;</span><br><span class="line">    pos.push_back(mHeap.push(*it));</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    mHeap.remove(pos.front());</span><br><span class="line">    pos.pop_front();</span><br><span class="line">    pos.push_back(mHeap.push(*it));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Maximum">Maximum</h3><p>Maximum is similar to minimum</p>
+<h3 id="Median">Median</h3><p>Median is the hardest one, we need to keep two heaps, one uses for the smallest 1~(k/2) elements, one for the other (k/2 + 1) ~ k elements. The first heap is max heap because we want the largest number in the first part which can be the candidate of the median; the second heap is a min heap because we want the smallest number in the second part which can be the candidate of the median.</p>
+<p>The algorithm works as follows:</p>
+<ul>
+<li>if there is no valid median (at the beginning), we put the input at <code>median</code></li>
+<li>if the input is larger/equal to median, insert it into right min heap, otherwise insert it into left max heap</li>
+<li>if the size difference is larger than 2, we pop the top of the heap that has the larger size, and then put median into the other heap</li>
+</ul></span>
       
     </div>
 
@@ -271,19 +260,9 @@ There is a good youtube video t">
       
         <div class="post-tags">
           
-            <a href="/tags/LCS/" rel="tag">#LCS</a>
-          
             <a href="/tags/algorithm/" rel="tag">#algorithm</a>
           
-            <a href="/tags/leetcode/" rel="tag">#leetcode</a>
-          
-            <a href="/tags/lintcode/" rel="tag">#lintcode</a>
-          
-            <a href="/tags/longest-common-subsequence/" rel="tag">#longest common subsequence</a>
-          
-            <a href="/tags/longest-common-substring/" rel="tag">#longest common substring</a>
-          
-            <a href="/tags/string/" rel="tag">#string</a>
+            <a href="/tags/interview/" rel="tag">#interview</a>
           
         </div>
       
@@ -292,13 +271,11 @@ There is a good youtube video t">
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/06/Trie-Prefix-Tree-and-Suffix-Tree/" rel="prev">Trie, Prefix Tree, and Suffix Tree</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/08/27/Graph-Traversal-DFS-BFS-and-BFS-From-Both-Sides/" rel="next">Graph Traversal -- DFS, BFS, and BFS From Both Sides</a>
+              <a href="/2015/09/30/Subarray-Problems/" rel="next">Subarray Problems</a>
             
           </div>
         </div>
@@ -416,7 +393,7 @@ There is a good youtube video t">
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#String_Matching,_or_needle_in_haystack_(KMP_Algorithm)"><span class="nav-number">1.</span> <span class="nav-text">String Matching, or needle in haystack (KMP Algorithm)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Longest_Common_Substring"><span class="nav-number">2.</span> <span class="nav-text">Longest Common Substring</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Suffix_Tree_solution_of_LCS_with_two_strings"><span class="nav-number">2.1.</span> <span class="nav-text">Suffix Tree solution of LCS with two strings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Dynamic_Programming_solution_of_LCS_with_two_strings"><span class="nav-number">2.2.</span> <span class="nav-text">Dynamic Programming solution of LCS with two strings</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Suffix_Tree_solution_of_LCS_with_m_strings"><span class="nav-number">2.3.</span> <span class="nav-text">Suffix Tree solution of LCS with m strings</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Longest_Common_Subsequence"><span class="nav-number">3.</span> <span class="nav-text">Longest Common Subsequence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Reference:"><span class="nav-number">4.</span> <span class="nav-text">Reference:</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Sum"><span class="nav-number">1.</span> <span class="nav-text">Sum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Mean"><span class="nav-number">2.</span> <span class="nav-text">Mean</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Minimum"><span class="nav-number">3.</span> <span class="nav-text">Minimum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Maximum"><span class="nav-number">4.</span> <span class="nav-text">Maximum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Median"><span class="nav-number">5.</span> <span class="nav-text">Median</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -470,9 +447,9 @@ There is a good youtube video t">
 
     <script type="text/javascript">
       var disqus_shortname = 'bshiblog';
-      var disqus_identifier = '2015/09/06/String-Problems/';
-      var disqus_title = 'String Problems';
-      var disqus_url = 'http://bxshi.github.io/2015/09/06/String-Problems/';
+      var disqus_identifier = '2015/10/06/Questions-About-Infinite-Inputs/';
+      var disqus_title = 'Questions About Infinite Inputs';
+      var disqus_url = 'http://bxshi.github.io/2015/10/06/Questions-About-Infinite-Inputs/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
