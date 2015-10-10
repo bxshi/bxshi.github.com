@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="algorithm,permutation,">
+  <meta name="keywords" content="DFA,LL1,LR0,LR1,NFA,SLR,compilers,">
 
 
 
@@ -39,22 +39,25 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1">
 
 
-<meta name="description" content="Next Permutation (With duplication)First let’s check the first six permutation of sequence [1,2,3,4] in lexical order.
-1234561 2 3 41 2 4 31 3 2 41 3 4 21 4 2 31 4 3 2
-If we starting from the tail of">
+<meta name="description" content="First and Follow setFirst set can be computed by the following rules:
+
+If there are terminals at the start of a production rule, add them into first set. A -&amp;gt; a B, where a is a terminal.
+If there a">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Permutation">
-<meta property="og:url" content="http://bxshi.github.io/2015/09/29/Permutation/index.html">
+<meta property="og:title" content="Compilers Note">
+<meta property="og:url" content="http://bxshi.github.io/2015/10/10/Compilers-Note/index.html">
 <meta property="og:site_name" content="RAndom NoTeS">
-<meta property="og:description" content="Next Permutation (With duplication)First let’s check the first six permutation of sequence [1,2,3,4] in lexical order.
-1234561 2 3 41 2 4 31 3 2 41 3 4 21 4 2 31 4 3 2
-If we starting from the tail of">
-<meta property="og:updated_time" content="2015-09-30T02:05:49.000Z">
+<meta property="og:description" content="First and Follow setFirst set can be computed by the following rules:
+
+If there are terminals at the start of a production rule, add them into first set. A -&amp;gt; a B, where a is a terminal.
+If there a">
+<meta property="og:updated_time" content="2015-10-10T20:17:45.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Permutation">
-<meta name="twitter:description" content="Next Permutation (With duplication)First let’s check the first six permutation of sequence [1,2,3,4] in lexical order.
-1234561 2 3 41 2 4 31 3 2 41 3 4 21 4 2 31 4 3 2
-If we starting from the tail of">
+<meta name="twitter:title" content="Compilers Note">
+<meta name="twitter:description" content="First and Follow setFirst set can be computed by the following rules:
+
+If there are terminals at the start of a production rule, add them into first set. A -&amp;gt; a B, where a is a terminal.
+If there a">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -64,7 +67,7 @@ If we starting from the tail of">
   };
 </script>
 
-  <title> Permutation | RAndom NoTeS </title>
+  <title> Compilers Note | RAndom NoTeS </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -172,7 +175,7 @@ If we starting from the tail of">
           
           
             
-              Permutation
+              Compilers Note
             
           
         </h1>
@@ -181,8 +184,8 @@ If we starting from the tail of">
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2015-09-29T20:58:24-05:00" content="2015-09-29">
-            2015-09-29
+          <time itemprop="dateCreated" datetime="2015-10-10T11:09:44-05:00" content="2015-10-10">
+            2015-10-10
           </time>
         </span>
 
@@ -192,8 +195,8 @@ If we starting from the tail of">
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/09/29/Permutation/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/29/Permutation/" itemprop="commentsCount"></span>
+            <a href="/2015/10/10/Compilers-Note/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/10/10/Compilers-Note/" itemprop="commentsCount"></span>
             </a>
           </span>
           
@@ -207,25 +210,77 @@ If we starting from the tail of">
       
 
       
-        <span itemprop="articleBody"><h3 id="Next_Permutation_(With_duplication)">Next Permutation (With duplication)</h3><p>First let’s check the first six permutation of sequence <code>[1,2,3,4]</code> in lexical order.</p>
-<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1 2 3 4</span></span><br><span class="line"><span class="number">1 2 4 3</span></span><br><span class="line"><span class="number">1 3 2 4</span></span><br><span class="line"><span class="number">1 3 4 2</span></span><br><span class="line"><span class="number">1 4 2 3</span></span><br><span class="line"><span class="number">1 4 3 2</span></span><br></pre></td></tr></table></figure>
-<p>If we starting from the tail of each permutation and try find an ascending sequence <code>[n-1 : j]</code>, then the discovered sequences are:</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> [<span class="number">4</span>]</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> [<span class="number">4</span> <span class="number">3</span>]</span><br><span class="line"><span class="number">1</span> <span class="number">3</span> <span class="number">2</span> [<span class="number">4</span>]</span><br><span class="line"><span class="number">1</span> <span class="number">3</span> [<span class="number">4</span> <span class="number">2</span>]</span><br><span class="line"><span class="number">1</span> <span class="number">4</span> <span class="number">2</span> [<span class="number">3</span>]</span><br><span class="line"><span class="number">1</span> [<span class="number">4</span> <span class="number">3</span> <span class="number">2</span>]</span><br></pre></td></tr></table></figure>
-<p>Now for every permutation we successfully divide it into two parts, then if we exam the difference between two adjacent permutation, we can find the following rules:</p>
+        <span itemprop="articleBody"><h2 id="First_and_Follow_set">First and Follow set</h2><p>First set can be computed by the following rules:</p>
 <ol>
-<li>get <code>s[j - 1]</code></li>
-<li>find the first <code>s[k]</code> in <code>s[n-1:j]</code> that is larger than <code>s[j-1]</code></li>
-<li>swap <code>s[j-1]</code> and <code>s[k]</code>, sort <code>s[j:n-1]</code> in ascending order</li>
+<li>If there are terminals at the start of a production rule, add them into first set. <code>A -&gt; a B</code>, where <code>a</code> is a terminal.</li>
+<li>If there are nonterminals at the start of a production rule, add their first set into first set. <code>A -&gt; B</code>, where B is a nonterminal.</li>
+<li>If one ore more nonterminals can be dreived to epsilon, find the first thing after all the epsilons, apply 1 and 2.</li>
 </ol>
-<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find <span class="keyword">ascending</span> subarray starting <span class="built_in">from</span> <span class="operator">the</span> <span class="keyword">end</span>, <span class="operator">the</span> left <span class="keyword">element</span> <span class="operator">of</span> this subarray should be replaced <span class="keyword">by</span> <span class="operator">the</span> <span class="keyword">first</span> <span class="keyword">element</span> <span class="keyword">at</span> <span class="operator">the</span> <span class="constant">right</span> <span class="operator">of</span> <span class="operator">the</span> subarray that is larger than <span class="operator">the</span> <span class="keyword">element</span>.</span><br></pre></td></tr></table></figure>
-<script src="//gist.github.com/4f13804d7e34c9d955ad.js"></script>
-<h3 id="Previous_Permutation_(With_duplication)">Previous Permutation (With duplication)</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find <span class="keyword">descending</span> subarray starting <span class="built_in">from</span> <span class="operator">the</span> <span class="keyword">end</span>, <span class="operator">the</span> left <span class="keyword">element</span> <span class="operator">of</span> this subarray should be replaced <span class="keyword">by</span> <span class="operator">the</span> <span class="keyword">first</span> <span class="keyword">element</span> <span class="keyword">at</span> <span class="operator">the</span> <span class="constant">right</span> <span class="operator">of</span> <span class="operator">the</span> subarray that is smaller than <span class="operator">the</span> <span class="keyword">element</span>.</span><br></pre></td></tr></table></figure>
-<script src="//gist.github.com/ec0f330b300e77c3529c.js"></script>
-<h3 id="Permutation_(Without_duplication)">Permutation (Without duplication)</h3><p>We can do a depth-first search to construct the permutation, or use the code snippet we shown above to generate next permutation until reach <code>asc == 0</code>. Note the result of both solution has the same order.</p>
-<p>The DFS method is maintaining a visited vector and for every recursive call pick one unvisited node and visit it until all nodes are visited (put into the temporary result vector).</p>
-<script src="//gist.github.com/b6fe650dfe1af6209c86.js"></script>
-<h3 id="Permutation_(With_duplication)">Permutation (With duplication)</h3><p>When there are duplications in <code>nums</code>, create a map in which the key is the number in <code>nums</code> and the value is the count of the occurrence of key. When doing DFS, traverse through the map and try any numbers that has a value larger than 1.</p>
-<script src="//gist.github.com/d9ea51e11fcc9c77e21e.js"></script></span>
+<p>Follow set can be computed by the following rules:</p>
+<ol>
+<li>Add <code>$</code> into follow set</li>
+<li>Find all occurrence of the non-terminal of interest that appears on the right hand side.</li>
+<li>If it is the last token in a production rule, for example <code>A -&gt; xxxxxB</code>, then <code>B</code> contains all the follows of <code>A</code>.</li>
+<li>If it is followed by other tokens, for example <code>A -&gt; xxxBC</code>, if <code>C</code> is terminal, put <code>C</code> into <code>B</code>‘s follow set, if non-terminal, put <code>first(C)</code> into <code>follow(B)</code>.</li>
+<li>If things following <code>B</code> can dreive to epsilon, find the first thing after all epsilons, apply 2 and 3.</li>
+</ol>
+<h2 id="LL(1)_Grammar">LL(1) Grammar</h2><ul>
+<li>No left recursion: <code>E -&gt; E + T</code> is invalid.</li>
+<li>No common left prefix: <code>E -&gt; ab | ac</code> is invalid</li>
+<li>No ambiguity: <code>S -&gt; if E then S | if E then S else S</code> (dangling else)</li>
+</ul>
+<h3 id="How_to_solve_left_recursion:">How to solve left recursion:</h3><ul>
+<li><code>E -&gt; E + id</code></li>
+<li><code>E -&gt; id</code></li>
+<li><code>E -&gt; (E)</code></li>
+</ul>
+<p>First, find the production rule with left recursion <code>E -&gt; E + id</code>, then cut off the right part after the recursive non-terminal <code>E</code>, which is <code>+id</code>, create a new production rule <code>E&#39; -&gt; +id E&#39;|e</code>. Convert the original left recursive rule to <code>E -&gt; idE&#39;</code>.</p>
+<h3 id="How_to_solve_common_prefix">How to solve common prefix</h3><p>For production rule <code>E -&gt; ab | ac</code>, extract common prefix, which in this case is <code>a</code> and construct two new production rule <code>E -&gt; aE&#39;</code> and <code>E&#39; -&gt; b | c</code>.</p>
+<p>Note that <strong>left factoring can not solve ambiguity</strong>:</p>
+<p><code>S -&gt; if E then S</code> and <code>S -&gt; if E then S else S</code> can be converted into <code>S -&gt; if E then S S&#39;</code>, <code>S&#39; -&gt; else S | e</code>. But in certain cases we can not determine which <code>if</code> an <code>else</code> belongs to (the dangling else problem).</p>
+<h3 id="LL(1)_parse_table">LL(1) parse table</h3><p>After we get the first and follow sets, we do the following</p>
+<ol>
+<li>For <code>First(A)</code>, write corresponding production rule at <code>[A,x]</code> where <code>x</code> is an item in <code>First(A)</code> except epsilon.</li>
+<li>For epsilon, write all corresponding production rule at <code>[A,y]</code>, where <code>y</code> is an item in <code>Follow(A)</code>.</li>
+</ol>
+<h2 id="LR(0)_Grammar">LR(0) Grammar</h2><p>If there are shift and reduce in the same configuration set, then it is not a LR(0) grammar. If we consider the SLR parsing table, it is a LR(0) grammar if there is no shift and reduce on the same row.</p>
+<h2 id="SLR(1)_Grammar">SLR(1) Grammar</h2><p>It is a SLR1 if in a SLR parsing table, there is no shift and reduce in the same cell. We reduce when the following character is in <code>Follow(A)</code> where <code>A</code> is the current nonterminal on the top of the stack.</p>
+<p>An example that is not SLR is</p>
+<ul>
+<li><code>S -&gt; L = R</code></li>
+<li><code>S –&gt; R</code></li>
+<li><code>L –&gt; *R</code></li>
+<li><code>L –&gt; id</code></li>
+<li><code>R –&gt; L</code></li>
+</ul>
+<p>because when</p>
+<ul>
+<li><code>S -&gt; L. = R</code></li>
+<li><code>R -&gt; L.</code></li>
+</ul>
+<p><code>Follow(L)</code> contains <code>=</code>, therefore we can not distinguish shift and reduce by looking at next symbol <code>=</code>.</p>
+<h2 id="LR(1)_Grammar">LR(1) Grammar</h2><p>Instead of reduce by items in <code>Follow</code>, we use a lookahead Here</p>
+<ul>
+<li><code>S&#39; -&gt; .S, $</code></li>
+<li><code>S -&gt; .L = R, $</code></li>
+<li><code>S -&gt; .R, $</code></li>
+<li><code>L -&gt; .*R, =</code></li>
+<li><code>L -&gt; .id, =</code></li>
+<li><code>R -&gt; L, $</code></li>
+</ul>
+<p>Note we write down the lookahead of an item, for example, <code>S&#39; -&gt; .S</code> ends with <code>$</code>, and <code>S -&gt; .L = R</code>. Therefore the token follows <code>S -&gt; .L = R, $</code> is <code>$</code>. And for <code>S -&gt; .L = R, $</code>, we also have <code>L -&gt; .*R</code>, and because <code>L</code> is followed by <code>=</code> in the previous item, so <code>L -&gt; .*R, =</code>.</p>
+<p>A grammar is not LR(1) only if there is a shift-reduce conflict that has an overlapped lookhead set.</p>
+<h2 id="LALR(1)_Grammar">LALR(1) Grammar</h2><p>This is based on LR(1) automaton but merge items with same core (but different lookheads).</p>
+<p>If we have two items</p>
+<ul>
+<li><code>S -&gt; R, a/b</code></li>
+<li><code>S -&gt; R, $</code></li>
+</ul>
+<p>then we combine them into one item because they have the same core <code>S -&gt; R</code></p>
+<ul>
+<li><code>S -&gt; R, $/a/b</code></li>
+</ul>
+<h2 id="Reference">Reference</h2><p>(LL1 Praser)[<a href="http://research.microsoft.com/en-us/um/people/abegel/cs164/ll1.html" target="_blank" rel="external">http://research.microsoft.com/en-us/um/people/abegel/cs164/ll1.html</a>]<br>(SLR and LR Parsing)[<a href="https://web.stanford.edu/class/archive/cs/cs143/cs143.1128/handouts/110%20LR%20and%20SLR%20Parsing.pdf" target="_blank" rel="external">https://web.stanford.edu/class/archive/cs/cs143/cs143.1128/handouts/110%20LR%20and%20SLR%20Parsing.pdf</a>]</p></span>
       
     </div>
 
@@ -233,9 +288,19 @@ If we starting from the tail of">
       
         <div class="post-tags">
           
-            <a href="/tags/algorithm/" rel="tag">#algorithm</a>
+            <a href="/tags/DFA/" rel="tag">#DFA</a>
           
-            <a href="/tags/permutation/" rel="tag">#permutation</a>
+            <a href="/tags/LL1/" rel="tag">#LL1</a>
+          
+            <a href="/tags/LR0/" rel="tag">#LR0</a>
+          
+            <a href="/tags/LR1/" rel="tag">#LR1</a>
+          
+            <a href="/tags/NFA/" rel="tag">#NFA</a>
+          
+            <a href="/tags/SLR/" rel="tag">#SLR</a>
+          
+            <a href="/tags/compilers/" rel="tag">#compilers</a>
           
         </div>
       
@@ -244,13 +309,11 @@ If we starting from the tail of">
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/30/Subarray-Problems/" rel="prev">Subarray Problems</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/28/Construct-Binary-Tree-Using-Traversal/" rel="next">Construct Binary Tree Using Traversal</a>
+              <a href="/2015/10/06/Questions-About-Infinite-Inputs/" rel="next">Questions About Infinite Inputs</a>
             
           </div>
         </div>
@@ -368,7 +431,7 @@ If we starting from the tail of">
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Next_Permutation_(With_duplication)"><span class="nav-number">1.</span> <span class="nav-text">Next Permutation (With duplication)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Previous_Permutation_(With_duplication)"><span class="nav-number">2.</span> <span class="nav-text">Previous Permutation (With duplication)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Permutation_(Without_duplication)"><span class="nav-number">3.</span> <span class="nav-text">Permutation (Without duplication)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Permutation_(With_duplication)"><span class="nav-number">4.</span> <span class="nav-text">Permutation (With duplication)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#First_and_Follow_set"><span class="nav-number">1.</span> <span class="nav-text">First and Follow set</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LL(1)_Grammar"><span class="nav-number">2.</span> <span class="nav-text">LL(1) Grammar</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#How_to_solve_left_recursion:"><span class="nav-number">2.1.</span> <span class="nav-text">How to solve left recursion:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How_to_solve_common_prefix"><span class="nav-number">2.2.</span> <span class="nav-text">How to solve common prefix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LL(1)_parse_table"><span class="nav-number">2.3.</span> <span class="nav-text">LL(1) parse table</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LR(0)_Grammar"><span class="nav-number">3.</span> <span class="nav-text">LR(0) Grammar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SLR(1)_Grammar"><span class="nav-number">4.</span> <span class="nav-text">SLR(1) Grammar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LR(1)_Grammar"><span class="nav-number">5.</span> <span class="nav-text">LR(1) Grammar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LALR(1)_Grammar"><span class="nav-number">6.</span> <span class="nav-text">LALR(1) Grammar</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reference"><span class="nav-number">7.</span> <span class="nav-text">Reference</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -422,9 +485,9 @@ If we starting from the tail of">
 
     <script type="text/javascript">
       var disqus_shortname = 'bshiblog';
-      var disqus_identifier = '2015/09/29/Permutation/';
-      var disqus_title = 'Permutation';
-      var disqus_url = 'http://bxshi.github.io/2015/09/29/Permutation/';
+      var disqus_identifier = '2015/10/10/Compilers-Note/';
+      var disqus_title = 'Compilers Note';
+      var disqus_url = 'http://bxshi.github.io/2015/10/10/Compilers-Note/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
