@@ -30,7 +30,7 @@
 
 
 
-  <meta name="keywords" content="algorithm,edit distance,string,">
+  <meta name="keywords" content="algorithm,binary search,partition,quick sort,">
 
 
 
@@ -39,28 +39,16 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1">
 
 
-<meta name="description" content="The sub-problem of edit distance is the edit distance of string A[0:i] and string B[0:j].
-The boundary cases are:
-
-A.length() == 0, then edit distance is B.legnth()
-B.length() == 0, then edit distance">
+<meta name="description" content="Partition (2-part partition)It is very often that we need to partition an array or something into two parts so we can do quick sort. The partition of such purpose can be done using the following code:">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Edit Distance">
-<meta property="og:url" content="http://bxshi.github.io/2015/09/21/Edit-Distance/index.html">
+<meta property="og:title" content="Partition, Kth Element, and Sort">
+<meta property="og:url" content="http://bxshi.github.io/2015/10/11/Partition-Kth-Element-and-Sort/index.html">
 <meta property="og:site_name" content="RAndom NoTeS">
-<meta property="og:description" content="The sub-problem of edit distance is the edit distance of string A[0:i] and string B[0:j].
-The boundary cases are:
-
-A.length() == 0, then edit distance is B.legnth()
-B.length() == 0, then edit distance">
-<meta property="og:updated_time" content="2015-09-22T02:36:34.000Z">
+<meta property="og:description" content="Partition (2-part partition)It is very often that we need to partition an array or something into two parts so we can do quick sort. The partition of such purpose can be done using the following code:">
+<meta property="og:updated_time" content="2015-10-11T16:33:31.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Edit Distance">
-<meta name="twitter:description" content="The sub-problem of edit distance is the edit distance of string A[0:i] and string B[0:j].
-The boundary cases are:
-
-A.length() == 0, then edit distance is B.legnth()
-B.length() == 0, then edit distance">
+<meta name="twitter:title" content="Partition, Kth Element, and Sort">
+<meta name="twitter:description" content="Partition (2-part partition)It is very often that we need to partition an array or something into two parts so we can do quick sort. The partition of such purpose can be done using the following code:">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -70,7 +58,7 @@ B.length() == 0, then edit distance">
   };
 </script>
 
-  <title> Edit Distance | RAndom NoTeS </title>
+  <title> Partition, Kth Element, and Sort | RAndom NoTeS </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
@@ -178,7 +166,7 @@ B.length() == 0, then edit distance">
           
           
             
-              Edit Distance
+              Partition, Kth Element, and Sort
             
           
         </h1>
@@ -187,8 +175,8 @@ B.length() == 0, then edit distance">
       <div class="post-meta">
         <span class="post-time">
           Posted on
-          <time itemprop="dateCreated" datetime="2015-09-21T22:13:00-05:00" content="2015-09-21">
-            2015-09-21
+          <time itemprop="dateCreated" datetime="2015-10-11T10:50:14-05:00" content="2015-10-11">
+            2015-10-11
           </time>
         </span>
 
@@ -198,8 +186,8 @@ B.length() == 0, then edit distance">
           
             <span class="post-comments-count">
             &nbsp; | &nbsp;
-            <a href="/2015/09/21/Edit-Distance/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/21/Edit-Distance/" itemprop="commentsCount"></span>
+            <a href="/2015/10/11/Partition-Kth-Element-and-Sort/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/10/11/Partition-Kth-Element-and-Sort/" itemprop="commentsCount"></span>
             </a>
           </span>
           
@@ -213,21 +201,24 @@ B.length() == 0, then edit distance">
       
 
       
-        <span itemprop="articleBody"><p>The sub-problem of edit distance is the edit distance of string <code>A[0:i]</code> and string <code>B[0:j]</code>.</p>
-<p>The boundary cases are:</p>
-<ol>
-<li><code>A.length() == 0</code>, then edit distance is <code>B.legnth()</code></li>
-<li><code>B.length() == 0</code>, then edit distance is <code>A.length()</code></li>
-<li>otherwise, there are three cases (log the minimum score):<ol>
-<li>if we align <code>A</code> and <code>B</code> at <code>i</code> and <code>j</code> respectly, then the edit distance is <code>M[i-1][j-1] + (A[i] == B[j] ? 0 : 1)</code></li>
-<li>if we align by <code>A[0:i-1]</code> and <code>B[0:j]</code>, then we need to perform a delete/add operation</li>
-<li>if we align by <code>A[0:i]</code> and <code>B[0:j-1]</code>, then we need to perform a delete/add operation</li>
-</ol>
-</li>
-</ol>
-<p>By analysis the above conditions, we can know the state we need to keep is two rows, namely <code>M[i-1][0:j]</code> and <code>M[i][0:j]</code>.</p>
-<p>Therefore, the code is:</p>
-<script src="//gist.github.com/264b131e2edb52d2ba5b.js"></script></span>
+        <span itemprop="articleBody"><h2 id="Partition_(2-part_partition)">Partition (2-part partition)</h2><p>It is very often that we need to partition an array or something into two parts so we can do quick sort. The partition of such purpose can be done using the following code:</p>
+<p>This code partitions the subarray of <code>vec[i:j]</code>, <code>i</code> and <code>j</code> are inclusive.</p>
+<script src="//gist.github.com/2ff85e366c2b02938809.js"></script>
+<p>Note that at the start of this code snippet we first try if the pivot is the starting index of this subarray, which means if the subarray only contains two elements. It is straightforward to prove this because <code>floor((i+j)/2)=i</code>, then <code>i+j = 2*i (+0.5)</code>, therefore <code>j = i</code> or <code>j = i + 1</code>. In this case we can not execute the normal procedure because it will have out-of-bound problem.</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">  <span class="number">0</span> <span class="number">1</span></span><br><span class="line">  ^ ^</span><br><span class="line">  <span class="built_in">i</span> <span class="built_in">j</span></span><br><span class="line"></span><br><span class="line">  <span class="number">0</span> <span class="number">1</span></span><br><span class="line">  ^</span><br><span class="line">(<span class="built_in">i</span>,<span class="built_in">j</span>)</span><br><span class="line"></span><br><span class="line">  <span class="number">0</span> <span class="number">1</span></span><br><span class="line">^   ^</span><br><span class="line"><span class="built_in">i</span>   <span class="built_in">j</span></span><br></pre></td></tr></table></figure>
+<p>See above example, <code>while(vec[j] &gt; pivot) --j</code> will execute until <code>vec[j] == 0</code>. At that time, <code>vec[i] == 0</code>. Then we swap them two and move <code>i</code> and <code>j</code> by one, we get <code>j</code> points to <code>1</code> and <code>i</code> points to somewhere out of the boundary.</p>
+<p>To avoid this problem, we add that extra procedure that if there are only two elements, do not bother to do the fancy partition just sort them and return the index of pivot.</p>
+<p>However, the resulting index that returned by this function is not always the index of pivot. Remember at the very beginning we said that this function partitions an array into two parts, we do not specify that <em>by what number</em>. An example is as follow:</p>
+<figure class="highlight matlab"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">*start*</span><br><span class="line"></span><br><span class="line">pivot = vec<span class="matrix">[<span class="number">1</span>]</span> = <span class="number">0</span></span><br><span class="line">index: <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span></span><br><span class="line">value: -<span class="number">1</span> <span class="number">0</span>  <span class="number">1</span> -<span class="number">1</span></span><br><span class="line">       ^        ^</span><br><span class="line">       <span class="built_in">i</span>        <span class="built_in">j</span></span><br><span class="line"></span><br><span class="line">*<span class="built_in">i</span>-<span class="keyword">while</span> &amp;&amp; <span class="built_in">j</span>-<span class="keyword">while</span>*</span><br><span class="line"></span><br><span class="line">pivot = vec<span class="matrix">[<span class="number">1</span>]</span> = <span class="number">0</span></span><br><span class="line">index: <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span></span><br><span class="line">value: -<span class="number">1</span> <span class="number">0</span>  <span class="number">1</span> -<span class="number">1</span></span><br><span class="line">          ^     ^</span><br><span class="line">          <span class="built_in">i</span>     <span class="built_in">j</span></span><br><span class="line"></span><br><span class="line">*swap*</span><br><span class="line"></span><br><span class="line">pivot = vec<span class="matrix">[<span class="number">1</span>]</span> = <span class="number">0</span></span><br><span class="line">index: <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span></span><br><span class="line">value:-<span class="number">1</span> -<span class="number">1</span>  <span class="number">1</span>  <span class="number">0</span></span><br><span class="line">             ^</span><br><span class="line">           (<span class="built_in">i</span>,<span class="built_in">j</span>)</span><br><span class="line"></span><br><span class="line">*<span class="built_in">i</span>-<span class="keyword">while</span> &amp;&amp; <span class="built_in">j</span>-<span class="keyword">while</span>*</span><br><span class="line"></span><br><span class="line">pivot = vec<span class="matrix">[<span class="number">1</span>]</span> = <span class="number">0</span></span><br><span class="line">index: <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span></span><br><span class="line">value:-<span class="number">1</span> -<span class="number">1</span>  <span class="number">1</span>  <span class="number">0</span></span><br><span class="line">          ^  ^</span><br><span class="line">          <span class="built_in">j</span>  <span class="built_in">i</span></span><br><span class="line"></span><br><span class="line">*stop*</span><br></pre></td></tr></table></figure>
+<p>In this case, the resulting partitions are <code>-1,-1</code> and <code>1,0</code>. Although all elements in left part are smaller than things in the right part, the partition is not based on <code>pivot = 0</code>. To make a partition that <code>left &lt; pivot &lt; right</code>, we need a 3-part partition instead of this basic 2-part partition.</p>
+<h2 id="3-Part_Partition">3-Part Partition</h2><p>Note in the previous section we mentioned that the partition used in quick sort is not a 3-part partition which means not all the elements in the left part is smaller than the pivot and all the elements in the right part is larger than the pivot. This is fine for quick sort since the ultimiate goal of quick sort is sort the entire array and we do not really care about this extra feature. But if we want to explicitly find an item, or say find kth element (it can be the largest or the smallest), we need a 3-part partition.</p>
+<p>A sample code is described as follow:</p>
+<script src="//gist.github.com/a297cdc2ca264ca20b49.js"></script>
+<p>The key idea of this function is, we keep three indexes, <code>l</code> means a boundary that all elements before <code>l</code> are smaller than <code>pivot</code>; <code>r</code> means a boundary that all elements after <code>r</code> are larger than <code>pivot</code>.</p>
+<p>At the beginning of this function we do not know anything about the comparison result so <code>l</code> and <code>r</code> is the original boundary of this input subarray.</p>
+<p>Then we start compare the elements, every time we find a smaller element, we switch it with <code>vec[l]</code> because <code>l</code> is the successor of a sequence of smaller elements, then we increase <code>k</code> and <code>l</code> by one because 1) <code>l</code> is no longer the boundary, <code>l+1</code> is, and 2) the element we switched to <code>k</code> is equal to pivot so we start on next.</p>
+<p>If we find an element that is larger than pivot, we switch it with <code>r</code>. Note here we only decrease <code>r</code> by 1 because <code>r-1</code> now is the new boundary, but we have not examed <code>vec[r]</code>, which now is at <code>vec[k]</code>, so we need to exam it first before we move to next index. In previous paragraph we move <code>k</code> and <code>l</code> at the same time because every element between <code>start ~ k</code> have beeen compared and we know that there are no element that is larger than pivot.</p>
+<p>This 3-part partition can have some interesting usage except find kth element. For example if we have a limited value range of elements and we want to do a in place sort, we can use partition sort by setting the pivot as all the elements but the smallest and the largest one. Say we have an array of elements that has value <code>1,2,3,4</code>, we can set the pivot to <code>2,3</code> so after running the aforementioned algorithm, we can put all <code>1</code>s at the beginning of the array and all <code>4</code>s at the end of the array. then we repeat the same procedure by sorting <code>2,3</code> by pivot <code>2.5</code> in subarray <code>vec[l:r]</code>.</p></span>
       
     </div>
 
@@ -237,9 +228,11 @@ B.length() == 0, then edit distance">
           
             <a href="/tags/algorithm/" rel="tag">#algorithm</a>
           
-            <a href="/tags/edit-distance/" rel="tag">#edit distance</a>
+            <a href="/tags/binary-search/" rel="tag">#binary search</a>
           
-            <a href="/tags/string/" rel="tag">#string</a>
+            <a href="/tags/partition/" rel="tag">#partition</a>
+          
+            <a href="/tags/quick-sort/" rel="tag">#quick sort</a>
           
         </div>
       
@@ -248,13 +241,11 @@ B.length() == 0, then edit distance">
         <div class="post-nav">
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2015/09/28/Construct-Binary-Tree-Using-Traversal/" rel="prev">Construct Binary Tree Using Traversal</a>
-            
           </div>
 
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2015/09/11/Pirority-Queue-Heap-Implementation/" rel="next">Pirority Queue, Heap Implementation</a>
+              <a href="/2015/10/10/Compilers-Note/" rel="next">Compilers Note</a>
             
           </div>
         </div>
@@ -372,7 +363,7 @@ B.length() == 0, then edit distance">
           <div class="post-toc">
             
             
-              <p class="post-toc-empty">This post does not have a Table Of Contents</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Partition_(2-part_partition)"><span class="nav-number">1.</span> <span class="nav-text">Partition (2-part partition)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Part_Partition"><span class="nav-number">2.</span> <span class="nav-text">3-Part Partition</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -426,9 +417,9 @@ B.length() == 0, then edit distance">
 
     <script type="text/javascript">
       var disqus_shortname = 'bshiblog';
-      var disqus_identifier = '2015/09/21/Edit-Distance/';
-      var disqus_title = 'Edit Distance';
-      var disqus_url = 'http://bxshi.github.io/2015/09/21/Edit-Distance/';
+      var disqus_identifier = '2015/10/11/Partition-Kth-Element-and-Sort/';
+      var disqus_title = 'Partition, Kth Element, and Sort';
+      var disqus_url = 'http://bxshi.github.io/2015/10/11/Partition-Kth-Element-and-Sort/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');

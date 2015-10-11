@@ -165,6 +165,96 @@
           
           
             
+              <a class="post-title-link" href="/2015/08/27/Graph-Traversal-DFS-BFS-and-BFS-From-Both-Sides/" itemprop="url">
+                Graph Traversal -- DFS, BFS, and BFS From Both Sides
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2015-08-27T21:25:14-05:00" content="2015-08-27">
+            2015-08-27
+          </time>
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/code-interview/" itemprop="url" rel="index">
+                  <span itemprop="name">code interview</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/08/27/Graph-Traversal-DFS-BFS-and-BFS-From-Both-Sides/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/08/27/Graph-Traversal-DFS-BFS-and-BFS-From-Both-Sides/" itemprop="commentsCount"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h3 id="Depth_First_Search">Depth First Search</h3><p>The key point of DFS is keep tracking all visited nodes and make sure check the end condition correctly. Usually the end condition is reaching certain length or certain node.</p>
+<script src="//gist.github.com/b942e1b8b4a9edcd05ec.js"></script>
+<h3 id="Breadth_First_Search">Breadth First Search</h3><p>The key point of BFS is also keep tracking visited nodes. Unlike DFS which uses recursion, BFS uses a queue to do layer-by-layer traversal.</p>
+<script src="//gist.github.com/542f78c54f77f26fb819.js"></script>
+<p>In this implementation, we do not keep the lavel, or depth, of the nodes we visited, a simple way to do that is insert an indicator to indicate the end of a layer:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">deque</span>&lt;Node*&gt; frontier;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; visited(GRAPH_SIZE, <span class="keyword">false</span>);</span><br><span class="line">frontier.push_back(startNode);</span><br><span class="line">visited[startNode-&gt;label] = <span class="keyword">true</span>;</span><br><span class="line"><span class="keyword">int</span> level = <span class="number">0</span>; <span class="comment">// start node is at level 0</span></span><br><span class="line"><span class="keyword">while</span>(frontier.size() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="comment">// push a nullptr into the queue as a label, all nodes before that belongs to the same level</span></span><br><span class="line">  frontier.push_back(<span class="keyword">nullptr</span>);</span><br><span class="line">  <span class="keyword">while</span>(frontier.front() != <span class="keyword">nullptr</span>) &#123;</span><br><span class="line">    <span class="comment">/*Do normal works, push_back a new neighbor that we did not visited*/</span></span><br><span class="line">    frontier.pop_back(); <span class="comment">// remove current node</span></span><br><span class="line">  &#125;</span><br><span class="line">  frontier.pop_back(<span class="keyword">nullptr</span>); <span class="comment">// now we reach the end of the level, add level by 1</span></span><br><span class="line">  ++level;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h3 id="Breath_First_Search_with_Two_Frontiers">Breath First Search with Two Frontiers</h3><p>The following code is for the <code>Word Ladder</code> problem. I used BFS with two frontiers to solve this problem. The details can be seen in the code comment</p>
+<script src="//gist.github.com/2f026be77fa8fcc2ef73.js"></script></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/08/25/Hide-One-or-More-Legends-in-ggplot2/" itemprop="url">
                 Hide One or More Legends in ggplot2
               </a>
@@ -525,7 +615,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">13</span>
+              <span class="site-state-item-count">14</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -539,7 +629,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">34</span>
+              <span class="site-state-item-count">36</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
