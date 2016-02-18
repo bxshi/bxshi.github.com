@@ -165,6 +165,100 @@
           
           
             
+              <a class="post-title-link" href="/2016/02/18/First-order-logic/" itemprop="url">
+                First order logic
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2016-02-18T12:26:25-05:00" content="2016-02-18">
+            2016-02-18
+          </time>
+        </span>
+
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2016/02/18/First-order-logic/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/02/18/First-order-logic/" itemprop="commentsCount"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><p><a href="http://mathworld.wolfram.com/First-OrderLogic.html" target="_blank" rel="external">First Order Loigc</a>, as known as first order predicate calculus, is defined by the following terms:</p>
+<ul>
+<li><p><a href="http://mathworld.wolfram.com/Term.html" target="_blank" rel="external">Term</a>, a variable, constant, or the result of a function. Denoted by upper case letters,<em>e.g.,</em>, <code>A</code>.</p>
+</li>
+<li><p><a href="http://www.cogsci.rpi.edu/public_html/heuveb/teaching/Logic/CompLogic/Web/Handouts/FOL.pdf" target="_blank" rel="external"><em>N</em>-place function</a>, <em>n</em> is the arity of the function. <em>n</em>-place function means a function takes <code>n</code> arguments, and will return an object that has certain relations with those <code>n</code> inputs. Denoted by <code>f</code>.</p>
+</li>
+<li><p><a href="http://mathworld.wolfram.com/Predicate.html" target="_blank" rel="external">Predicate</a>, an operator that will return either true or false. Predicates can be seen as a special type of functions which takes a set of arguments and return a true or false based on the definition of this predicate. Denoted by <code>P</code>.</p>
+</li>
+<li><p><a href="http://mathworld.wolfram.com/SententialFormula.html" target="_blank" rel="external">Sentential formula</a>, an expression that represents a setence if we substitute variables to proper words (constants).</p>
+</li>
+<li><p><a href="http://www.cogsci.rpi.edu/public_html/heuveb/teaching/Logic/CompLogic/Web/Handouts/FOL.pdf" target="_blank" rel="external">atomic statement</a>, constant, variable, 0-place function, and 0-place predicate.</p>
+</li>
+<li><p>Universal quantifier, <span>$\forall$</span><!-- Has MathJax -->, for all</p>
+</li>
+<li><p>Existential quantifier, <span>$\exists$</span><!-- Has MathJax -->, exists</p>
+</li>
+<li><p>Scope of the respective quantifier, <span>$\forall x B$</span><!-- Has MathJax -->, <span>$B$</span><!-- Has MathJax --> is the scope of the universal quantifier <span>$\forall$</span><!-- Has MathJax -->.</p>
+</li>
+<li><p>Free variable, a variable that is not in the scope of respective quantifier.</p>
+</li>
+</ul>
+<p>With above definitions, <strong>first-order predicate calculus</strong> is defined by the following rules:</p>
+<ol>
+<li>Any atomic statement is a sentential formula.</li>
+<li>If <span>$B$</span><!-- Has MathJax --> and <span>$C$</span><!-- Has MathJax --> are sentential formulas, then <span>$\neg B$</span><!-- Has MathJax --> <span>$B \land C$</span><!-- Has MathJax --> <span>$B \lor C$</span><!-- Has MathJax --> <span>$B \implies C$</span><!-- Has MathJax --> are all sentential formulas based on propositional calculus.</li>
+<li>If <span>$B$</span><!-- Has MathJax --> ia a sentential formula in which <span>$x$</span><!-- Has MathJax --> is a free variable, then <span>$\forall x B$</span><!-- Has MathJax --> <span>$\exists x B$</span><!-- Has MathJax --> are sentential formulas.</li>
+</ol></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/10/11/Partition-Kth-Element-and-Sort/" itemprop="url">
                 Partition, Kth Element, and Sort
               </a>
@@ -203,7 +297,7 @@
 
       
         
-          <span itemprop="articleBody"><h2 id="Partition_(2-part_partition)">Partition (2-part partition)</h2><p>It is very often that we need to partition an array or something into two parts so we can do quick sort. The partition of such purpose can be done using the following code:</p>
+          <span itemprop="articleBody"><h2 id="Partition-2-part-partition"><a href="#Partition-2-part-partition" class="headerlink" title="Partition (2-part partition)"></a>Partition (2-part partition)</h2><p>It is very often that we need to partition an array or something into two parts so we can do quick sort. The partition of such purpose can be done using the following code:</p>
 <p>This code partitions the subarray of <code>vec[i:j]</code>, <code>i</code> and <code>j</code> are inclusive.</p>
 <script src="//gist.github.com/2ff85e366c2b02938809.js"></script>
 <p>Note that at the start of this code snippet we first try if the pivot is the starting index of this subarray, which means if the subarray only contains two elements. It is straightforward to prove this because <code>floor((i+j)/2)=i</code>, then <code>i+j = 2*i (+0.5)</code>, therefore <code>j = i</code> or <code>j = i + 1</code>. In this case we can not execute the normal procedure because it will have out-of-bound problem.</p>
@@ -213,7 +307,7 @@
 <p>However, the resulting index that returned by this function is not always the index of pivot. Remember at the very beginning we said that this function partitions an array into two parts, we do not specify that <em>by what number</em>. An example is as follow:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">*start*</span><br><span class="line"></span><br><span class="line">pivot = vec[<span class="number">1</span>] = <span class="number">0</span></span><br><span class="line">index: <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span></span><br><span class="line">value: -<span class="number">1</span> <span class="number">0</span>  <span class="number">1</span> -<span class="number">1</span></span><br><span class="line">       ^        ^</span><br><span class="line">       i        j</span><br><span class="line"></span><br><span class="line">*i-<span class="keyword">while</span> &amp;&amp; j-<span class="keyword">while</span>*</span><br><span class="line"></span><br><span class="line">pivot = vec[<span class="number">1</span>] = <span class="number">0</span></span><br><span class="line">index: <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span></span><br><span class="line">value: -<span class="number">1</span> <span class="number">0</span>  <span class="number">1</span> -<span class="number">1</span></span><br><span class="line">          ^     ^</span><br><span class="line">          i     j</span><br><span class="line"></span><br><span class="line">*swap*</span><br><span class="line"></span><br><span class="line">pivot = vec[<span class="number">1</span>] = <span class="number">0</span></span><br><span class="line">index: <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span></span><br><span class="line">value:-<span class="number">1</span> -<span class="number">1</span>  <span class="number">1</span>  <span class="number">0</span></span><br><span class="line">             ^</span><br><span class="line">           (i,j)</span><br><span class="line"></span><br><span class="line">*i-<span class="keyword">while</span> &amp;&amp; j-<span class="keyword">while</span>*</span><br><span class="line"></span><br><span class="line">pivot = vec[<span class="number">1</span>] = <span class="number">0</span></span><br><span class="line">index: <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span></span><br><span class="line">value:-<span class="number">1</span> -<span class="number">1</span>  <span class="number">1</span>  <span class="number">0</span></span><br><span class="line">          ^  ^</span><br><span class="line">          j  i</span><br><span class="line"></span><br><span class="line">*stop*</span><br></pre></td></tr></table></figure>
 <p>In this case, the resulting partitions are <code>-1,-1</code> and <code>1,0</code>. Although all elements in left part are smaller than things in the right part, the partition is not based on <code>pivot = 0</code>. To make a partition that <code>left &lt; pivot &lt; right</code>, we need a 3-part partition instead of this basic 2-part partition.</p>
-<h2 id="3-Part_Partition">3-Part Partition</h2><p>Note in the previous section we mentioned that the partition used in quick sort is not a 3-part partition which means not all the elements in the left part is smaller than the pivot and all the elements in the right part is larger than the pivot. This is fine for quick sort since the ultimiate goal of quick sort is sort the entire array and we do not really care about this extra feature. But if we want to explicitly find an item, or say find kth element (it can be the largest or the smallest), we need a 3-part partition.</p>
+<h2 id="3-Part-Partition"><a href="#3-Part-Partition" class="headerlink" title="3-Part Partition"></a>3-Part Partition</h2><p>Note in the previous section we mentioned that the partition used in quick sort is not a 3-part partition which means not all the elements in the left part is smaller than the pivot and all the elements in the right part is larger than the pivot. This is fine for quick sort since the ultimiate goal of quick sort is sort the entire array and we do not really care about this extra feature. But if we want to explicitly find an item, or say find kth element (it can be the largest or the smallest), we need a 3-part partition.</p>
 <p>A sample code is described as follow:</p>
 <script src="//gist.github.com/a297cdc2ca264ca20b49.js"></script>
 <p>The key idea of this function is, we keep three indexes, <code>l</code> means a boundary that all elements before <code>l</code> are smaller than <code>pivot</code>; <code>r</code> means a boundary that all elements after <code>r</code> are larger than <code>pivot</code>.</p>
@@ -288,7 +382,7 @@
 
       
         
-          <span itemprop="articleBody"><h2 id="First_and_Follow_set">First and Follow set</h2><p>First set can be computed by the following rules:</p>
+          <span itemprop="articleBody"><h2 id="First-and-Follow-set"><a href="#First-and-Follow-set" class="headerlink" title="First and Follow set"></a>First and Follow set</h2><p>First set can be computed by the following rules:</p>
 <ol>
 <li>If there are terminals at the start of a production rule, add them into first set. <code>A -&gt; a B</code>, where <code>a</code> is a terminal.</li>
 <li>If there are nonterminals at the start of a production rule, add their first set into first set. <code>A -&gt; B</code>, where B is a nonterminal.</li>
@@ -302,27 +396,27 @@
 <li>If it is followed by other tokens, for example <code>A -&gt; xxxBC</code>, if <code>C</code> is terminal, put <code>C</code> into <code>B</code>‘s follow set, if non-terminal, put <code>first(C)</code> into <code>follow(B)</code>.</li>
 <li>If things following <code>B</code> can dreive to epsilon, find the first thing after all epsilons, apply 2 and 3.</li>
 </ol>
-<h2 id="LL(1)_Grammar">LL(1) Grammar</h2><ul>
+<h2 id="LL-1-Grammar"><a href="#LL-1-Grammar" class="headerlink" title="LL(1) Grammar"></a>LL(1) Grammar</h2><ul>
 <li>No left recursion: <code>E -&gt; E + T</code> is invalid.</li>
 <li>No common left prefix: <code>E -&gt; ab | ac</code> is invalid</li>
 <li>No ambiguity: <code>S -&gt; if E then S | if E then S else S</code> (dangling else)</li>
 </ul>
-<h3 id="How_to_solve_left_recursion:">How to solve left recursion:</h3><ul>
+<h3 id="How-to-solve-left-recursion"><a href="#How-to-solve-left-recursion" class="headerlink" title="How to solve left recursion:"></a>How to solve left recursion:</h3><ul>
 <li><code>E -&gt; E + id</code></li>
 <li><code>E -&gt; id</code></li>
 <li><code>E -&gt; (E)</code></li>
 </ul>
 <p>First, find the production rule with left recursion <code>E -&gt; E + id</code>, then cut off the right part after the recursive non-terminal <code>E</code>, which is <code>+id</code>, create a new production rule <code>E&#39; -&gt; +id E&#39;|e</code>. Convert the original left recursive rule to <code>E -&gt; idE&#39;</code>.</p>
-<h3 id="How_to_solve_common_prefix">How to solve common prefix</h3><p>For production rule <code>E -&gt; ab | ac</code>, extract common prefix, which in this case is <code>a</code> and construct two new production rule <code>E -&gt; aE&#39;</code> and <code>E&#39; -&gt; b | c</code>.</p>
+<h3 id="How-to-solve-common-prefix"><a href="#How-to-solve-common-prefix" class="headerlink" title="How to solve common prefix"></a>How to solve common prefix</h3><p>For production rule <code>E -&gt; ab | ac</code>, extract common prefix, which in this case is <code>a</code> and construct two new production rule <code>E -&gt; aE&#39;</code> and <code>E&#39; -&gt; b | c</code>.</p>
 <p>Note that <strong>left factoring can not solve ambiguity</strong>:</p>
 <p><code>S -&gt; if E then S</code> and <code>S -&gt; if E then S else S</code> can be converted into <code>S -&gt; if E then S S&#39;</code>, <code>S&#39; -&gt; else S | e</code>. But in certain cases we can not determine which <code>if</code> an <code>else</code> belongs to (the dangling else problem).</p>
-<h3 id="LL(1)_parse_table">LL(1) parse table</h3><p>After we get the first and follow sets, we do the following</p>
+<h3 id="LL-1-parse-table"><a href="#LL-1-parse-table" class="headerlink" title="LL(1) parse table"></a>LL(1) parse table</h3><p>After we get the first and follow sets, we do the following</p>
 <ol>
 <li>For <code>First(A)</code>, write corresponding production rule at <code>[A,x]</code> where <code>x</code> is an item in <code>First(A)</code> except epsilon.</li>
 <li>For epsilon, write all corresponding production rule at <code>[A,y]</code>, where <code>y</code> is an item in <code>Follow(A)</code>.</li>
 </ol>
-<h2 id="LR(0)_Grammar">LR(0) Grammar</h2><p>If there are shift and reduce in the same configuration set, then it is not a LR(0) grammar. If we consider the SLR parsing table, it is a LR(0) grammar if there is no shift and reduce on the same row.</p>
-<h2 id="SLR(1)_Grammar">SLR(1) Grammar</h2><p>It is a SLR1 if in a SLR parsing table, there is no shift and reduce in the same cell. We reduce when the following character is in <code>Follow(A)</code> where <code>A</code> is the current nonterminal on the top of the stack.</p>
+<h2 id="LR-0-Grammar"><a href="#LR-0-Grammar" class="headerlink" title="LR(0) Grammar"></a>LR(0) Grammar</h2><p>If there are shift and reduce in the same configuration set, then it is not a LR(0) grammar. If we consider the SLR parsing table, it is a LR(0) grammar if there is no shift and reduce on the same row.</p>
+<h2 id="SLR-1-Grammar"><a href="#SLR-1-Grammar" class="headerlink" title="SLR(1) Grammar"></a>SLR(1) Grammar</h2><p>It is a SLR1 if in a SLR parsing table, there is no shift and reduce in the same cell. We reduce when the following character is in <code>Follow(A)</code> where <code>A</code> is the current nonterminal on the top of the stack.</p>
 <p>An example that is not SLR is</p>
 <ul>
 <li><code>S -&gt; L = R</code></li>
@@ -337,7 +431,7 @@
 <li><code>R -&gt; L.</code></li>
 </ul>
 <p><code>Follow(L)</code> contains <code>=</code>, therefore we can not distinguish shift and reduce by looking at next symbol <code>=</code>.</p>
-<h2 id="LR(1)_Grammar">LR(1) Grammar</h2><p>Instead of reduce by items in <code>Follow</code>, we use a lookahead Here</p>
+<h2 id="LR-1-Grammar"><a href="#LR-1-Grammar" class="headerlink" title="LR(1) Grammar"></a>LR(1) Grammar</h2><p>Instead of reduce by items in <code>Follow</code>, we use a lookahead Here</p>
 <ul>
 <li><code>S&#39; -&gt; .S, $</code></li>
 <li><code>S -&gt; .L = R, $</code></li>
@@ -348,7 +442,7 @@
 </ul>
 <p>Note we write down the lookahead of an item, for example, <code>S&#39; -&gt; .S</code> ends with <code>$</code>, and <code>S -&gt; .L = R</code>. Therefore the token follows <code>S -&gt; .L = R, $</code> is <code>$</code>. And for <code>S -&gt; .L = R, $</code>, we also have <code>L -&gt; .*R</code>, and because <code>L</code> is followed by <code>=</code> in the previous item, so <code>L -&gt; .*R, =</code>.</p>
 <p>A grammar is not LR(1) only if there is a shift-reduce conflict that has an overlapped lookhead set.</p>
-<h2 id="LALR(1)_Grammar">LALR(1) Grammar</h2><p>This is based on LR(1) automaton but merge items with same core (but different lookheads).</p>
+<h2 id="LALR-1-Grammar"><a href="#LALR-1-Grammar" class="headerlink" title="LALR(1) Grammar"></a>LALR(1) Grammar</h2><p>This is based on LR(1) automaton but merge items with same core (but different lookheads).</p>
 <p>If we have two items</p>
 <ul>
 <li><code>S -&gt; R, a/b</code></li>
@@ -358,7 +452,7 @@
 <ul>
 <li><code>S -&gt; R, $/a/b</code></li>
 </ul>
-<h2 id="Reference">Reference</h2><p><a href="http://research.microsoft.com/en-us/um/people/abegel/cs164/ll1.html" target="_blank" rel="external">LL1 Praser</a><br><a href="https://web.stanford.edu/class/archive/cs/cs143/cs143.1128/handouts/110%20LR%20and%20SLR%20Parsing.pdf" target="_blank" rel="external">SLR and LR Parsing</a></p></span>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p><a href="http://research.microsoft.com/en-us/um/people/abegel/cs164/ll1.html" target="_blank" rel="external">LL1 Praser</a><br><a href="https://web.stanford.edu/class/archive/cs/cs143/cs143.1128/handouts/110%20LR%20and%20SLR%20Parsing.pdf" target="_blank" rel="external">SLR and LR Parsing</a></p></span>
         
       
     </div>
@@ -439,15 +533,15 @@
 <li><p>The median of the last <code>k</code> elements</p>
 </li>
 </ol>
-<h3 id="Sum">Sum</h3><p>Well, there are two ways of thinking this, first is the sum of last <code>k</code> elements can be stored in a single primitive type. In this case, we store the last k elements and keep a cache of the ksum.</p>
+<h3 id="Sum"><a href="#Sum" class="headerlink" title="Sum"></a>Sum</h3><p>Well, there are two ways of thinking this, first is the sum of last <code>k</code> elements can be stored in a single primitive type. In this case, we store the last k elements and keep a cache of the ksum.</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">auto</span> it = input.begin();</span><br><span class="line"><span class="built_in">deque</span>&lt;<span class="keyword">int</span>&gt; lastK;</span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> k = <span class="number">10000</span>; <span class="comment">// whatever window size</span></span><br><span class="line"><span class="keyword">long</span> <span class="keyword">long</span> ksum = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(it != input.end()) &#123;</span><br><span class="line">  <span class="keyword">if</span> (lastK.size() &lt;= k) &#123;</span><br><span class="line">    lastK.push_back(*it);</span><br><span class="line">    ksum += *it;</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    ksum -= lastK.front();</span><br><span class="line">    lastK.pop_front();</span><br><span class="line">    lastK.push_back(*it);</span><br><span class="line">    ksum += *it;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>If the sum can not be stored, we can define a new ksum class to store the sum by combining the values. The basic idea of that class is, instead of storing the sum directly, we store m partial sums for the k elements.</p>
-<h3 id="Mean">Mean</h3><p>To calculate the mean we will use the ksum we have in previous section and divide it by k.</p>
-<h3 id="Minimum">Minimum</h3><p>To get the minimum, we can traverse through <code>lastK</code> and find the minimum value, which costs <code>O(k)</code> time, if we want <code>O(logk)</code> time, we can keep a minHeap but the space cost may double if we also want <code>O(logk)</code> insertion time.</p>
+<h3 id="Mean"><a href="#Mean" class="headerlink" title="Mean"></a>Mean</h3><p>To calculate the mean we will use the ksum we have in previous section and divide it by k.</p>
+<h3 id="Minimum"><a href="#Minimum" class="headerlink" title="Minimum"></a>Minimum</h3><p>To get the minimum, we can traverse through <code>lastK</code> and find the minimum value, which costs <code>O(k)</code> time, if we want <code>O(logk)</code> time, we can keep a minHeap but the space cost may double if we also want <code>O(logk)</code> insertion time.</p>
 <p>Here is a findMin <code>O(logk)</code> but insert/delete <code>O(k)</code> example:</p>
 <figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> minHeap &#123;</span><br><span class="line">  <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; heap;</span><br><span class="line">  <span class="keyword">long</span> <span class="keyword">long</span> size;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (heap.size() &lt; size + <span class="number">1</span>) heap.resize(size + <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">    heap[++size] = val;</span><br><span class="line">    <span class="comment">// do swim at heap[size]</span></span><br><span class="line">    <span class="keyword">return</span> swim(size); <span class="comment">// return final position</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (size &lt;= <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    heap[<span class="number">1</span>] = heap[size--];</span><br><span class="line">    <span class="comment">// do sink at heap[1]</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">front</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (size &gt; <span class="number">0</span>) <span class="keyword">return</span> heap[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>; <span class="comment">// <span class="doctag">TODO:</span> should define error here</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> pos)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (size &lt; pos) <span class="keyword">return</span>;</span><br><span class="line">    heap[pos] = heap[size--];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// do sink at heap[pos]</span></span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">auto</span> it = input.begin();</span><br><span class="line"><span class="built_in">deque</span>&lt;<span class="keyword">int</span>&gt; pos;</span><br><span class="line">minHeap mHeap;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(it != input.end()) &#123;</span><br><span class="line">  <span class="keyword">if</span> (pos.size() &lt; k) &#123;</span><br><span class="line">    pos.push_back(mHeap.push(*it));</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    mHeap.remove(pos.front());</span><br><span class="line">    pos.pop_front();</span><br><span class="line">    pos.push_back(mHeap.push(*it));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Maximum">Maximum</h3><p>Maximum is similar to minimum</p>
-<h3 id="Median">Median</h3><p>Median is the hardest one, we need to keep two heaps, one uses for the smallest 1~(k/2) elements, one for the other (k/2 + 1) ~ k elements. The first heap is max heap because we want the largest number in the first part which can be the candidate of the median; the second heap is a min heap because we want the smallest number in the second part which can be the candidate of the median.</p>
+<h3 id="Maximum"><a href="#Maximum" class="headerlink" title="Maximum"></a>Maximum</h3><p>Maximum is similar to minimum</p>
+<h3 id="Median"><a href="#Median" class="headerlink" title="Median"></a>Median</h3><p>Median is the hardest one, we need to keep two heaps, one uses for the smallest 1~(k/2) elements, one for the other (k/2 + 1) ~ k elements. The first heap is max heap because we want the largest number in the first part which can be the candidate of the median; the second heap is a min heap because we want the smallest number in the second part which can be the candidate of the median.</p>
 <p>The algorithm works as follows:</p>
 <ul>
 <li>if there is no valid median (at the beginning), we put the input at <code>median</code></li>
@@ -521,12 +615,12 @@
 
       
         
-          <span itemprop="articleBody"><h3 id="Maximal_Subarray">Maximal Subarray</h3><p>Given an unsorted array <code>s[0:n]</code>, find a subarray <code>s[i:j]</code> that maximize <code>sum(s[i:j])</code>.</p>
+          <span itemprop="articleBody"><h3 id="Maximal-Subarray"><a href="#Maximal-Subarray" class="headerlink" title="Maximal Subarray"></a>Maximal Subarray</h3><p>Given an unsorted array <code>s[0:n]</code>, find a subarray <code>s[i:j]</code> that maximize <code>sum(s[i:j])</code>.</p>
 <p><code>sum(s[i:j])</code> equals to <code>sum(s[0:j]) - sum(s[0:i-1])</code>, in which <code>sum(s[0:j])</code> is a fixed value when <code>j</code> is known. Hence maximizing <code>sum(s[i:j])</code> becomes minimize <code>sum(s[0:i-1])</code>, where <code>i-1 &lt; j</code>.</p>
 <p>Therefore we need <code>sum(s[0:i])</code>, and the minimum subarray <code>min(s[0:k])</code> where <code>k &lt; i</code> to calculate <code>max(s[i:j])</code>.</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">sum</span><span class="params">(s[<span class="number">0</span>:i])</span></span> = s[<span class="number">0</span>:i]</span><br><span class="line"><span class="function"><span class="title">min</span><span class="params">(s[<span class="number">0</span>:k])</span></span> = <span class="function"><span class="title">min</span><span class="params">(sum(s[<span class="number">0</span>:k-<span class="number">1</span>])</span></span>, <span class="function"><span class="title">sum</span><span class="params">(s[<span class="number">0</span>:k])</span></span>)</span><br><span class="line"><span class="function"><span class="title">max</span><span class="params">(s[k+<span class="number">1</span>:j])</span></span> = <span class="function"><span class="title">max</span><span class="params">(sum(s[<span class="number">0</span>:j])</span></span>, <span class="function"><span class="title">sum</span><span class="params">(s[<span class="number">0</span>:j])</span></span> - <span class="function"><span class="title">min</span><span class="params">(s[<span class="number">0</span>:k])</span></span>, <span class="function"><span class="title">max</span><span class="params">(s[k+<span class="number">1</span>:j-<span class="number">1</span>])</span></span>)</span><br></pre></td></tr></table></figure>
 <script src="//gist.github.com/5af5505e881706765593.js"></script>
-<h3 id="Minimal_Subarray">Minimal Subarray</h3><p>Similar idea but we need to keep the minimal <code>s[0:k]</code>.</p>
+<h3 id="Minimal-Subarray"><a href="#Minimal-Subarray" class="headerlink" title="Minimal Subarray"></a>Minimal Subarray</h3><p>Similar idea but we need to keep the minimal <code>s[0:k]</code>.</p>
 <script src="//gist.github.com/8f6f92926f3929b5f810.js"></script></span>
         
       
@@ -595,7 +689,7 @@
 
       
         
-          <span itemprop="articleBody"><h3 id="Next_Permutation_(With_duplication)">Next Permutation (With duplication)</h3><p>First let’s check the first six permutation of sequence <code>[1,2,3,4]</code> in lexical order.</p>
+          <span itemprop="articleBody"><h3 id="Next-Permutation-With-duplication"><a href="#Next-Permutation-With-duplication" class="headerlink" title="Next Permutation (With duplication)"></a>Next Permutation (With duplication)</h3><p>First let’s check the first six permutation of sequence <code>[1,2,3,4]</code> in lexical order.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">4</span> <span class="number">3</span></span><br><span class="line"><span class="number">1</span> <span class="number">3</span> <span class="number">2</span> <span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">3</span> <span class="number">4</span> <span class="number">2</span></span><br><span class="line"><span class="number">1</span> <span class="number">4</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">1</span> <span class="number">4</span> <span class="number">3</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
 <p>If we starting from the tail of each permutation and try find an ascending sequence <code>[n-1 : j]</code>, then the discovered sequences are:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> [<span class="number">4</span>]</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> [<span class="number">4</span> <span class="number">3</span>]</span><br><span class="line"><span class="number">1</span> <span class="number">3</span> <span class="number">2</span> [<span class="number">4</span>]</span><br><span class="line"><span class="number">1</span> <span class="number">3</span> [<span class="number">4</span> <span class="number">2</span>]</span><br><span class="line"><span class="number">1</span> <span class="number">4</span> <span class="number">2</span> [<span class="number">3</span>]</span><br><span class="line"><span class="number">1</span> [<span class="number">4</span> <span class="number">3</span> <span class="number">2</span>]</span><br></pre></td></tr></table></figure>
@@ -607,12 +701,12 @@
 </ol>
 <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find <span class="keyword">ascending</span> subarray starting <span class="built_in">from</span> <span class="operator">the</span> <span class="keyword">end</span>, <span class="operator">the</span> left <span class="keyword">element</span> <span class="operator">of</span> this subarray should be replaced <span class="keyword">by</span> <span class="operator">the</span> <span class="keyword">first</span> <span class="keyword">element</span> <span class="keyword">at</span> <span class="operator">the</span> <span class="constant">right</span> <span class="operator">of</span> <span class="operator">the</span> subarray that is larger than <span class="operator">the</span> <span class="keyword">element</span>.</span><br></pre></td></tr></table></figure>
 <script src="//gist.github.com/4f13804d7e34c9d955ad.js"></script>
-<h3 id="Previous_Permutation_(With_duplication)">Previous Permutation (With duplication)</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find <span class="keyword">descending</span> subarray starting <span class="built_in">from</span> <span class="operator">the</span> <span class="keyword">end</span>, <span class="operator">the</span> left <span class="keyword">element</span> <span class="operator">of</span> this subarray should be replaced <span class="keyword">by</span> <span class="operator">the</span> <span class="keyword">first</span> <span class="keyword">element</span> <span class="keyword">at</span> <span class="operator">the</span> <span class="constant">right</span> <span class="operator">of</span> <span class="operator">the</span> subarray that is smaller than <span class="operator">the</span> <span class="keyword">element</span>.</span><br></pre></td></tr></table></figure>
+<h3 id="Previous-Permutation-With-duplication"><a href="#Previous-Permutation-With-duplication" class="headerlink" title="Previous Permutation (With duplication)"></a>Previous Permutation (With duplication)</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find <span class="keyword">descending</span> subarray starting <span class="built_in">from</span> <span class="operator">the</span> <span class="keyword">end</span>, <span class="operator">the</span> left <span class="keyword">element</span> <span class="operator">of</span> this subarray should be replaced <span class="keyword">by</span> <span class="operator">the</span> <span class="keyword">first</span> <span class="keyword">element</span> <span class="keyword">at</span> <span class="operator">the</span> <span class="constant">right</span> <span class="operator">of</span> <span class="operator">the</span> subarray that is smaller than <span class="operator">the</span> <span class="keyword">element</span>.</span><br></pre></td></tr></table></figure>
 <script src="//gist.github.com/ec0f330b300e77c3529c.js"></script>
-<h3 id="Permutation_(Without_duplication)">Permutation (Without duplication)</h3><p>We can do a depth-first search to construct the permutation, or use the code snippet we shown above to generate next permutation until reach <code>asc == 0</code>. Note the result of both solution has the same order.</p>
+<h3 id="Permutation-Without-duplication"><a href="#Permutation-Without-duplication" class="headerlink" title="Permutation (Without duplication)"></a>Permutation (Without duplication)</h3><p>We can do a depth-first search to construct the permutation, or use the code snippet we shown above to generate next permutation until reach <code>asc == 0</code>. Note the result of both solution has the same order.</p>
 <p>The DFS method is maintaining a visited vector and for every recursive call pick one unvisited node and visit it until all nodes are visited (put into the temporary result vector).</p>
 <script src="//gist.github.com/b6fe650dfe1af6209c86.js"></script>
-<h3 id="Permutation_(With_duplication)">Permutation (With duplication)</h3><p>When there are duplications in <code>nums</code>, create a map in which the key is the number in <code>nums</code> and the value is the count of the occurrence of key. When doing DFS, traverse through the map and try any numbers that has a value larger than 1.</p>
+<h3 id="Permutation-With-duplication"><a href="#Permutation-With-duplication" class="headerlink" title="Permutation (With duplication)"></a>Permutation (With duplication)</h3><p>When there are duplications in <code>nums</code>, create a map in which the key is the number in <code>nums</code> and the value is the count of the occurrence of key. When doing DFS, traverse through the map and try any numbers that has a value larger than 1.</p>
 <script src="//gist.github.com/d9ea51e11fcc9c77e21e.js"></script></span>
         
       
@@ -685,7 +779,7 @@
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">      <span class="number">7</span></span><br><span class="line">   /     \</span><br><span class="line"> <span class="number">10</span>       <span class="number">2</span></span><br><span class="line"> /\       /</span><br><span class="line"><span class="number">4</span>  <span class="number">3</span>     <span class="number">8</span></span><br><span class="line">    \   /</span><br><span class="line">     <span class="number">1</span> <span class="number">11</span></span><br></pre></td></tr></table></figure>
 <p>The traversal results are as follow:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Index:   <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span></span><br><span class="line">In:      <span class="number">4</span> <span class="number">10</span>  <span class="number">3</span>  <span class="number">1</span>  <span class="number">7</span> <span class="number">11</span>  <span class="number">8</span>  <span class="number">2</span></span><br><span class="line">Pre:     <span class="number">7</span> <span class="number">10</span>  <span class="number">4</span>  <span class="number">3</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">8</span>  <span class="number">11</span></span><br><span class="line">Post:    <span class="number">4</span>  <span class="number">1</span>  <span class="number">3</span> <span class="number">10</span> <span class="number">11</span>  <span class="number">8</span>  <span class="number">2</span>  <span class="number">7</span></span><br></pre></td></tr></table></figure>
-<h2 id="Construct_a_binary_tree_using_inorder_and_preorder_traversal">Construct a binary tree using inorder and preorder traversal</h2><p>It is clear that the first element in preorder traversal is the root of this tree, so we divide the inorder vector using the root.</p>
+<h2 id="Construct-a-binary-tree-using-inorder-and-preorder-traversal"><a href="#Construct-a-binary-tree-using-inorder-and-preorder-traversal" class="headerlink" title="Construct a binary tree using inorder and preorder traversal"></a>Construct a binary tree using inorder and preorder traversal</h2><p>It is clear that the first element in preorder traversal is the root of this tree, so we divide the inorder vector using the root.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Index:    <span class="number">0</span>   <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span>  <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span></span><br><span class="line">In:      [<span class="number">4</span>  <span class="number">10</span>  <span class="number">3</span>  <span class="number">1</span>] <span class="number">7</span>[<span class="number">11</span>  <span class="number">8</span>  <span class="number">2</span>]</span><br><span class="line">Pre:     [<span class="number">7</span>] <span class="number">10</span>  <span class="number">4</span>  <span class="number">3</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">8</span>  <span class="number">11</span></span><br></pre></td></tr></table></figure>
 <p>As we can see, <code>[4,10,3,1]</code> are in the left subtree of root and <code>[11,8,2]</code> are in the right subtree of root. Therefore, we can do the <code>find root-&gt;get left and right subtree</code> procedure recursively. However, a challenge here is how to determine the root of left and right subtree.</p>
 <p>To solve the above problem, we need to go back to the tree representation and recall the way that preorder traversal is done.</p>
@@ -694,7 +788,7 @@
 <p>To implement this algorithm, we need three indexes, first one is <code>rootPos</code>, which denotes the index of the root of current subtree, <code>lpos</code> and <code>rpos</code> denote the range of <code>rootPos</code>‘s decedents (not children, which are directly connected). We can find <code>lpos</code> and <code>rpos</code> by finding the root in inorder, and by fiding the root in inorder traversal, the size of two subtrees can be determined and therefore we can know the root of these two subtress in preorder traversal.</p>
 <p>The code are as follow:</p>
 <script src="//gist.github.com/e7aa1e158eeb1f159989.js"></script>
-<h2 id="Construct_a_binary_tree_using_inorder_and_postorder_traversal">Construct a binary tree using inorder and postorder traversal</h2><p>The difference between preorder and postorder traversal is that whether we visit the root at first or at last.</p>
+<h2 id="Construct-a-binary-tree-using-inorder-and-postorder-traversal"><a href="#Construct-a-binary-tree-using-inorder-and-postorder-traversal" class="headerlink" title="Construct a binary tree using inorder and postorder traversal"></a>Construct a binary tree using inorder and postorder traversal</h2><p>The difference between preorder and postorder traversal is that whether we visit the root at first or at last.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Index:   <span class="number">0</span>  <span class="number">1</span>  <span class="number">2</span>  <span class="number">3</span>  <span class="number">4</span>   <span class="number">5</span>  <span class="number">6</span>  <span class="number">7</span></span><br><span class="line">In:     [<span class="number">4</span> <span class="number">10</span>  <span class="number">3</span>  <span class="number">1</span>] <span class="number">7</span> [<span class="number">11</span>  <span class="number">8</span>  <span class="number">2</span>]</span><br><span class="line">Post:    <span class="number">4</span>  <span class="number">1</span>  <span class="number">3</span> <span class="number">10</span> <span class="number">11</span>   <span class="number">8</span> <span class="number">2</span>  [<span class="number">7</span>]</span><br></pre></td></tr></table></figure>
 <p>Therefore all we need to do is change the way we find the root of subtrees, namely we do it from right to left by minus the size of right tree.</p>
 <p>The code are as follow:</p>
@@ -857,7 +951,7 @@
 </ol>
 <p>The main operations of a heap is <code>insert</code> ant <code>pop</code>, when the heap is a min heap, <code>pop</code> pops out the maximum value in the heap and when it is a max heap, it pops out the smallest one. Since we need to keep the root to be the smallest or largest element, every time we modify the heap, we need to reorder it in order to keep the root is the largest or smallest.</p>
 <p>Therefore, we need to define two algorithms to reorder the heap for both <code>insert</code> and <code>pop</code> function.</p>
-<h3 id="Insert">Insert</h3><p>Insert is done by attach an element to the rightmost node.</p></span>
+<h3 id="Insert"><a href="#Insert" class="headerlink" title="Insert"></a>Insert</h3><p>Insert is done by attach an element to the rightmost node.</p></span>
         
       
     </div>
@@ -928,128 +1022,7 @@
           <span itemprop="articleBody"><p>Trie is a tree with k different type of children where the number of each type of child is 0 or 1.</p>
 <p>Prefix Tree is a Trie that contains all the prefix of a string or strings.</p>
 <p>Suffix Tree is a Trie that contains all the suffix of a string or strings.</p>
-<h3 id="Reference:">Reference:</h3><p><a href="https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/suffixtrees.pdf" target="_blank" rel="external">Suffix Trees</a></p></span>
-        
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-
-
-    
-      
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              <a class="post-title-link" href="/2015/09/06/String-Problems/" itemprop="url">
-                String Problems
-              </a>
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2015-09-06T20:17:07-04:00" content="2015-09-06">
-            2015-09-06
-          </time>
-        </span>
-
-        
-          <span class="post-category">
-            &nbsp; | &nbsp; In
-            
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/code-interview/" itemprop="url" rel="index">
-                  <span itemprop="name">code interview</span>
-                </a>
-              </span>
-
-              
-              
-
-            
-          </span>
-        
-
-        
-          
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/09/06/String-Problems/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/06/String-Problems/" itemprop="commentsCount"></span>
-            </a>
-          </span>
-          
-        
-      </div>
-    </header>
-
-    <div class="post-body">
-
-      
-      
-
-      
-        
-          <span itemprop="articleBody"><h3 id="String_Matching,_or_needle_in_haystack_(KMP_Algorithm)">String Matching, or needle in haystack (KMP Algorithm)</h3><blockquote>
-<p>Given a string <code>target</code>, find the index of its first occurrence in string <code>source</code>. -1 if such index does not exist.</p>
-</blockquote>
-<p>There is a good <a href="https://www.youtube.com/watch?v=1k2KDhcO_uo" target="_blank" rel="external">youtube video</a> that describes KMP table generation pretty well and I hope you could check it out.</p>
-<p>Another good resource is the <a href="https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm" target="_blank" rel="external">Wikipedia page of KMP</a>, which explains the purpose of KMP with great examples. But it becomes less straightforward when comes to the pseudo code part.</p>
-<p>Okay, here comes the code, we divide the code into two parts, the first one is generating KMP table, which determines how should we move when there is a mismatch, and the second part is the matching function that does the matching according to our KMP table.</p>
-<script src="//gist.github.com/7238f288bb28ebc3a088.js"></script>
-<p>Several notes:</p>
-<ol>
-<li>The <code>failure_table</code> (or <code>table</code> in this case) is for the target string (needle), not the source string.</li>
-<li>Using <code>pos</code> and <code>offset</code> can be more convience than traditional <code>i</code>, <code>j</code> which denotes the position in each string accordingly because this eliminates the calulation of the index of first occurrence.</li>
-</ol>
-<p>The above code is also the solution of <code>strStr()</code> question on <a href="https://leetcode.com/problems/implement-strstr/" target="_blank" rel="external">LeetCode</a> and <a href="http://www.lintcode.com/en/problem/strstr/" target="_blank" rel="external">LintCode</a>.</p>
-<h3 id="Longest_Common_Substring">Longest Common Substring</h3><blockquote>
-<p>Find the longest common substring of two strings.</p>
-</blockquote>
-<h4 id="Suffix_Tree_solution_of_LCS_with_two_strings">Suffix Tree solution of LCS with two strings</h4><p>First let’s see an examle from Wikipedia</p>
-<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ABABC</span><br><span class="line">  <span class="string">|||</span></span><br><span class="line"> BABCA</span><br></pre></td></tr></table></figure>
-<p>Apparently the longset common substring is <code>ABC</code>, and <code>ABC</code> can be obtained by the following procedures:</p>
-<ol>
-<li>For all suffixes of <code>ABABC</code> and <code>BABCA</code>, find the longest common prefix of their suffixes</li>
-<li>For all prefixes of <code>ABABC</code> and <code>BABCA</code>, find the longest common suffix of their prefixes</li>
-</ol>
-<p>The defintion and implementation of <code>Suffix Tree</code> or <code>Suffix Trie</code> can be found in <a href="../Trie-Prefix-Tree-and-Suffix-Tree/">another article</a>.</p>
-<p>Here is the naive solution of it, and the time complexity is <code>O(n^2 + m^2)</code>, where <code>n</code> and <code>m</code> are the length of each string.</p>
-<p>The main steps of this solution is:</p>
-<ol>
-<li>we insert all suffixes of string <code>A</code> and string <code>B</code> into a suffix trie. &lt;- this costs <code>O(n^2 + m^2)</code> due to the naive implementation</li>
-<li>we search the suffix trie we get and find the deepest ancestor of suffixes of both <code>A</code> and <code>B</code>. &lt;- this costs <code>O(m+n)</code> time</li>
-</ol>
-<script src="//gist.github.com/b06602a60aa5feb47497.js"></script>
-<p>An improved implementation is as follow.</p>
-<p>TODO: gist of an improved version of suffix tree</p>
-<p>Here is a youtube video that explains how (Ukkonen’s algorithm)[<a href="https://www.youtube.com/watch?v=aPRqocoBsFQ" target="_blank" rel="external">https://www.youtube.com/watch?v=aPRqocoBsFQ</a>] works</p>
-<h4 id="Dynamic_Programming_solution_of_LCS_with_two_strings">Dynamic Programming solution of LCS with two strings</h4><script src="//gist.github.com/857586e520357160bd0b.js"></script>
-<blockquote>
-<p>Find the longset common substring of <code>m</code> strings.</p>
-</blockquote>
-<h4 id="Suffix_Tree_solution_of_LCS_with_m_strings">Suffix Tree solution of LCS with <code>m</code> strings</h4><h3 id="Longest_Common_Subsequence">Longest Common Subsequence</h3><h3 id="Reference:">Reference:</h3><p><a href="https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm" target="_blank" rel="external">Knuth–Morris–Pratt algorithm</a><br><a href="https://www.youtube.com/watch?v=1k2KDhcO_uo" target="_blank" rel="external">KMP Table Tutorial</a><br><a href="https://en.wikipedia.org/wiki/Longest_common_substring_problem" target="_blank" rel="external">Longest common substring problem</a><br><a href="https://en.wikipedia.org/wiki/Longest_common_subsequence_problem" target="_blank" rel="external">Longest common subsequence problem</a></p></span>
+<h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h3><p><a href="https://www.cs.cmu.edu/~ckingsf/bioinfo-lectures/suffixtrees.pdf" target="_blank" rel="external">Suffix Trees</a></p></span>
         
       
     </div>
@@ -1106,7 +1079,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -1120,7 +1093,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">36</span>
+              <span class="site-state-item-count">40</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
@@ -1163,8 +1136,8 @@
     <footer id="footer" class="footer">
       <div class="footer-inner"> <div class="copyright">
   
-  &copy; &nbsp; 
-  <span itemprop="copyrightYear">2015</span>
+  &copy; &nbsp;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="icon-next-heart"></i>
   </span>

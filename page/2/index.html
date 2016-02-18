@@ -165,6 +165,127 @@
           
           
             
+              <a class="post-title-link" href="/2015/09/06/String-Problems/" itemprop="url">
+                String Problems
+              </a>
+            
+          
+        </h1>
+      
+
+      <div class="post-meta">
+        <span class="post-time">
+          Posted on
+          <time itemprop="dateCreated" datetime="2015-09-06T20:17:07-04:00" content="2015-09-06">
+            2015-09-06
+          </time>
+        </span>
+
+        
+          <span class="post-category">
+            &nbsp; | &nbsp; In
+            
+              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                <a href="/categories/code-interview/" itemprop="url" rel="index">
+                  <span itemprop="name">code interview</span>
+                </a>
+              </span>
+
+              
+              
+
+            
+          </span>
+        
+
+        
+          
+            <span class="post-comments-count">
+            &nbsp; | &nbsp;
+            <a href="/2015/09/06/String-Problems/#comments" itemprop="discussionUrl">
+              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/09/06/String-Problems/" itemprop="commentsCount"></span>
+            </a>
+          </span>
+          
+        
+      </div>
+    </header>
+
+    <div class="post-body">
+
+      
+      
+
+      
+        
+          <span itemprop="articleBody"><h3 id="String-Matching-or-needle-in-haystack-KMP-Algorithm"><a href="#String-Matching-or-needle-in-haystack-KMP-Algorithm" class="headerlink" title="String Matching, or needle in haystack (KMP Algorithm)"></a>String Matching, or needle in haystack (KMP Algorithm)</h3><blockquote>
+<p>Given a string <code>target</code>, find the index of its first occurrence in string <code>source</code>. -1 if such index does not exist.</p>
+</blockquote>
+<p>There is a good <a href="https://www.youtube.com/watch?v=1k2KDhcO_uo" target="_blank" rel="external">youtube video</a> that describes KMP table generation pretty well and I hope you could check it out.</p>
+<p>Another good resource is the <a href="https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm" target="_blank" rel="external">Wikipedia page of KMP</a>, which explains the purpose of KMP with great examples. But it becomes less straightforward when comes to the pseudo code part.</p>
+<p>Okay, here comes the code, we divide the code into two parts, the first one is generating KMP table, which determines how should we move when there is a mismatch, and the second part is the matching function that does the matching according to our KMP table.</p>
+<script src="//gist.github.com/7238f288bb28ebc3a088.js"></script>
+<p>Several notes:</p>
+<ol>
+<li>The <code>failure_table</code> (or <code>table</code> in this case) is for the target string (needle), not the source string.</li>
+<li>Using <code>pos</code> and <code>offset</code> can be more convience than traditional <code>i</code>, <code>j</code> which denotes the position in each string accordingly because this eliminates the calulation of the index of first occurrence.</li>
+</ol>
+<p>The above code is also the solution of <code>strStr()</code> question on <a href="https://leetcode.com/problems/implement-strstr/" target="_blank" rel="external">LeetCode</a> and <a href="http://www.lintcode.com/en/problem/strstr/" target="_blank" rel="external">LintCode</a>.</p>
+<h3 id="Longest-Common-Substring"><a href="#Longest-Common-Substring" class="headerlink" title="Longest Common Substring"></a>Longest Common Substring</h3><blockquote>
+<p>Find the longest common substring of two strings.</p>
+</blockquote>
+<h4 id="Suffix-Tree-solution-of-LCS-with-two-strings"><a href="#Suffix-Tree-solution-of-LCS-with-two-strings" class="headerlink" title="Suffix Tree solution of LCS with two strings"></a>Suffix Tree solution of LCS with two strings</h4><p>First let’s see an examle from Wikipedia</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ABABC</span><br><span class="line">  <span class="string">|||</span></span><br><span class="line"> BABCA</span><br></pre></td></tr></table></figure>
+<p>Apparently the longset common substring is <code>ABC</code>, and <code>ABC</code> can be obtained by the following procedures:</p>
+<ol>
+<li>For all suffixes of <code>ABABC</code> and <code>BABCA</code>, find the longest common prefix of their suffixes</li>
+<li>For all prefixes of <code>ABABC</code> and <code>BABCA</code>, find the longest common suffix of their prefixes</li>
+</ol>
+<p>The defintion and implementation of <code>Suffix Tree</code> or <code>Suffix Trie</code> can be found in <a href="../Trie-Prefix-Tree-and-Suffix-Tree/">another article</a>.</p>
+<p>Here is the naive solution of it, and the time complexity is <code>O(n^2 + m^2)</code>, where <code>n</code> and <code>m</code> are the length of each string.</p>
+<p>The main steps of this solution is:</p>
+<ol>
+<li>we insert all suffixes of string <code>A</code> and string <code>B</code> into a suffix trie. &lt;- this costs <code>O(n^2 + m^2)</code> due to the naive implementation</li>
+<li>we search the suffix trie we get and find the deepest ancestor of suffixes of both <code>A</code> and <code>B</code>. &lt;- this costs <code>O(m+n)</code> time</li>
+</ol>
+<script src="//gist.github.com/b06602a60aa5feb47497.js"></script>
+<p>An improved implementation is as follow.</p>
+<p>TODO: gist of an improved version of suffix tree</p>
+<p>Here is a youtube video that explains how (Ukkonen’s algorithm)[<a href="https://www.youtube.com/watch?v=aPRqocoBsFQ" target="_blank" rel="external">https://www.youtube.com/watch?v=aPRqocoBsFQ</a>] works</p>
+<h4 id="Dynamic-Programming-solution-of-LCS-with-two-strings"><a href="#Dynamic-Programming-solution-of-LCS-with-two-strings" class="headerlink" title="Dynamic Programming solution of LCS with two strings"></a>Dynamic Programming solution of LCS with two strings</h4><script src="//gist.github.com/857586e520357160bd0b.js"></script>
+<blockquote>
+<p>Find the longset common substring of <code>m</code> strings.</p>
+</blockquote>
+<h4 id="Suffix-Tree-solution-of-LCS-with-m-strings"><a href="#Suffix-Tree-solution-of-LCS-with-m-strings" class="headerlink" title="Suffix Tree solution of LCS with m strings"></a>Suffix Tree solution of LCS with <code>m</code> strings</h4><h3 id="Longest-Common-Subsequence"><a href="#Longest-Common-Subsequence" class="headerlink" title="Longest Common Subsequence"></a>Longest Common Subsequence</h3><h3 id="Reference"><a href="#Reference" class="headerlink" title="Reference:"></a>Reference:</h3><p><a href="https://en.wikipedia.org/wiki/Knuth–Morris–Pratt_algorithm" target="_blank" rel="external">Knuth–Morris–Pratt algorithm</a><br><a href="https://www.youtube.com/watch?v=1k2KDhcO_uo" target="_blank" rel="external">KMP Table Tutorial</a><br><a href="https://en.wikipedia.org/wiki/Longest_common_substring_problem" target="_blank" rel="external">Longest common substring problem</a><br><a href="https://en.wikipedia.org/wiki/Longest_common_subsequence_problem" target="_blank" rel="external">Longest common subsequence problem</a></p></span>
+        
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+
+
+    
+      
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      
+      
+        <h1 class="post-title" itemprop="name headline">
+          
+          
+            
               <a class="post-title-link" href="/2015/08/27/Graph-Traversal-DFS-BFS-and-BFS-From-Both-Sides/" itemprop="url">
                 Graph Traversal -- DFS, BFS, and BFS From Both Sides
               </a>
@@ -218,13 +339,13 @@
 
       
         
-          <span itemprop="articleBody"><h3 id="Depth_First_Search">Depth First Search</h3><p>The key point of DFS is keep tracking all visited nodes and make sure check the end condition correctly. Usually the end condition is reaching certain length or certain node.</p>
+          <span itemprop="articleBody"><h3 id="Depth-First-Search"><a href="#Depth-First-Search" class="headerlink" title="Depth First Search"></a>Depth First Search</h3><p>The key point of DFS is keep tracking all visited nodes and make sure check the end condition correctly. Usually the end condition is reaching certain length or certain node.</p>
 <script src="//gist.github.com/b942e1b8b4a9edcd05ec.js"></script>
-<h3 id="Breadth_First_Search">Breadth First Search</h3><p>The key point of BFS is also keep tracking visited nodes. Unlike DFS which uses recursion, BFS uses a queue to do layer-by-layer traversal.</p>
+<h3 id="Breadth-First-Search"><a href="#Breadth-First-Search" class="headerlink" title="Breadth First Search"></a>Breadth First Search</h3><p>The key point of BFS is also keep tracking visited nodes. Unlike DFS which uses recursion, BFS uses a queue to do layer-by-layer traversal.</p>
 <script src="//gist.github.com/542f78c54f77f26fb819.js"></script>
 <p>In this implementation, we do not keep the lavel, or depth, of the nodes we visited, a simple way to do that is insert an indicator to indicate the end of a layer:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">deque</span>&lt;Node*&gt; frontier;</span><br><span class="line"><span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; visited(GRAPH_SIZE, <span class="literal">false</span>);</span><br><span class="line">frontier.push_back(startNode);</span><br><span class="line">visited[startNode-&gt;label] = <span class="literal">true</span>;</span><br><span class="line"><span class="keyword">int</span> level = <span class="number">0</span>; <span class="comment">// start node is at level 0</span></span><br><span class="line"><span class="keyword">while</span>(frontier.size() &gt; <span class="number">0</span>) &#123;</span><br><span class="line">  <span class="comment">// push a nullptr into the queue as a label, all nodes before that belongs to the same level</span></span><br><span class="line">  frontier.push_back(<span class="literal">nullptr</span>);</span><br><span class="line">  <span class="keyword">while</span>(frontier.front() != <span class="literal">nullptr</span>) &#123;</span><br><span class="line">    <span class="comment">/*Do normal works, push_back a new neighbor that we did not visited*/</span></span><br><span class="line">    frontier.pop_back(); <span class="comment">// remove current node</span></span><br><span class="line">  &#125;</span><br><span class="line">  frontier.pop_back(<span class="literal">nullptr</span>); <span class="comment">// now we reach the end of the level, add level by 1</span></span><br><span class="line">  ++level;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="Breath_First_Search_with_Two_Frontiers">Breath First Search with Two Frontiers</h3><p>The following code is for the <code>Word Ladder</code> problem. I used BFS with two frontiers to solve this problem. The details can be seen in the code comment</p>
+<h3 id="Breath-First-Search-with-Two-Frontiers"><a href="#Breath-First-Search-with-Two-Frontiers" class="headerlink" title="Breath First Search with Two Frontiers"></a>Breath First Search with Two Frontiers</h3><p>The following code is for the <code>Word Ladder</code> problem. I used BFS with two frontiers to solve this problem. The details can be seen in the code comment</p>
 <script src="//gist.github.com/2f026be77fa8fcc2ef73.js"></script></span>
         
       
@@ -378,7 +499,7 @@
 
       
         
-          <span itemprop="articleBody"><h2 id="Ugly_Number_and_Find_<!-￼6->_Ugly_Number">Ugly Number and Find <span>$n^{th}$</span><!-- Has MathJax --> Ugly Number</h2><p>The question description can be found at the following site:</p>
+          <span itemprop="articleBody"><h2 id="Ugly-Number-and-Find-Ugly-Number"><a href="#Ugly-Number-and-Find-Ugly-Number" class="headerlink" title="Ugly Number and Find  Ugly Number"></a>Ugly Number and Find <span>$n^{th}$</span><!-- Has MathJax --> Ugly Number</h2><p>The question description can be found at the following site:</p>
 <blockquote>
 <p>Leetcode: <a href="https://leetcode.com/problems/ugly-number/" target="_blank" rel="external">(263) Ugly Number</a></p>
 </blockquote>
@@ -387,7 +508,7 @@
 <p>The first problem, <code>263 Ugly Number</code> gives an integer as input and the output is whether this is an <strong>ugly number</strong> or not. In order to solve this problem, we need to know how the <strong>ugly numbers</strong> are constructed.</p>
 <p>Namely any ugly number can be written as <span>$2^n \times 3^m \times 5^k$</span><!-- Has MathJax -->, therefore to validate an ugly number, all we need to do is divide that number by <code>2</code>,<code>3</code>, and <code>5</code> and see if there is any fraction.</p>
 <script src="//gist.github.com/999c226fceb59cc8c549.js"></script>
-<h2 id="Find_<!-￼9->_Ugly_Number">Find <span>$n^{th}$</span><!-- Has MathJax --> Ugly Number</h2><p>The question description can be found at the following site:</p>
+<h2 id="Find-Ugly-Number"><a href="#Find-Ugly-Number" class="headerlink" title="Find  Ugly Number"></a>Find <span>$n^{th}$</span><!-- Has MathJax --> Ugly Number</h2><p>The question description can be found at the following site:</p>
 <blockquote>
 <p>Leetcode: <a href="https://leetcode.com/problems/ugly-number-ii/" target="_blank" rel="external">(264) Ugly Number II</a></p>
 </blockquote>
@@ -490,7 +611,7 @@
 
       
         
-          <span itemprop="articleBody"><h2 id="Binary_Search_Basics">Binary Search Basics</h2><blockquote>
+          <span itemprop="articleBody"><h2 id="Binary-Search-Basics"><a href="#Binary-Search-Basics" class="headerlink" title="Binary Search Basics"></a>Binary Search Basics</h2><blockquote>
 <p>If you know what is binary search, I encourage you to skip the first section and goes to <a href="#Binary Search Questions">the questions</a>.</p>
 </blockquote>
 <p>Before we dive into real problems, I want to briefly discuss about binary search. Binary search is a technic that can search for the existance of a value in a sorted array in <code>O(logn)</code> time, where <code>n</code> is the size of that array.</p>
@@ -515,7 +636,7 @@
 <p>Now <code>v[m] = 11</code>, which is still larger than our target <code>10</code>, therefore we set <code>r = m</code>. Note that in our <code>C++</code> snippet we stop when <code>l == r - 1</code>, therefore we stop when l and r are adjecent.</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">index: 0  1  2  3  4  5  6  7  8  9  10&#10;&#10;value: 1  3  4  5  7  9 11 13 20 21  39&#10;                      ^  ^&#10;label:                l  r</span><br></pre></td></tr></table></figure>
 <p>Then we test <code>v[l]</code> and <code>v[r]</code> to see if they equal to <code>10</code>. Unfortunately none of them is <code>10</code> therefore we say <code>10</code> is not in this array <code>v</code>. One may wondering why comparing <code>v[r]</code> since <code>r</code> is <code>m</code> in the previous step and we already compared <code>v[m]</code> in last step. Thing may get tricky when one is trying to save this two comparison. An example is what if <code>l == m</code>? In such case we do not need to compare <code>v[l]</code> but <code>v[r]</code>.</p>
-<h2 id="Binary_Search_Questions">Binary Search Questions</h2><p>There are five main parts of a binary search algorithm:</p>
+<h2 id="Binary-Search-Questions"><a href="#Binary-Search-Questions" class="headerlink" title="Binary Search Questions"></a>Binary Search Questions</h2><p>There are five main parts of a binary search algorithm:</p>
 <ol>
 <li>Invalid input detection. One need to filter our all input with a length less than 0 because this will make <code>r == -1</code>.</li>
 <li>Iteration stop condition. Usually I like to use <code>l &lt; r - 1</code> because it is easy to implement and can avoid specific cases. But you can always use <code>l &lt; r - k</code>, where <code>k &gt;= 0</code>.</li>
@@ -523,12 +644,12 @@
 <li>Boundry condition. By using <code>l &lt; r - 1</code>, one do not need to do detecting but check the value of <code>v[l]</code> and <code>v[r]</code>.</li>
 <li>Boundry check. Check boundary values <code>v[l]</code> and <code>v[r]</code> and deal with the case when target is not found.</li>
 </ol>
-<h3 id="Problems_on_Sorted_Arrays">Problems on Sorted Arrays</h3><h4 id="Binary_Search">Binary Search</h4><p>The question description can be found at the following site:</p>
+<h3 id="Problems-on-Sorted-Arrays"><a href="#Problems-on-Sorted-Arrays" class="headerlink" title="Problems on Sorted Arrays"></a>Problems on Sorted Arrays</h3><h4 id="Binary-Search"><a href="#Binary-Search" class="headerlink" title="Binary Search"></a>Binary Search</h4><p>The question description can be found at the following site:</p>
 <blockquote>
 <p>Lintcode: <a href="http://www.lintcode.com/en/problem/binary-search/" target="_blank" rel="external">(14) Binary Search</a></p>
 </blockquote>
 <p>This is the basic binary search problem, the code can be found <a href="#Binary_Search_Basics">above</a>.</p>
-<h4 id="Search_insert_position">Search insert position</h4><p>The question description can be found at the following sites:</p>
+<h4 id="Search-insert-position"><a href="#Search-insert-position" class="headerlink" title="Search insert position"></a>Search insert position</h4><p>The question description can be found at the following sites:</p>
 <blockquote>
 <p>Lintcode: <a href="http://www.lintcode.com/en/problem/search-insert-position/" target="_blank" rel="external">(60) Search insert position</a><br>Leetcode: <a href="https://leetcode.com/problems/search-insert-position/" target="_blank" rel="external">(35) Search insert position</a></p>
 </blockquote>
@@ -536,13 +657,13 @@
 <p>The invalid input detection should output <code>0</code> instead of <code>-1</code> because when <code>target</code> is not found, the output should be the index of target if it was inserted. In this case, it is <code>0</code>.</p>
 <p>As for boundary check, we return <code>l</code> or <code>r</code> if <code>m[l] == target</code> or <code>m[r] == target</code>. If none of them equals to <code>target</code>, we need to determine where to insert <code>target</code>. The index should be the smallest value in <code>m</code> that is larger than <code>target</code>.</p>
 <script src="//gist.github.com/2d48d066fee6ccc38c85.js"></script>
-<h4 id="Wood_Cut">Wood Cut</h4><h4 id="Find_Bad_Version">Find Bad Version</h4><h4 id="Find_the_nearest_pow(i,2)_that_equals_or_less_thansqrt(x)">Find the nearest <code>pow(i,2)</code> that equals or less than<code>sqrt(x)</code></h4><p>The question description can be found at the following sites:</p>
+<h4 id="Wood-Cut"><a href="#Wood-Cut" class="headerlink" title="Wood Cut"></a>Wood Cut</h4><h4 id="Find-Bad-Version"><a href="#Find-Bad-Version" class="headerlink" title="Find Bad Version"></a>Find Bad Version</h4><h4 id="Find-the-nearest-pow-i-2-that-equals-or-less-thansqrt-x"><a href="#Find-the-nearest-pow-i-2-that-equals-or-less-thansqrt-x" class="headerlink" title="Find the nearest pow(i,2) that equals or less thansqrt(x)"></a>Find the nearest <code>pow(i,2)</code> that equals or less than<code>sqrt(x)</code></h4><p>The question description can be found at the following sites:</p>
 <blockquote>
 <p>Lintcode: <a href="http://www.lintcode.com/en/problem/sqrtx/" target="_blank" rel="external">(141) sqrt(x)</a><br>Leetcode: <a href="https://leetcode.com/problems/sqrtx/" target="_blank" rel="external">(69) sqrt(x)</a></p>
 </blockquote>
 <p>This problem is also a variant of binary search problem. One thing we need to mention is how to calculate <code>sqrt(2)</code>. The question does not require you to return <code>1.414</code> but <code>1</code> (the largest integer that satifies <code>x^2 &lt; target</code>). Therefore, we need to change the <em>pruning condition</em> to comparing <code>m[mid]^2</code> and <code>x</code>.</p>
 <script src="//gist.github.com/15f9e8aed2f0590ba099.js"></script>
-<h4 id="Find_value_range_in_sorted_array_containing_duplicate_values">Find value range in sorted array containing duplicate values</h4><p>The question description can be found at the following sites:</p>
+<h4 id="Find-value-range-in-sorted-array-containing-duplicate-values"><a href="#Find-value-range-in-sorted-array-containing-duplicate-values" class="headerlink" title="Find value range in sorted array containing duplicate values"></a>Find value range in sorted array containing duplicate values</h4><p>The question description can be found at the following sites:</p>
 <blockquote>
 <p>Lintcode: <a href="http://www.lintcode.com/en/problem/search-for-a-range/" target="_blank" rel="external">(61) Search for a Range</a><br>Leetcode: <a href="https://leetcode.com/problems/search-for-a-range/" target="_blank" rel="external">(34) Search for a Range</a></p>
 </blockquote>
@@ -558,7 +679,7 @@
 <p>In such way, if we find <code>v[m] == target</code>, we will not stop. Instead we will search the left part while keeping <code>v[r] == target</code>. When <code>l == r - 1</code>, we just check <code>v[l]</code> and <code>v[r]</code> and see if <code>v[l] == target</code>, which is unlikely in this case, or <code>v[r] == target</code>. We return the index of the leftmost one that equals to <code>target</code>. By doing this, we find the leftmost <code>target</code>.</p>
 <p>The way of finding the rightmost target is similar and is shown in the follwing code.</p>
 <script src="//gist.github.com/6f158096ca48efc9fb19.js"></script>
-<h3 id="Problems_on_Rotated,_Sorted_Arrays">Problems on Rotated, Sorted Arrays</h3><h4 id="Search_in_Rotated_Sorted_Array">Search in Rotated Sorted Array</h4><h4 id="Search_in_Rotated_Sorted_Array_II">Search in Rotated Sorted Array II</h4><h4 id="Find_Minimum_in_Rotated_Sorted_Array">Find Minimum in Rotated Sorted Array</h4><h4 id="Find_Minimum_in_Rotated_Sorted_Array_II">Find Minimum in Rotated Sorted Array II</h4><h4 id="Find_Peak_Element">Find Peak Element</h4><h3 id="Other_Binary_Search_Problems">Other Binary Search Problems</h3><h4 id="Search_A_2D_Matrix">Search A 2D Matrix</h4></span>
+<h3 id="Problems-on-Rotated-Sorted-Arrays"><a href="#Problems-on-Rotated-Sorted-Arrays" class="headerlink" title="Problems on Rotated, Sorted Arrays"></a>Problems on Rotated, Sorted Arrays</h3><h4 id="Search-in-Rotated-Sorted-Array"><a href="#Search-in-Rotated-Sorted-Array" class="headerlink" title="Search in Rotated Sorted Array"></a>Search in Rotated Sorted Array</h4><h4 id="Search-in-Rotated-Sorted-Array-II"><a href="#Search-in-Rotated-Sorted-Array-II" class="headerlink" title="Search in Rotated Sorted Array II"></a>Search in Rotated Sorted Array II</h4><h4 id="Find-Minimum-in-Rotated-Sorted-Array"><a href="#Find-Minimum-in-Rotated-Sorted-Array" class="headerlink" title="Find Minimum in Rotated Sorted Array"></a>Find Minimum in Rotated Sorted Array</h4><h4 id="Find-Minimum-in-Rotated-Sorted-Array-II"><a href="#Find-Minimum-in-Rotated-Sorted-Array-II" class="headerlink" title="Find Minimum in Rotated Sorted Array II"></a>Find Minimum in Rotated Sorted Array II</h4><h4 id="Find-Peak-Element"><a href="#Find-Peak-Element" class="headerlink" title="Find Peak Element"></a>Find Peak Element</h4><h3 id="Other-Binary-Search-Problems"><a href="#Other-Binary-Search-Problems" class="headerlink" title="Other Binary Search Problems"></a>Other Binary Search Problems</h3><h4 id="Search-A-2D-Matrix"><a href="#Search-A-2D-Matrix" class="headerlink" title="Search A 2D Matrix"></a>Search A 2D Matrix</h4></span>
         
       
     </div>
@@ -615,7 +736,7 @@
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -629,7 +750,7 @@
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">36</span>
+              <span class="site-state-item-count">40</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
@@ -672,8 +793,8 @@
     <footer id="footer" class="footer">
       <div class="footer-inner"> <div class="copyright">
   
-  &copy; &nbsp; 
-  <span itemprop="copyrightYear">2015</span>
+  &copy; &nbsp;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="icon-next-heart"></i>
   </span>

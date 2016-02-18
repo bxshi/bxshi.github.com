@@ -204,12 +204,12 @@ sum(s[i:j]) equals to sum(s[0:j]) - sum(s[0:i-1]), in which sum(s[0:j]) is a fix
       
 
       
-        <span itemprop="articleBody"><h3 id="Maximal_Subarray">Maximal Subarray</h3><p>Given an unsorted array <code>s[0:n]</code>, find a subarray <code>s[i:j]</code> that maximize <code>sum(s[i:j])</code>.</p>
+        <span itemprop="articleBody"><h3 id="Maximal-Subarray"><a href="#Maximal-Subarray" class="headerlink" title="Maximal Subarray"></a>Maximal Subarray</h3><p>Given an unsorted array <code>s[0:n]</code>, find a subarray <code>s[i:j]</code> that maximize <code>sum(s[i:j])</code>.</p>
 <p><code>sum(s[i:j])</code> equals to <code>sum(s[0:j]) - sum(s[0:i-1])</code>, in which <code>sum(s[0:j])</code> is a fixed value when <code>j</code> is known. Hence maximizing <code>sum(s[i:j])</code> becomes minimize <code>sum(s[0:i-1])</code>, where <code>i-1 &lt; j</code>.</p>
 <p>Therefore we need <code>sum(s[0:i])</code>, and the minimum subarray <code>min(s[0:k])</code> where <code>k &lt; i</code> to calculate <code>max(s[i:j])</code>.</p>
 <figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="title">sum</span><span class="params">(s[<span class="number">0</span>:i])</span></span> = s[<span class="number">0</span>:i]</span><br><span class="line"><span class="function"><span class="title">min</span><span class="params">(s[<span class="number">0</span>:k])</span></span> = <span class="function"><span class="title">min</span><span class="params">(sum(s[<span class="number">0</span>:k-<span class="number">1</span>])</span></span>, <span class="function"><span class="title">sum</span><span class="params">(s[<span class="number">0</span>:k])</span></span>)</span><br><span class="line"><span class="function"><span class="title">max</span><span class="params">(s[k+<span class="number">1</span>:j])</span></span> = <span class="function"><span class="title">max</span><span class="params">(sum(s[<span class="number">0</span>:j])</span></span>, <span class="function"><span class="title">sum</span><span class="params">(s[<span class="number">0</span>:j])</span></span> - <span class="function"><span class="title">min</span><span class="params">(s[<span class="number">0</span>:k])</span></span>, <span class="function"><span class="title">max</span><span class="params">(s[k+<span class="number">1</span>:j-<span class="number">1</span>])</span></span>)</span><br></pre></td></tr></table></figure>
 <script src="//gist.github.com/5af5505e881706765593.js"></script>
-<h3 id="Minimal_Subarray">Minimal Subarray</h3><p>Similar idea but we need to keep the minimal <code>s[0:k]</code>.</p>
+<h3 id="Minimal-Subarray"><a href="#Minimal-Subarray" class="headerlink" title="Minimal Subarray"></a>Minimal Subarray</h3><p>Similar idea but we need to keep the minimal <code>s[0:k]</code>.</p>
 <script src="//gist.github.com/8f6f92926f3929b5f810.js"></script></span>
       
     </div>
@@ -303,7 +303,7 @@ sum(s[i:j]) equals to sum(s[0:j]) - sum(s[0:i-1]), in which sum(s[0:j]) is a fix
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -317,7 +317,7 @@ sum(s[i:j]) equals to sum(s[0:j]) - sum(s[0:i-1]), in which sum(s[0:j]) is a fix
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">36</span>
+              <span class="site-state-item-count">40</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
@@ -355,7 +355,7 @@ sum(s[i:j]) equals to sum(s[0:j]) - sum(s[0:i-1]), in which sum(s[0:j]) is a fix
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Maximal_Subarray"><span class="nav-number">1.</span> <span class="nav-text">Maximal Subarray</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Minimal_Subarray"><span class="nav-number">2.</span> <span class="nav-text">Minimal Subarray</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Maximal-Subarray"><span class="nav-number">1.</span> <span class="nav-text">Maximal Subarray</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Minimal-Subarray"><span class="nav-number">2.</span> <span class="nav-text">Minimal Subarray</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -371,8 +371,8 @@ sum(s[i:j]) equals to sum(s[0:j]) - sum(s[0:i-1]), in which sum(s[0:j]) is a fix
     <footer id="footer" class="footer">
       <div class="footer-inner"> <div class="copyright">
   
-  &copy; &nbsp; 
-  <span itemprop="copyrightYear">2015</span>
+  &copy; &nbsp;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="icon-next-heart"></i>
   </span>

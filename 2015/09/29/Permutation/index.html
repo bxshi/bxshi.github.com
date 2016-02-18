@@ -49,7 +49,7 @@ If we starting from the tail of">
 <meta property="og:description" content="Next Permutation (With duplication)First let’s check the first six permutation of sequence [1,2,3,4] in lexical order.
 1234561 2 3 41 2 4 31 3 2 41 3 4 21 4 2 31 4 3 2
 If we starting from the tail of">
-<meta property="og:updated_time" content="2015-09-30T02:05:49.000Z">
+<meta property="og:updated_time" content="2016-02-18T17:27:21.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Permutation">
 <meta name="twitter:description" content="Next Permutation (With duplication)First let’s check the first six permutation of sequence [1,2,3,4] in lexical order.
@@ -207,7 +207,7 @@ If we starting from the tail of">
       
 
       
-        <span itemprop="articleBody"><h3 id="Next_Permutation_(With_duplication)">Next Permutation (With duplication)</h3><p>First let’s check the first six permutation of sequence <code>[1,2,3,4]</code> in lexical order.</p>
+        <span itemprop="articleBody"><h3 id="Next-Permutation-With-duplication"><a href="#Next-Permutation-With-duplication" class="headerlink" title="Next Permutation (With duplication)"></a>Next Permutation (With duplication)</h3><p>First let’s check the first six permutation of sequence <code>[1,2,3,4]</code> in lexical order.</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> <span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">4</span> <span class="number">3</span></span><br><span class="line"><span class="number">1</span> <span class="number">3</span> <span class="number">2</span> <span class="number">4</span></span><br><span class="line"><span class="number">1</span> <span class="number">3</span> <span class="number">4</span> <span class="number">2</span></span><br><span class="line"><span class="number">1</span> <span class="number">4</span> <span class="number">2</span> <span class="number">3</span></span><br><span class="line"><span class="number">1</span> <span class="number">4</span> <span class="number">3</span> <span class="number">2</span></span><br></pre></td></tr></table></figure>
 <p>If we starting from the tail of each permutation and try find an ascending sequence <code>[n-1 : j]</code>, then the discovered sequences are:</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1</span> <span class="number">2</span> <span class="number">3</span> [<span class="number">4</span>]</span><br><span class="line"><span class="number">1</span> <span class="number">2</span> [<span class="number">4</span> <span class="number">3</span>]</span><br><span class="line"><span class="number">1</span> <span class="number">3</span> <span class="number">2</span> [<span class="number">4</span>]</span><br><span class="line"><span class="number">1</span> <span class="number">3</span> [<span class="number">4</span> <span class="number">2</span>]</span><br><span class="line"><span class="number">1</span> <span class="number">4</span> <span class="number">2</span> [<span class="number">3</span>]</span><br><span class="line"><span class="number">1</span> [<span class="number">4</span> <span class="number">3</span> <span class="number">2</span>]</span><br></pre></td></tr></table></figure>
@@ -219,12 +219,12 @@ If we starting from the tail of">
 </ol>
 <figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find <span class="keyword">ascending</span> subarray starting <span class="built_in">from</span> <span class="operator">the</span> <span class="keyword">end</span>, <span class="operator">the</span> left <span class="keyword">element</span> <span class="operator">of</span> this subarray should be replaced <span class="keyword">by</span> <span class="operator">the</span> <span class="keyword">first</span> <span class="keyword">element</span> <span class="keyword">at</span> <span class="operator">the</span> <span class="constant">right</span> <span class="operator">of</span> <span class="operator">the</span> subarray that is larger than <span class="operator">the</span> <span class="keyword">element</span>.</span><br></pre></td></tr></table></figure>
 <script src="//gist.github.com/4f13804d7e34c9d955ad.js"></script>
-<h3 id="Previous_Permutation_(With_duplication)">Previous Permutation (With duplication)</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find <span class="keyword">descending</span> subarray starting <span class="built_in">from</span> <span class="operator">the</span> <span class="keyword">end</span>, <span class="operator">the</span> left <span class="keyword">element</span> <span class="operator">of</span> this subarray should be replaced <span class="keyword">by</span> <span class="operator">the</span> <span class="keyword">first</span> <span class="keyword">element</span> <span class="keyword">at</span> <span class="operator">the</span> <span class="constant">right</span> <span class="operator">of</span> <span class="operator">the</span> subarray that is smaller than <span class="operator">the</span> <span class="keyword">element</span>.</span><br></pre></td></tr></table></figure>
+<h3 id="Previous-Permutation-With-duplication"><a href="#Previous-Permutation-With-duplication" class="headerlink" title="Previous Permutation (With duplication)"></a>Previous Permutation (With duplication)</h3><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Find <span class="keyword">descending</span> subarray starting <span class="built_in">from</span> <span class="operator">the</span> <span class="keyword">end</span>, <span class="operator">the</span> left <span class="keyword">element</span> <span class="operator">of</span> this subarray should be replaced <span class="keyword">by</span> <span class="operator">the</span> <span class="keyword">first</span> <span class="keyword">element</span> <span class="keyword">at</span> <span class="operator">the</span> <span class="constant">right</span> <span class="operator">of</span> <span class="operator">the</span> subarray that is smaller than <span class="operator">the</span> <span class="keyword">element</span>.</span><br></pre></td></tr></table></figure>
 <script src="//gist.github.com/ec0f330b300e77c3529c.js"></script>
-<h3 id="Permutation_(Without_duplication)">Permutation (Without duplication)</h3><p>We can do a depth-first search to construct the permutation, or use the code snippet we shown above to generate next permutation until reach <code>asc == 0</code>. Note the result of both solution has the same order.</p>
+<h3 id="Permutation-Without-duplication"><a href="#Permutation-Without-duplication" class="headerlink" title="Permutation (Without duplication)"></a>Permutation (Without duplication)</h3><p>We can do a depth-first search to construct the permutation, or use the code snippet we shown above to generate next permutation until reach <code>asc == 0</code>. Note the result of both solution has the same order.</p>
 <p>The DFS method is maintaining a visited vector and for every recursive call pick one unvisited node and visit it until all nodes are visited (put into the temporary result vector).</p>
 <script src="//gist.github.com/b6fe650dfe1af6209c86.js"></script>
-<h3 id="Permutation_(With_duplication)">Permutation (With duplication)</h3><p>When there are duplications in <code>nums</code>, create a map in which the key is the number in <code>nums</code> and the value is the count of the occurrence of key. When doing DFS, traverse through the map and try any numbers that has a value larger than 1.</p>
+<h3 id="Permutation-With-duplication"><a href="#Permutation-With-duplication" class="headerlink" title="Permutation (With duplication)"></a>Permutation (With duplication)</h3><p>When there are duplications in <code>nums</code>, create a map in which the key is the number in <code>nums</code> and the value is the count of the occurrence of key. When doing DFS, traverse through the map and try any numbers that has a value larger than 1.</p>
 <script src="//gist.github.com/d9ea51e11fcc9c77e21e.js"></script></span>
       
     </div>
@@ -316,7 +316,7 @@ If we starting from the tail of">
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">14</span>
+              <span class="site-state-item-count">15</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -330,7 +330,7 @@ If we starting from the tail of">
 
           <div class="site-state-item site-state-tags">
             <a href="/tags">
-              <span class="site-state-item-count">36</span>
+              <span class="site-state-item-count">40</span>
               <span class="site-state-item-name">tags</span>
               </a>
           </div>
@@ -368,7 +368,7 @@ If we starting from the tail of">
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Next_Permutation_(With_duplication)"><span class="nav-number">1.</span> <span class="nav-text">Next Permutation (With duplication)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Previous_Permutation_(With_duplication)"><span class="nav-number">2.</span> <span class="nav-text">Previous Permutation (With duplication)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Permutation_(Without_duplication)"><span class="nav-number">3.</span> <span class="nav-text">Permutation (Without duplication)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Permutation_(With_duplication)"><span class="nav-number">4.</span> <span class="nav-text">Permutation (With duplication)</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Next-Permutation-With-duplication"><span class="nav-number">1.</span> <span class="nav-text">Next Permutation (With duplication)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Previous-Permutation-With-duplication"><span class="nav-number">2.</span> <span class="nav-text">Previous Permutation (With duplication)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Permutation-Without-duplication"><span class="nav-number">3.</span> <span class="nav-text">Permutation (Without duplication)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Permutation-With-duplication"><span class="nav-number">4.</span> <span class="nav-text">Permutation (With duplication)</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>
@@ -384,8 +384,8 @@ If we starting from the tail of">
     <footer id="footer" class="footer">
       <div class="footer-inner"> <div class="copyright">
   
-  &copy; &nbsp; 
-  <span itemprop="copyrightYear">2015</span>
+  &copy; &nbsp;  2015 - 
+  <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
     <i class="icon-next-heart"></i>
   </span>
