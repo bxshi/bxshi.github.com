@@ -39,16 +39,28 @@
   <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1">
 
 
-<meta name="description" content="$X \Rightarrow Y$&amp;lt;!-- Has MathJax --&amp;gt; means X associated with Y.### SupportThe portion of transactions that contain item set X.This number presents how specific item set X is.### ConfidenceThe portion">
+<meta name="description" content="$X \Rightarrow Y$&amp;lt;!-- Has MathJax --&amp;gt; means X associated with Y.
+
+SupportThe portion of transactions that contain item set X.
+This number presents how specific item set X is.
+ConfidenceThe portion of">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Association rule basics">
 <meta property="og:url" content="http://bxshi.github.io/2016/02/24/Association-rule-basics/index.html">
 <meta property="og:site_name" content="RAndom NoTeS">
-<meta property="og:description" content="$X \Rightarrow Y$&amp;lt;!-- Has MathJax --&amp;gt; means X associated with Y.### SupportThe portion of transactions that contain item set X.This number presents how specific item set X is.### ConfidenceThe portion">
-<meta property="og:updated_time" content="2016-02-24T16:16:12.000Z">
+<meta property="og:description" content="$X \Rightarrow Y$&amp;lt;!-- Has MathJax --&amp;gt; means X associated with Y.
+
+SupportThe portion of transactions that contain item set X.
+This number presents how specific item set X is.
+ConfidenceThe portion of">
+<meta property="og:updated_time" content="2016-02-24T16:22:18.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Association rule basics">
-<meta name="twitter:description" content="$X \Rightarrow Y$&amp;lt;!-- Has MathJax --&amp;gt; means X associated with Y.### SupportThe portion of transactions that contain item set X.This number presents how specific item set X is.### ConfidenceThe portion">
+<meta name="twitter:description" content="$X \Rightarrow Y$&amp;lt;!-- Has MathJax --&amp;gt; means X associated with Y.
+
+SupportThe portion of transactions that contain item set X.
+This number presents how specific item set X is.
+ConfidenceThe portion of">
 
 
 <script type="text/javascript" id="hexo.configuration">
@@ -201,7 +213,14 @@
       
 
       
-        <span itemprop="articleBody"><span>$X \Rightarrow Y$</span><!-- Has MathJax --> means <code>X</code> associated with <code>Y</code>.<br><br>### Support<br><br>The portion of transactions that contain item set <code>X</code>.<br><br>This number presents how specific item set <code>X</code> is.<br><br>### Confidence<br><br>The portion of transactions that contain both item set <code>X</code> and <code>Y</code>.<br><br>This number presents/estimate the conditional probability that <code>Y</code> exits when <code>X</code> exists.<br><br>### Lift<br><br><span>$lift(X \Rightarrow Y) = \frac{supp(X\cup Y)}{supp(X) \times supp(Y)}$</span><!-- Has MathJax -->
+        <span itemprop="articleBody"><blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Association_rule_learning" target="_blank" rel="external"><span>$X \Rightarrow Y$</span><!-- Has MathJax --> means <code>X</code> associated with <code>Y</code></a>.</p>
+</blockquote>
+<h3 id="Support"><a href="#Support" class="headerlink" title="Support"></a>Support</h3><p>The portion of transactions that contain item set <code>X</code>.</p>
+<p>This number presents how specific item set <code>X</code> is.</p>
+<h3 id="Confidence"><a href="#Confidence" class="headerlink" title="Confidence"></a>Confidence</h3><p>The portion of transactions that contain both item set <code>X</code> and <code>Y</code>.</p>
+<p>This number presents/estimate the conditional probability that <code>Y</code> exits when <code>X</code> exists.</p>
+<h3 id="Lift"><a href="#Lift" class="headerlink" title="Lift"></a>Lift</h3><span>$lift(X \Rightarrow Y) = \frac{supp(X\cup Y)}{supp(X) \times supp(Y)}$</span><!-- Has MathJax -->
 <p>The ratio of the observed support to X and the assumption that <code>X</code> and <code>Y</code> are independent.</p>
 <h3 id="Conviction"><a href="#Conviction" class="headerlink" title="Conviction"></a>Conviction</h3><span>$conv(X \Rightarrow Y) = \frac{1-supp(Y)}{1 - conf(X \Rightarrow Y)}$</span><!-- Has MathJax -->
 <p>The ratio of the expected frequency that <code>X</code> occurs without <code>Y</code>.</p></span>
@@ -343,7 +362,7 @@
           <div class="post-toc">
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Conviction"><span class="nav-number">1.</span> <span class="nav-text">Conviction</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Support"><span class="nav-number">1.</span> <span class="nav-text">Support</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Confidence"><span class="nav-number">2.</span> <span class="nav-text">Confidence</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Lift"><span class="nav-number">3.</span> <span class="nav-text">Lift</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Conviction"><span class="nav-number">4.</span> <span class="nav-text">Conviction</span></a></li></ol></div>
             
           </div>
           <div class="post-toc-indicator-bottom post-toc-indicator"></div>

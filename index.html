@@ -203,7 +203,14 @@
 
       
         
-          <span itemprop="articleBody"><span>$X \Rightarrow Y$</span><!-- Has MathJax --> means <code>X</code> associated with <code>Y</code>.<br><br>### Support<br><br>The portion of transactions that contain item set <code>X</code>.<br><br>This number presents how specific item set <code>X</code> is.<br><br>### Confidence<br><br>The portion of transactions that contain both item set <code>X</code> and <code>Y</code>.<br><br>This number presents/estimate the conditional probability that <code>Y</code> exits when <code>X</code> exists.<br><br>### Lift<br><br><span>$lift(X \Rightarrow Y) = \frac{supp(X\cup Y)}{supp(X) \times supp(Y)}$</span><!-- Has MathJax -->
+          <span itemprop="articleBody"><blockquote>
+<p><a href="https://en.wikipedia.org/wiki/Association_rule_learning" target="_blank" rel="external"><span>$X \Rightarrow Y$</span><!-- Has MathJax --> means <code>X</code> associated with <code>Y</code></a>.</p>
+</blockquote>
+<h3 id="Support"><a href="#Support" class="headerlink" title="Support"></a>Support</h3><p>The portion of transactions that contain item set <code>X</code>.</p>
+<p>This number presents how specific item set <code>X</code> is.</p>
+<h3 id="Confidence"><a href="#Confidence" class="headerlink" title="Confidence"></a>Confidence</h3><p>The portion of transactions that contain both item set <code>X</code> and <code>Y</code>.</p>
+<p>This number presents/estimate the conditional probability that <code>Y</code> exits when <code>X</code> exists.</p>
+<h3 id="Lift"><a href="#Lift" class="headerlink" title="Lift"></a>Lift</h3><span>$lift(X \Rightarrow Y) = \frac{supp(X\cup Y)}{supp(X) \times supp(Y)}$</span><!-- Has MathJax -->
 <p>The ratio of the observed support to X and the assumption that <code>X</code> and <code>Y</code> are independent.</p>
 <h3 id="Conviction"><a href="#Conviction" class="headerlink" title="Conviction"></a>Conviction</h3><span>$conv(X \Rightarrow Y) = \frac{1-supp(Y)}{1 - conf(X \Rightarrow Y)}$</span><!-- Has MathJax -->
 <p>The ratio of the expected frequency that <code>X</code> occurs without <code>Y</code>.</p></span>
