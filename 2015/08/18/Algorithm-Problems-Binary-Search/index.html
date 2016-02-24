@@ -1,15 +1,21 @@
 <!doctype html>
-<html class="theme-next use-motion">
-<head>
+
+
+
   
 
-<meta charset="UTF-8">
+
+<html class="theme-next muse use-motion">
+<head>
+  <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
 
 
+
 <meta http-equiv="Cache-Control" content="no-transform">
 <meta http-equiv="Cache-Control" content="no-siteapp">
+
 
 
   <meta name="google-site-verification" content="8zCr1Cr9pNCmDVidKXdGFdCIDicUaVqFIICkdm51t9I">
@@ -18,16 +24,23 @@
 
 
 
-  <link rel="stylesheet" type="text/css" href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5">
+
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
 
 
 
   <link href="//fonts.googleapis.com/css?family=Lato:300,400,700,400italic&subset=latin,latin-ext" rel="stylesheet" type="text/css">
 
 
-<link rel="stylesheet" type="text/css" href="/css/main.css?v=0.4.5.1">
 
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
 
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css">
 
 
   <meta name="keywords" content="algorithm,binary search,leetcode,lintcode,">
@@ -36,7 +49,14 @@
 
 
 
-  <link rel="shorticon icon" type="image/x-icon" href="/favicon.ico?v=0.4.5.1">
+
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0">
+
+
+
+
 
 
 <meta name="description" content="Binary Search Basics
@@ -60,10 +80,18 @@ If you know what is binary search, I encourage you to skip the first section and
 Before we dive into real problems, I want to briefly discuss about binary">
 
 
+
 <script type="text/javascript" id="hexo.configuration">
+  var NexT = window.NexT || {};
   var CONFIG = {
-    scheme: '',
-    sidebar: 'post'
+    scheme: 'Muse',
+    sidebar: {"position":"left","display":"post"},
+    fancybox: true,
+    motion: true,
+    duoshuo: {
+      userId: 0,
+      author: 'Author'
+    }
   };
 </script>
 
@@ -72,16 +100,9 @@ Before we dive into real problems, I want to briefly discuss about binary">
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="en">
 
-  <!--[if lte IE 8]>
-  <div style=' clear: both; height: 59px; padding:0 0 0 15px; position: relative;margin:0 auto;'>
-    <a href="http://windows.microsoft.com/en-US/internet-explorer/products/ie/home?ocid=ie6_countdown_bannercode">
-      <img src="http://7u2nvr.com1.z0.glb.clouddn.com/picouterie.jpg" border="0" height="42" width="820"
-           alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today or use other browser ,like chrome firefox safari."
-           style='margin-left:auto;margin-right:auto;display: block;'/>
-    </a>
-  </div>
-<![endif]-->
   
+
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
             (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
@@ -94,20 +115,30 @@ Before we dive into real problems, I want to briefly discuss about binary">
 
 
 
-  <div class="container one-column page-post-detail">
+
+
+
+  
+  
+    
+  
+
+  <div class="container one-collumn sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><h1 class="site-meta">
-  <span class="logo-line-before"><i></i></span>
-  <a href="/" class="brand" rel="start">
-      <span class="logo">
-        <i class="icon-next-logo"></i>
-      </span>
+      <div class="header-inner"><div class="site-meta">
+  
+
+  <div class="custom-logo-site-title">
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
       <span class="site-title">RAndom NoTeS</span>
-  </a>
-  <span class="logo-line-after"><i></i></span>
-</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+  <p class="site-subtitle"></p>
+</div>
 
 <div class="site-nav-toggle">
   <button>
@@ -126,7 +157,9 @@ Before we dive into real problems, I want to briefly discuss about binary">
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
-            <i class="menu-item-icon icon-next-home"></i> <br>
+            
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br>
+            
             Home
           </a>
         </li>
@@ -134,7 +167,9 @@ Before we dive into real problems, I want to briefly discuss about binary">
         
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
-            <i class="menu-item-icon icon-next-archives"></i> <br>
+            
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br>
+            
             Archives
           </a>
         </li>
@@ -142,12 +177,15 @@ Before we dive into real problems, I want to briefly discuss about binary">
         
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
-            <i class="menu-item-icon icon-next-tags"></i> <br>
+            
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br>
+            
             Tags
           </a>
         </li>
       
 
+      
       
       
     </ul>
@@ -161,71 +199,96 @@ Before we dive into real problems, I want to briefly discuss about binary">
 
     <main id="main" class="main">
       <div class="main-inner">
-        <div id="content" class="content"> 
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
 
   <div id="posts" class="posts-expand">
     
 
+  
+  
+
+  
+  
+  
+
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
 
-      
-      
-        <h1 class="post-title" itemprop="name headline">
-          
-          
-            
-              Algorithm Problems: Binary Search
-            
-          
-        </h1>
-      
-
-      <div class="post-meta">
-        <span class="post-time">
-          Posted on
-          <time itemprop="dateCreated" datetime="2015-08-18T22:03:03-04:00" content="2015-08-18">
-            2015-08-18
-          </time>
-        </span>
+    
+      <header class="post-header">
 
         
-          <span class="post-category">
-            &nbsp; | &nbsp; In
+        
+          <h1 class="post-title" itemprop="name headline">
             
-              <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
-                <a href="/categories/code-interview/" itemprop="url" rel="index">
-                  <span itemprop="name">code interview</span>
+            
+              
+                Algorithm Problems: Binary Search
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">Posted on</span>
+            <time itemprop="dateCreated" datetime="2015-08-18T22:03:03-04:00" content="2015-08-18">
+              2015-08-18
+            </time>
+          </span>
+
+          
+            <span class="post-category">
+              &nbsp; | &nbsp;
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+              
+                <span itemprop="about" itemscope itemtype="https://schema.org/Thing">
+                  <a href="/categories/code-interview/" itemprop="url" rel="index">
+                    <span itemprop="name">code interview</span>
+                  </a>
+                </span>
+
+                
+                
+
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2015/08/18/Algorithm-Problems-Binary-Search/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/08/18/Algorithm-Problems-Binary-Search/" itemprop="commentsCount"></span>
                 </a>
               </span>
-
-              
-              
-
             
-          </span>
-        
-
-        
           
-            <span class="post-comments-count">
-            &nbsp; | &nbsp;
-            <a href="/2015/08/18/Algorithm-Problems-Binary-Search/#comments" itemprop="discussionUrl">
-              <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2015/08/18/Algorithm-Problems-Binary-Search/" itemprop="commentsCount"></span>
-            </a>
-          </span>
+
           
-        
-      </div>
-    </header>
 
-    <div class="post-body">
+          
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
 
       
       
 
       
-        <span itemprop="articleBody"><h2 id="Binary-Search-Basics"><a href="#Binary-Search-Basics" class="headerlink" title="Binary Search Basics"></a>Binary Search Basics</h2><blockquote>
+        <h2 id="Binary-Search-Basics"><a href="#Binary-Search-Basics" class="headerlink" title="Binary Search Basics"></a>Binary Search Basics</h2><blockquote>
 <p>If you know what is binary search, I encourage you to skip the first section and goes to <a href="#Binary Search Questions">the questions</a>.</p>
 </blockquote>
 <p>Before we dive into real problems, I want to briefly discuss about binary search. Binary search is a technic that can search for the existance of a value in a sorted array in <code>O(logn)</code> time, where <code>n</code> is the size of that array.</p>
@@ -293,7 +356,7 @@ Before we dive into real problems, I want to briefly discuss about binary">
 <p>In such way, if we find <code>v[m] == target</code>, we will not stop. Instead we will search the left part while keeping <code>v[r] == target</code>. When <code>l == r - 1</code>, we just check <code>v[l]</code> and <code>v[r]</code> and see if <code>v[l] == target</code>, which is unlikely in this case, or <code>v[r] == target</code>. We return the index of the leftmost one that equals to <code>target</code>. By doing this, we find the leftmost <code>target</code>.</p>
 <p>The way of finding the rightmost target is similar and is shown in the follwing code.</p>
 <script src="//gist.github.com/6f158096ca48efc9fb19.js"></script>
-<h3 id="Problems-on-Rotated-Sorted-Arrays"><a href="#Problems-on-Rotated-Sorted-Arrays" class="headerlink" title="Problems on Rotated, Sorted Arrays"></a>Problems on Rotated, Sorted Arrays</h3><h4 id="Search-in-Rotated-Sorted-Array"><a href="#Search-in-Rotated-Sorted-Array" class="headerlink" title="Search in Rotated Sorted Array"></a>Search in Rotated Sorted Array</h4><h4 id="Search-in-Rotated-Sorted-Array-II"><a href="#Search-in-Rotated-Sorted-Array-II" class="headerlink" title="Search in Rotated Sorted Array II"></a>Search in Rotated Sorted Array II</h4><h4 id="Find-Minimum-in-Rotated-Sorted-Array"><a href="#Find-Minimum-in-Rotated-Sorted-Array" class="headerlink" title="Find Minimum in Rotated Sorted Array"></a>Find Minimum in Rotated Sorted Array</h4><h4 id="Find-Minimum-in-Rotated-Sorted-Array-II"><a href="#Find-Minimum-in-Rotated-Sorted-Array-II" class="headerlink" title="Find Minimum in Rotated Sorted Array II"></a>Find Minimum in Rotated Sorted Array II</h4><h4 id="Find-Peak-Element"><a href="#Find-Peak-Element" class="headerlink" title="Find Peak Element"></a>Find Peak Element</h4><h3 id="Other-Binary-Search-Problems"><a href="#Other-Binary-Search-Problems" class="headerlink" title="Other Binary Search Problems"></a>Other Binary Search Problems</h3><h4 id="Search-A-2D-Matrix"><a href="#Search-A-2D-Matrix" class="headerlink" title="Search A 2D Matrix"></a>Search A 2D Matrix</h4></span>
+<h3 id="Problems-on-Rotated-Sorted-Arrays"><a href="#Problems-on-Rotated-Sorted-Arrays" class="headerlink" title="Problems on Rotated, Sorted Arrays"></a>Problems on Rotated, Sorted Arrays</h3><h4 id="Search-in-Rotated-Sorted-Array"><a href="#Search-in-Rotated-Sorted-Array" class="headerlink" title="Search in Rotated Sorted Array"></a>Search in Rotated Sorted Array</h4><h4 id="Search-in-Rotated-Sorted-Array-II"><a href="#Search-in-Rotated-Sorted-Array-II" class="headerlink" title="Search in Rotated Sorted Array II"></a>Search in Rotated Sorted Array II</h4><h4 id="Find-Minimum-in-Rotated-Sorted-Array"><a href="#Find-Minimum-in-Rotated-Sorted-Array" class="headerlink" title="Find Minimum in Rotated Sorted Array"></a>Find Minimum in Rotated Sorted Array</h4><h4 id="Find-Minimum-in-Rotated-Sorted-Array-II"><a href="#Find-Minimum-in-Rotated-Sorted-Array-II" class="headerlink" title="Find Minimum in Rotated Sorted Array II"></a>Find Minimum in Rotated Sorted Array II</h4><h4 id="Find-Peak-Element"><a href="#Find-Peak-Element" class="headerlink" title="Find Peak Element"></a>Find Peak Element</h4><h3 id="Other-Binary-Search-Problems"><a href="#Other-Binary-Search-Problems" class="headerlink" title="Other Binary Search Problems"></a>Other Binary Search Problems</h3><h4 id="Search-A-2D-Matrix"><a href="#Search-A-2D-Matrix" class="headerlink" title="Search A 2D Matrix"></a>Search A 2D Matrix</h4>
       
     </div>
 
@@ -314,13 +377,15 @@ Before we dive into real problems, I want to briefly discuss about binary">
 
       
         <div class="post-nav">
-          <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2015/08/19/Ugly-Number/" rel="prev">Ugly Number</a>
+          <div class="post-nav-next post-nav-item">
             
           </div>
 
-          <div class="post-nav-next post-nav-item">
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2015/08/19/Ugly-Number/" rel="prev" title="Ugly Number">
+                Ugly Number <i class="fa fa-chevron-right"></i>
+              </a>
             
           </div>
         </div>
@@ -338,22 +403,27 @@ Before we dive into real problems, I want to briefly discuss about binary">
     </div>
   </div>
 
- </div>
 
-        
-
-        
-          <div class="comments" id="comments">
-            
-              <div id="disqus_thread">
-                <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-              </div>
-            
           </div>
-        
-      </div>
+          
 
-      
+
+          
+  <div class="comments" id="comments">
+    
+      <div id="disqus_thread">
+        <noscript>
+          Please enable JavaScript to view the
+          <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a>
+        </noscript>
+      </div>
+    
+  </div>
+
+
+        </div>
+        
+          
   
   <div class="sidebar-toggle">
     <div class="sidebar-toggle-line-wrap">
@@ -367,9 +437,11 @@ Before we dive into real problems, I want to briefly discuss about binary">
     <div class="sidebar-inner">
 
       
+
+      
         <ul class="sidebar-nav motion-element">
           <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            Table Of Contents
+            Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
             Overview
@@ -377,12 +449,12 @@ Before we dive into real problems, I want to briefly discuss about binary">
         </ul>
       
 
-      <section class="site-overview">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" src="https://pbs.twimg.com/profile_images/542136176363053056/JGvwpXLI.png" alt="Baoxu(Dash) Shi" itemprop="image">
+          <img class="site-author-image" itemprop="image" src="https://pbs.twimg.com/profile_images/542136176363053056/JGvwpXLI.png" alt="Baoxu(Dash) Shi">
           <p class="site-author-name" itemprop="name">Baoxu(Dash) Shi</p>
+          <p class="site-description motion-element" itemprop="description"></p>
         </div>
-        <p class="site-description motion-element" itemprop="description"></p>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
@@ -390,20 +462,24 @@ Before we dive into real problems, I want to briefly discuss about binary">
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
-
-          <div class="site-state-item site-state-categories">
-            
-              <span class="site-state-item-count">1</span>
-              <span class="site-state-item-name">categories</span>
+          
+          
+            <div class="site-state-item site-state-categories">
               
-          </div>
+                <span class="site-state-item-count">1</span>
+                <span class="site-state-item-name">categories</span>
+              
+            </div>
+          
 
-          <div class="site-state-item site-state-tags">
-            <a href="/tags">
-              <span class="site-state-item-count">41</span>
-              <span class="site-state-item-name">tags</span>
+          
+            <div class="site-state-item site-state-tags">
+              <a href="/tags">
+                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-name">tags</span>
               </a>
-          </div>
+            </div>
+          
 
         </nav>
 
@@ -413,11 +489,19 @@ Before we dive into real problems, I want to briefly discuss about binary">
           
             
               <span class="links-of-author-item">
-                <a href="https://github.com/bxshi" target="_blank">GitHub</a>
+                <a href="https://github.com/bxshi" target="_blank">
+                  
+                    <i class="fa fa-github"></i> GitHub
+                  
+                </a>
               </span>
             
               <span class="links-of-author-item">
-                <a href="https://twitter.com/slaindev" target="_blank">Twitter</a>
+                <a href="https://twitter.com/slaindev" target="_blank">
+                  
+                    <i class="fa fa-twitter"></i> Twitter
+                  
+                </a>
               </span>
             
           
@@ -433,15 +517,21 @@ Before we dive into real problems, I want to briefly discuss about binary">
       </section>
 
       
-        <section class="post-toc-wrap sidebar-panel-active">
-          <div class="post-toc-indicator-top post-toc-indicator"></div>
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc-indicator-top post-toc-indicator">
+            <i class="fa fa-angle-double-up"></i>
+          </div>
           <div class="post-toc">
+            
+              
             
             
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Binary-Search-Basics"><span class="nav-number">1.</span> <span class="nav-text">Binary Search Basics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Binary-Search-Questions"><span class="nav-number">2.</span> <span class="nav-text">Binary Search Questions</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Problems-on-Sorted-Arrays"><span class="nav-number">2.1.</span> <span class="nav-text">Problems on Sorted Arrays</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Binary-Search"><span class="nav-number">2.1.1.</span> <span class="nav-text">Binary Search</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Search-insert-position"><span class="nav-number">2.1.2.</span> <span class="nav-text">Search insert position</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Wood-Cut"><span class="nav-number">2.1.3.</span> <span class="nav-text">Wood Cut</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-Bad-Version"><span class="nav-number">2.1.4.</span> <span class="nav-text">Find Bad Version</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-the-nearest-pow-i-2-that-equals-or-less-thansqrt-x"><span class="nav-number">2.1.5.</span> <span class="nav-text">Find the nearest pow(i,2) that equals or less thansqrt(x)</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-value-range-in-sorted-array-containing-duplicate-values"><span class="nav-number">2.1.6.</span> <span class="nav-text">Find value range in sorted array containing duplicate values</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Problems-on-Rotated-Sorted-Arrays"><span class="nav-number">2.2.</span> <span class="nav-text">Problems on Rotated, Sorted Arrays</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Search-in-Rotated-Sorted-Array"><span class="nav-number">2.2.1.</span> <span class="nav-text">Search in Rotated Sorted Array</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Search-in-Rotated-Sorted-Array-II"><span class="nav-number">2.2.2.</span> <span class="nav-text">Search in Rotated Sorted Array II</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-Minimum-in-Rotated-Sorted-Array"><span class="nav-number">2.2.3.</span> <span class="nav-text">Find Minimum in Rotated Sorted Array</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-Minimum-in-Rotated-Sorted-Array-II"><span class="nav-number">2.2.4.</span> <span class="nav-text">Find Minimum in Rotated Sorted Array II</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Find-Peak-Element"><span class="nav-number">2.2.5.</span> <span class="nav-text">Find Peak Element</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Other-Binary-Search-Problems"><span class="nav-number">2.3.</span> <span class="nav-text">Other Binary Search Problems</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Search-A-2D-Matrix"><span class="nav-number">2.3.1.</span> <span class="nav-text">Search A 2D Matrix</span></a></li></ol></li></ol></li></ol></div>
             
           </div>
-          <div class="post-toc-indicator-bottom post-toc-indicator"></div>
+          <div class="post-toc-indicator-bottom post-toc-indicator">
+            <i class="fa fa-angle-double-down"></i>
+          </div>
         </section>
       
 
@@ -449,15 +539,18 @@ Before we dive into real problems, I want to briefly discuss about binary">
   </aside>
 
 
+        
+      </div>
     </main>
 
     <footer id="footer" class="footer">
-      <div class="footer-inner"> <div class="copyright">
+      <div class="footer-inner">
+        <div class="copyright">
   
-  &copy; &nbsp;  2015 - 
+  &copy;  2015 - 
   <span itemprop="copyrightYear">2016</span>
   <span class="with-love">
-    <i class="icon-next-heart"></i>
+    <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Baoxu(Dash) Shi</span>
 </div>
@@ -469,73 +562,53 @@ Before we dive into real problems, I want to briefly discuss about binary">
 <div class="theme-info">
   Theme -
   <a class="theme-link" href="https://github.com/iissnan/hexo-theme-next">
-    NexT
+    NexT.Muse
   </a>
 </div>
 
 
- </div>
+
+      </div>
     </footer>
 
     <div class="back-to-top"></div>
   </div>
 
+  
+
+
+  
+
+
+
   <script type="text/javascript" src="/vendors/jquery/index.js?v=2.1.3"></script>
 
-  
-  
-  
-    
-    
-
-  
-
-    <script type="text/javascript">
-      var disqus_shortname = 'bshiblog';
-      var disqus_identifier = '2015/08/18/Algorithm-Problems-Binary-Search/';
-      var disqus_title = 'Algorithm Problems: Binary Search';
-      var disqus_url = 'http://bxshi.github.io/2015/08/18/Algorithm-Problems-Binary-Search/';
-
-      function run_disqus_script(disqus_script){
-        var dsq = document.createElement('script');
-        dsq.type = 'text/javascript';
-        dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-      }
-
-      run_disqus_script('count.js');
-      
-        run_disqus_script('embed.js');
-      
-    </script>
-  
-
-
-  
-  
-  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
-  <script type="text/javascript" src="/js/fancy-box.js?v=0.4.5.1"></script>
-
-
-  <script type="text/javascript" src="/js/helpers.js?v=0.4.5.1"></script>
-  
-
-  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
-  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
-
-  <script type="text/javascript" src="/js/motion_global.js?v=0.4.5.1" id="motion.global"></script>
-
-
-
-
-  <script type="text/javascript" src="/js/nav-toggle.js?v=0.4.5.1"></script>
   <script type="text/javascript" src="/vendors/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
 
-  
-  
-<script type="text/javascript" src="/js/bootstrap.scrollspy.js?v=0.4.5.1" id="bootstrap.scrollspy.custom"></script>
+  <script type="text/javascript" src="/vendors/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
 
+  <script type="text/javascript" src="/vendors/velocity/velocity.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/velocity/velocity.ui.min.js"></script>
+
+  <script type="text/javascript" src="/vendors/fancybox/source/jquery.fancybox.pack.js"></script>
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=0.5.0"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=0.5.0"></script>
+
+
+
+  
+  
+
+  
+  
+<script type="text/javascript" src="/js/src/scrollspy.js?v=0.5.0"></script>
 
 <script type="text/javascript" id="sidebar.toc.highlight">
   $(document).ready(function () {
@@ -615,7 +688,7 @@ Before we dive into real problems, I want to briefly discuss about binary">
 
     function tocOverflowIndicator (indicator, action) {
       var $indicator = $(indicator);
-      var opacity = action === 'show' ? 0.4 : 0;
+      var opacity = action === 'show' ? 1 : 0;
       $indicator.velocity ?
         $indicator.velocity('stop').velocity({
           opacity: opacity
@@ -669,7 +742,7 @@ Before we dive into real problems, I want to briefly discuss about binary">
 
     $('.post-toc a').on('click', function (e) {
       e.preventDefault();
-      var targetSelector = escapeSelector(this.getAttribute('href'));
+      var targetSelector = NexT.utils.escapeSelector(this.getAttribute('href'));
       var offset = $(targetSelector).offset().top;
       hasVelocity ?
         html.velocity('stop').velocity('scroll', {
@@ -682,43 +755,63 @@ Before we dive into real problems, I want to briefly discuss about binary">
     });
 
     // Expand sidebar on post detail page by default, when post has a toc.
-    var $tocContent = $('.post-toc-content');
-    if (isDesktop() && CONFIG.sidebar === 'post') {
-      if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
-        displaySidebar();
+    NexT.motion.middleWares.sidebar = function () {
+      var $tocContent = $('.post-toc-content');
+
+      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+        if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
+          NexT.utils.displaySidebar();
+        }
       }
-    }
+    };
   });
 </script>
 
 
 
-  <script type="text/javascript">
-    $(document).ready(function () {
-      if (CONFIG.sidebar === 'always') {
-        displaySidebar();
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=0.5.0"></script>
+
+
+
+  
+
+
+
+  
+
+    <script type="text/javascript">
+      var disqus_shortname = 'bshiblog';
+      var disqus_identifier = '2015/08/18/Algorithm-Problems-Binary-Search/';
+      var disqus_title = 'Algorithm Problems: Binary Search';
+      var disqus_url = 'http://bxshi.github.io/2015/08/18/Algorithm-Problems-Binary-Search/';
+
+      function run_disqus_script(disqus_script){
+        var dsq = document.createElement('script');
+        dsq.type = 'text/javascript';
+        dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/' + disqus_script;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
       }
-      if (isMobile()) {
-        FastClick.attach(document.body);
-      }
-    });
-  </script>
 
-  
-
-  
+      run_disqus_script('count.js');
+      
+        run_disqus_script('embed.js');
+      
+    </script>
   
 
+
+
   
-  <script type="text/javascript" src="/js/lazyload.js"></script>
-  <script type="text/javascript">
-    $(function () {
-      $("#posts").find('img').lazyload({
-        placeholder: "/images/loading.gif",
-        effect: "fadeIn"
-      });
-    });
-  </script>
+  
+
+  
+  
+
+
 <!-- mathjax config similar to math.stackexchange -->
 
 <script type="text/x-mathjax-config">
