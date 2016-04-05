@@ -7,29 +7,29 @@
 
 <html class="theme-next muse use-motion">
 <head>
-  <meta charset="UTF-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 
 
 
-<meta http-equiv="Cache-Control" content="no-transform">
-<meta http-equiv="Cache-Control" content="no-siteapp">
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
 
 
 
-  <meta name="google-site-verification" content="8zCr1Cr9pNCmDVidKXdGFdCIDicUaVqFIICkdm51t9I">
-
-
-
-
+  <meta name="google-site-verification" content="8zCr1Cr9pNCmDVidKXdGFdCIDicUaVqFIICkdm51t9I" />
 
 
 
 
 
 
-  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+  <link href="/vendors/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css"/>
 
 
 
@@ -38,21 +38,21 @@
 
 
 
-<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css">
+<link href="/vendors/font-awesome/css/font-awesome.min.css?v=4.4.0" rel="stylesheet" type="text/css" />
 
-<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css">
-
-
-  <meta name="keywords" content="algorithm,interview,">
+<link href="/css/main.css?v=0.5.0" rel="stylesheet" type="text/css" />
 
 
+  <meta name="keywords" content="algorithm,interview," />
 
 
 
 
 
 
-  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0">
+
+
+  <link rel="shortcut icon" type="image/x-icon" href="/favicon.ico?v=0.5.0" />
 
 
 
@@ -138,15 +138,15 @@ The maximum">
     
   
 
-  <div class="container one-collumn sidebar-position-left page-post-detail">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-meta">
+      <div class="header-inner"><div class="site-meta ">
   
 
   <div class="custom-logo-site-title">
-    <a href="/" class="brand" rel="start">
+    <a href="/"  class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <span class="site-title">RAndom NoTeS</span>
       <span class="logo-line-after"><i></i></span>
@@ -167,13 +167,13 @@ The maximum">
   
 
   
-    <ul id="menu" class="menu">
+    <ul id="menu" class="menu ">
       
         
         <li class="menu-item menu-item-home">
           <a href="/" rel="section">
             
-              <i class="menu-item-icon fa fa-home fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-home fa-fw"></i> <br />
             
             Home
           </a>
@@ -183,7 +183,7 @@ The maximum">
         <li class="menu-item menu-item-about">
           <a href="/about" rel="section">
             
-              <i class="menu-item-icon fa fa-user fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-user fa-fw"></i> <br />
             
             About
           </a>
@@ -193,7 +193,7 @@ The maximum">
         <li class="menu-item menu-item-archives">
           <a href="/archives" rel="section">
             
-              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-archive fa-fw"></i> <br />
             
             Archives
           </a>
@@ -203,7 +203,7 @@ The maximum">
         <li class="menu-item menu-item-tags">
           <a href="/tags" rel="section">
             
-              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br>
+              <i class="menu-item-icon fa fa-tags fa-fw"></i> <br />
             
             Tags
           </a>
@@ -238,7 +238,7 @@ The maximum">
   
   
 
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
 
     
       <header class="post-header">
@@ -283,6 +283,7 @@ The maximum">
 
           
           
+
         </div>
       </header>
     
@@ -313,7 +314,7 @@ The maximum">
 <h3 id="Mean"><a href="#Mean" class="headerlink" title="Mean"></a>Mean</h3><p>To calculate the mean we will use the ksum we have in previous section and divide it by k.</p>
 <h3 id="Minimum"><a href="#Minimum" class="headerlink" title="Minimum"></a>Minimum</h3><p>To get the minimum, we can traverse through <code>lastK</code> and find the minimum value, which costs <code>O(k)</code> time, if we want <code>O(logk)</code> time, we can keep a minHeap but the space cost may double if we also want <code>O(logk)</code> insertion time.</p>
 <p>Here is a findMin <code>O(logk)</code> but insert/delete <code>O(k)</code> example:</p>
-<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> minHeap &#123;</span><br><span class="line">  <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; heap;</span><br><span class="line">  <span class="keyword">long</span> <span class="keyword">long</span> size;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (heap.size() &lt; size + <span class="number">1</span>) heap.resize(size + <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">    heap[++size] = val;</span><br><span class="line">    <span class="comment">// do swim at heap[size]</span></span><br><span class="line">    <span class="keyword">return</span> swim(size); <span class="comment">// return final position</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (size &lt;= <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    heap[<span class="number">1</span>] = heap[size--];</span><br><span class="line">    <span class="comment">// do sink at heap[1]</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">front</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (size &gt; <span class="number">0</span>) <span class="keyword">return</span> heap[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">return</span> -<span class="number">1</span>; <span class="comment">// <span class="doctag">TODO:</span> should define error here</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> pos)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (size &lt; pos) <span class="keyword">return</span>;</span><br><span class="line">    heap[pos] = heap[size--];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// do sink at heap[pos]</span></span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">auto</span> it = input.begin();</span><br><span class="line"><span class="built_in">deque</span>&lt;<span class="keyword">int</span>&gt; pos;</span><br><span class="line">minHeap mHeap;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(it != input.end()) &#123;</span><br><span class="line">  <span class="keyword">if</span> (pos.size() &lt; k) &#123;</span><br><span class="line">    pos.push_back(mHeap.push(*it));</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    mHeap.remove(pos.front());</span><br><span class="line">    pos.pop_front();</span><br><span class="line">    pos.push_back(mHeap.push(*it));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> minHeap &#123;</span><br><span class="line">  <span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt; heap;</span><br><span class="line">  <span class="keyword">long</span> <span class="keyword">long</span> size;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">push</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (heap.size() &lt; size + <span class="number">1</span>) heap.resize(size + <span class="number">2</span>, <span class="number">0</span>);</span><br><span class="line">    heap[++size] = val;</span><br><span class="line">    <span class="comment">// do swim at heap[size]</span></span><br><span class="line">    <span class="keyword">return</span> swim(size); <span class="comment">// return final position</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">pop</span><span class="params">(<span class="keyword">int</span> val)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (size &lt;= <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    heap[<span class="number">1</span>] = heap[size--];</span><br><span class="line">    <span class="comment">// do sink at heap[1]</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">int</span> <span class="title">front</span><span class="params">()</span> <span class="keyword">const</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (size &gt; <span class="number">0</span>) <span class="keyword">return</span> heap[<span class="number">1</span>];</span><br><span class="line">    <span class="keyword">return</span> <span class="number">-1</span>; <span class="comment">// <span class="doctag">TODO:</span> should define error here</span></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">remove</span><span class="params">(<span class="keyword">int</span> pos)</span> </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (size &lt; pos) <span class="keyword">return</span>;</span><br><span class="line">    heap[pos] = heap[size--];</span><br><span class="line"></span><br><span class="line">    <span class="comment">// do sink at heap[pos]</span></span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">auto</span> it = input.begin();</span><br><span class="line"><span class="built_in">deque</span>&lt;<span class="keyword">int</span>&gt; pos;</span><br><span class="line">minHeap mHeap;</span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span>(it != input.end()) &#123;</span><br><span class="line">  <span class="keyword">if</span> (pos.size() &lt; k) &#123;</span><br><span class="line">    pos.push_back(mHeap.push(*it));</span><br><span class="line">  &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    mHeap.remove(pos.front());</span><br><span class="line">    pos.pop_front();</span><br><span class="line">    pos.push_back(mHeap.push(*it));</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Maximum"><a href="#Maximum" class="headerlink" title="Maximum"></a>Maximum</h3><p>Maximum is similar to minimum</p>
 <h3 id="Median"><a href="#Median" class="headerlink" title="Median"></a>Median</h3><p>Median is the hardest one, we need to keep two heaps, one uses for the smallest 1~(k/2) elements, one for the other (k/2 + 1) ~ k elements. The first heap is max heap because we want the largest number in the first part which can be the candidate of the median; the second heap is a min heap because we want the smallest number in the second part which can be the candidate of the median.</p>
 <p>The algorithm works as follows:</p>
@@ -322,6 +323,12 @@ The maximum">
 <li>if the input is larger/equal to median, insert it into right min heap, otherwise insert it into left max heap</li>
 <li>if the size difference is larger than 2, we pop the top of the heap that has the larger size, and then put median into the other heap</li>
 </ul>
+      
+    </div>
+
+    <div>
+      
+        
       
     </div>
 
@@ -405,7 +412,7 @@ The maximum">
 
       
         <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
             Table of Contents
           </li>
           <li class="sidebar-nav-overview" data-target="site-overview">
@@ -414,16 +421,18 @@ The maximum">
         </ul>
       
 
-      <section class="site-overview sidebar-panel">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
-          <img class="site-author-image" itemprop="image" src="https://pbs.twimg.com/profile_images/542136176363053056/JGvwpXLI.png" alt="Baoxu(Dash) Shi">
+          <img class="site-author-image" itemprop="image"
+               src="https://pbs.twimg.com/profile_images/542136176363053056/JGvwpXLI.png"
+               alt="Baoxu(Dash) Shi" />
           <p class="site-author-name" itemprop="name">Baoxu(Dash) Shi</p>
           <p class="site-description motion-element" itemprop="description"></p>
         </div>
         <nav class="site-state motion-element">
           <div class="site-state-item site-state-posts">
             <a href="/archives">
-              <span class="site-state-item-count">16</span>
+              <span class="site-state-item-count">18</span>
               <span class="site-state-item-name">posts</span>
             </a>
           </div>
@@ -440,7 +449,7 @@ The maximum">
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">41</span>
+                <span class="site-state-item-count">47</span>
                 <span class="site-state-item-name">tags</span>
               </a>
             </div>
@@ -510,7 +519,7 @@ The maximum">
 
     <footer id="footer" class="footer">
       <div class="footer-inner">
-        <div class="copyright">
+        <div class="copyright" >
   
   &copy;  2015 - 
   <span itemprop="copyrightYear">2016</span>
@@ -723,7 +732,7 @@ The maximum">
     NexT.motion.middleWares.sidebar = function () {
       var $tocContent = $('.post-toc-content');
 
-      if (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always') {
+      if (CONFIG.scheme !== 'Pisces' && (CONFIG.sidebar.display === 'post' || CONFIG.sidebar.display === 'always')) {
         if ($tocContent.length > 0 && $tocContent.html().trim().length > 0) {
           NexT.utils.displaySidebar();
         }
@@ -777,35 +786,5 @@ The maximum">
   
 
 
-<!-- mathjax config similar to math.stackexchange -->
-
-<script type="text/x-mathjax-config">
-  MathJax.Hub.Config({
-    tex2jax: {
-      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
-      processEscapes: true
-    }
-  });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Config({
-      tex2jax: {
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-      }
-    });
-</script>
-
-<script type="text/x-mathjax-config">
-    MathJax.Hub.Queue(function() {
-        var all = MathJax.Hub.getAllJax(), i;
-        for(i=0; i < all.length; i += 1) {
-            all[i].SourceElement().parentNode.className += ' has-jax';
-        }
-    });
-</script>
-
-<script type="text/javascript" src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
 </body>
 </html>

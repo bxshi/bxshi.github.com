@@ -441,7 +441,7 @@ body {
 .header-inner {
   margin: 0 auto;
   padding: 100px 0 70px;
-  max-width: 700px;
+  width: 700px;
 }
 @media (min-width: 1600px) {
   .container .header-inner {
@@ -470,7 +470,7 @@ body {
 .footer-inner {
   box-sizing: border-box;
   margin: 20px auto;
-  max-width: 700px;
+  width: 700px;
 }
 @media (min-width: 1600px) {
   .container .footer-inner {
@@ -988,11 +988,6 @@ pre .javascript .function {
   padding-left: 0;
   text-align: center;
 }
-@media (max-width: 767px) {
-  .menu {
-    padding-left: 10px;
-  }
-}
 .menu .menu-item {
   display: inline-block;
   margin: 0 10px;
@@ -1006,7 +1001,7 @@ pre .javascript .function {
   display: block;
   font-size: 13px;
   text-transform: capitalize;
-  line-height: 1.5;
+  line-height: inherit;
   border-bottom: 1px solid transparent;
   transition-property: border-color;
   transition-duration: 0.2s;
@@ -1093,6 +1088,9 @@ pre .javascript .function {
 .posts-expand .post-body h5:hover .header-anchor,
 .posts-expand .post-body h6:hover .header-anchor {
   visibility: visible;
+}
+.posts-expand .post-body ul li {
+  list-style: circle;
 }
 .posts-expand .post-body img {
   box-sizing: border-box;
@@ -1528,7 +1526,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #54af2a;
+  background: #74ff9a;
 }
 .sidebar-nav {
   margin: 0 0 20px;
@@ -1978,6 +1976,13 @@ pre .javascript .function {
 .page-post-detail .comments {
   overflow: hidden;
 }
+@media (max-width: 767px) {
+  .header-inner,
+  .container .main-inner,
+  .footer-inner {
+    width: auto;
+  }
+}
 .custom-logo .site-meta-headline {
   text-align: center;
 }
@@ -2005,6 +2010,7 @@ pre .javascript .function {
     top: 52px;
     margin: 0;
     width: 100%;
+    padding: 0;
     background: #fff;
     border-bottom: 1px solid #ddd;
   }
@@ -2017,7 +2023,7 @@ pre .javascript .function {
 @media (max-width: 767px) {
   .menu .menu-item {
     display: block;
-    margin-left: 0;
+    margin: 0 10px;
     vertical-align: top;
   }
 }
@@ -2027,9 +2033,12 @@ pre .javascript .function {
   }
 }
 @media (max-width: 767px) {
-  .menu .menu-item-icon {
-    font-size: 15px;
+  .menu .menu-item a {
+    padding: 5px 10px;
   }
+}
+.menu .menu-item .fa {
+  margin-right: 5px;
 }
 .site-search {
   position: absolute;
