@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>2 on Baoxu ``Dash&#39;&#39; Shi</title>
+    <link>https://bshi.engineer/publication_types/2/index.xml</link>
+    <description>Recent content in 2 on Baoxu ``Dash&#39;&#39; Shi</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <copyright>&amp;copy; 2016</copyright>
+    <atom:link href="/publication_types/2/index.xml" rel="self" type="application/rss+xml" />
+    
+    <item>
+      <title>Forward backward similarity search in knowledge networks</title>
+      <link>https://bshi.engineer/publication/kbs_fbppr/</link>
+      <pubDate>Thu, 08 Dec 2016 12:07:13 -0500</pubDate>
+      
+      <guid>https://bshi.engineer/publication/kbs_fbppr/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Discriminative predicate path mining for fact checking in knowledge graphs</title>
+      <link>https://bshi.engineer/publication/kbs_predpath/</link>
+      <pubDate>Thu, 07 Jul 2016 12:11:34 -0500</pubDate>
+      
+      <guid>https://bshi.engineer/publication/kbs_predpath/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Scalable models for computing hierarchies in information networks</title>
+      <link>https://bshi.engineer/publication/kais_hdtm/</link>
+      <pubDate>Wed, 08 Jun 2016 12:02:20 -0500</pubDate>
+      
+      <guid>https://bshi.engineer/publication/kais_hdtm/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>
